@@ -1,18 +1,18 @@
 
-INSERT INTO USERS(ID,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES(1,'Henk','Tatje','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
+INSERT INTO USERS(FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
+VALUES('Henk','Tatje','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
 
 INSERT INTO USERS(ID,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES(2,'Jan','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
+VALUES('Jan','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
 
 INSERT INTO USERS(ID,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES(3,'klaas','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
+VALUES('klaas','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
 
 INSERT INTO USERS(ID,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES(4,'Karst','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
+VALUES('Karst','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
 
 INSERT INTO USERS(ID,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES(5,'Jan','Klaasesn','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
+VALUES('Jan','Klaasesn','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
 
 
 

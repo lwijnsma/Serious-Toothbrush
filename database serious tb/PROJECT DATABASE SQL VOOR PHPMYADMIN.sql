@@ -95,6 +95,8 @@ ALTER TABLE songs ADD CONSTRAINT songs_pk PRIMARY KEY ( title );
 
 CREATE TABLE users (
     id           INTEGER(5) NOT NULL,
+    username     VARCHAR(25)
+    email        VARCHAR(50)
     first_name   VARCHAR(25),
     last_name    VARCHAR(25),
     password     VARCHAR(64),

@@ -99,7 +99,7 @@ CREATE TABLE users (
     email        VARCHAR(50),
     first_name   VARCHAR(25),
     last_name    VARCHAR(25),
-    password     VARCHAR(64) NOT NULL,
+    password     VARCHAR(64),
     is_admin     CHAR(1),
     created_at   DATE,
     updated_at   DATE

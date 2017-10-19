@@ -18,14 +18,14 @@ ALTER TABLE album ADD CONSTRAINT album_pk PRIMARY KEY ( title );
 CREATE TABLE cart (
     created_at   DATE,
     updated_at   DATE,
-    users_id     INTEGER NOT NULL
+    users_id     INTEGER(5) NOT NULL
 );
 
 ALTER TABLE cart ADD CONSTRAINT cart_pk PRIMARY KEY ( users_id );
 
 CREATE TABLE cart_songs (
     songs_title   VARCHAR(50) NOT NULL,
-    cart_id       INTEGER NOT NULL
+    cart_id       INTEGER(5) NOT NULL
 );
 
 ALTER TABLE cart_songs ADD CONSTRAINT cart_songs_pk PRIMARY KEY ( songs_title );
@@ -44,7 +44,7 @@ CREATE TABLE libraries (
     description   VARCHAR(250),
     created_at    DATE,
     updated_at    DATE,
-    users_id      INTEGER NOT NULL
+    users_id      INTEGER(5) NOT NULL
 );
 
 CREATE UNIQUE INDEX libraries__idx ON
@@ -55,7 +55,7 @@ ALTER TABLE libraries ADD CONSTRAINT libraries_pk PRIMARY KEY ( title,users_id )
 CREATE TABLE library_songs (
     songs_title          VARCHAR(50) NOT NULL,
     libraries_title      VARCHAR(25) NOT NULL,
-    libraries_users_id   INTEGER NOT NULL
+    libraries_users_id   INTEGER(5) NOT NULL
 );
 
 ALTER TABLE library_songs
@@ -64,14 +64,14 @@ ALTER TABLE library_songs
 CREATE TABLE playlist (
     title         VARCHAR(30) NOT NULL,
     description   VARCHAR(250),
-    users_id      INTEGER NOT NULL
+    users_id      INTEGER(5) NOT NULL
 );
 
 ALTER TABLE playlist ADD CONSTRAINT playlist_pk PRIMARY KEY ( title,users_id );
 
 CREATE TABLE playlist_songs (
     songs_title      VARCHAR(50) NOT NULL,
-    playlist_id      INTEGER NOT NULL,
+    playlist_id      INTEGER(5) NOT NULL,
     playlist_title   VARCHAR(30) NOT NULL
 );
 
@@ -100,7 +100,7 @@ CREATE TABLE songs (
 ALTER TABLE songs ADD CONSTRAINT songs_pk PRIMARY KEY ( title );
 
 CREATE TABLE users (
-    id           INTEGER NOT NULL,
+    id           INTEGER(5) NOT NULL auto_increment,
     first_name   VARCHAR(25),
     last_name    VARCHAR(25),
     password     VARCHAR(64),

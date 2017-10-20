@@ -1,0 +1,12 @@
+  .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+	  background-color:#33cccc;
+    }
+    .navbar li a {
+		color:white;
+	}
+
+	.navbar li a:hover {
+		background-color:#555;
+	}

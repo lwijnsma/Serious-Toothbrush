@@ -28,15 +28,8 @@
 			
 			<a href="#" style="color:grey; margin:5px;">forgot password</a>			
         </div>
-      </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-         
-        </div>
-      </li>
+	    </li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart</a> </li>
       </ul>
     </div>
   </div>

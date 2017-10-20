@@ -16,6 +16,13 @@ html {
 		background-color: #555;
 		color: white;
 		}
+    .sidenav {
+      padding: 20px;
+      background-color: #f1f1f1;
+	}
+ .jumbotron {
+      margin-bottom: 0;
+    }
 		
 	@media screen and (max-width: 600px) {
       .sidenav {

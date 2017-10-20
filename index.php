@@ -12,10 +12,10 @@
 </head>
 <body>
 <?php
-include 'pages/header.php';
+include 'include/header.php';
 ?>
 <?php
-include 'pages/navbar.php';
+include 'include/navbar.php';
 ?>
 <?php
 include 'pages/home.php';

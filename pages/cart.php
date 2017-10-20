@@ -6,18 +6,18 @@
 					<div class="card-title">
 						<div class="row"  style="margin-top: 20px;">
 							<div class="col" style="margin-left: 20px;">
-								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+								<h5><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart</h5>
 							</div>
 							<div class="col" style="margin-right: 20px;">
 								<button type="button" class="btn btn-primary btn-sm btn-block">
-									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+									<i class="fa fa-share" aria-hidden="true"></i> Continue shopping
 								</button>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="card-body">
-					<div class="row">
+						<div class="row">
 						<div class="col"><img class="img-responsive" src="http://placehold.it/100x70">
 						</div>
 						<div class="col">
@@ -25,11 +25,11 @@
 						</div>
 						<div class="col">
 							<div class="col text-right">
-								<h6><strong>00.00</strong></h6>
+								<h6><strong>25.00</strong></h6>
 							</div>
-							<div class="col">
-								<button type="button" class="btn btn-link btn">
-									<span class="glyphicon glyphicon-trash"> </span>
+							<div class="col text-right">
+								<button type="button" class="btn btn-sm btn-dark">
+									<i class="fa fa-trash fa-2x" aria-hidden="true"></i>
 								</button>
 							</div>
 						</div>

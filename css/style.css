@@ -1,0 +1,26 @@
+html {
+		position: relative;
+		min-height: 100%;
+		}
+		
+	body {
+		margin-bottom: 60px;
+		}
+		
+	.footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 60px;
+		line-height: 60px; 
+		background-color: #555;
+		color: white;
+		}
+		
+	@media screen and (max-width: 600px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+     	 .row.content {height:auto;}
+    }

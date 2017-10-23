@@ -27,31 +27,27 @@ include 'connection.php';
        if ($password==1)
        {
 
-         echo "je bent ingelogd";
+         echo '<div class="alert alert-success" role="alert"> je bent ingelogd </div>';
 
-         ////////////////////////// voer hier het pad in/////////////////
-          header('location: index.php');
-/////////////////////////////////////////////////////////////////////////
+          header('location:index.php');
+
          $_SESSION["auth"]=true; //auth controleert of een klant is ingelogd
          $_SESSION["timeout"]=time() + 120;
          $_SESSION["gebruiker"]=$user;
          $_SESSION["rol"]=$result["is_admin"];
 
-
-
        }
 
        else
        {
-         echo 'Gebruikersnaam of wachtwoord niet correct';
+         echo '<div class="alert alert-danger" role="alert">Gebruikersnaam of wachtwoord niet correct </div>';
           die();
      }
    }
      else {
-       echo 'Gebruikersnaam of wachtwoord niet correct';
+       echo '<div class="alert alert-danger" role="alert">Gebruikersnaam of wachtwoord niet correct </div>';
        die();
      }
-
 
   }
 

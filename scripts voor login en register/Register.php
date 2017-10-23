@@ -15,7 +15,7 @@
         <p>Wachtwoord opnieuw  <input type="password" name="repassword" value="" size="20"></p>
         <p><input type="submit" name="register" value="registreer"></p>
       </form>
-     <?php include 'Register_script.php'; ?>
+     <?php include 'include/register_script.php'; ?>
     </fieldset>
   </body>
 </html>

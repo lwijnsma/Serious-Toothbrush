@@ -23,7 +23,9 @@ include 'pages/home.php';
 ?>
 <footer class="footer">
 <div class="container">
+  <div class="row justify-content-md-center"">
   <p><?php echo date("Y"); ?> serious toothbrush</p>
+  </div>
   </div>
 </footer>
 </body>

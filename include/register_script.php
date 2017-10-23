@@ -57,7 +57,7 @@ if (isset($_POST['register']))
               $_POST=array();
               echo "uw bent geregistreed";
               sleep(1);
-              header("location: login.php");
+              header("location:pages/login.php");
            }
            else
            {

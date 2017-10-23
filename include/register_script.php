@@ -64,7 +64,7 @@ if (isset($_POST['register']))
       echo '<div class="alert alert-danger" role="alert">email is niet correct</div>';
     }
 
-    if ($_POST['password']!=$_POST['repassword']&& $_POST['password']>6))
+    if ($_POST['password']!=$_POST['repassword']&& $_POST['password']>6)
     {
       print '<div class="alert alert-danger" role="alert">wachtwoorden zijn niet gelijk</div>';
     }

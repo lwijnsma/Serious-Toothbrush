@@ -44,7 +44,8 @@ if (isset($_POST['register']))
                   mysqli_query($db, $query1) or die("FOUT : " . mysqli_error());
                   $_POST=array();
                   echo '<div class="alert alert-success" role="alert">uw bent geregistreed</div>';
-                  header("location: pages/login.php");
+                  $_SESSION['page']='Login';
+                  header("location: index.php");
                }
 
 

@@ -15,9 +15,9 @@
 
       <form class="nav navbar-nav ml-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
-        <button  type="submit" class="nav-item" name="submit" value="Account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
+        <button  type="submit" class="nav-item" name="page" value="Account"><i class="fa fa-user" aria-hidden="true"></i> Account</button>
 
-        <button type="submit" class="nav-item" name="submit" value="Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart</button>
+        <button type="submit" class="nav-item" name="page" value="Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart</button>
 
       </form>
 

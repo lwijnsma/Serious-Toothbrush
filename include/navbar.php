@@ -10,7 +10,6 @@
         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Store</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Library</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">

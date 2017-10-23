@@ -1,6 +1,6 @@
 <?php
 session_start(); // sessie beginnen
-include 'connection.php';
+include 'cfg/connection.php';
 // controleren of pagina correct is aangeroepen en of er waarden in de velden staan.
   if (!empty($_POST)&& $_POST['user']!=""&& $_POST['password']!="")
   {

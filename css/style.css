@@ -2,18 +2,18 @@ html {
 		position: relative;
 		min-height: 100%;
 }
-		
+
 body {
 		margin-bottom: 60px;
   		background-color: #eee;
 }
-		
+
 .footer {
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		height: 60px;
-		line-height: 60px; 
+		line-height: 60px;
 		background-color: #555;
 		color: white;
 }
@@ -26,16 +26,31 @@ body {
 .jumbotron {
       margin-bottom: 0;
 }
-		
+
 		 .row.content {height:auto;}
 }
 .navbar {
       margin-bottom: 0;
       border-radius: 0;
 	  background-color:#33cccc;
+
+}
+/*  dit is vanaf hier gemaakt door jeroen  */
+.nav-item
+{
+	background: none;
+	text-align: left;
+	border: none;
+	color:white;
 }
 
 
+.nav-item:hover{
+	background: none;
+	border: none;
+	color:grey;
+}
+/*  dit is tot hier gemaakt door jeroen  */
 .form-signin {
     max-width: 330px;
   	padding: 15px;

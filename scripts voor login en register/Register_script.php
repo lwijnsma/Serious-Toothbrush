@@ -32,7 +32,8 @@ if (isset($_POST['register']))
        $last_name=trim($last_name);
        $last_name = mysqli_real_escape_string($db, $last_name);
 
-       $password=htmlspecialchars($_POST['password']);
+       $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+       $password=htmlspecialchars($password);
        $password=stripslashes ($password);
        $password=trim($password);
        $password = mysqli_real_escape_string($db, $password);
@@ -41,7 +42,7 @@ if (isset($_POST['register']))
 
 
        $query = 	"SELECT * FROM USERS
-       WHERE username ='" . $user ."'";
+       WHERE BINARY username ='" . $user ."'";
          //dit geeft aan of username bestaat
        $unique = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
        if (strlen($password) >6 )
@@ -53,6 +54,10 @@ if (isset($_POST['register']))
               $query1 = 	"INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
               VALUES('".$user."','".$email."','".$name."','".$last_name."','".$password."','".$IS_ADMIN."','".date('Y-m-d')."','".date('Y-m-d')."')";
               mysqli_query($db, $query1) or die("FOUT : " . mysqli_error());
+              $_POST=array();
+              echo "uw bent geregistreed";
+              sleep(1);
+              header("location: login.php");
            }
            else
            {
@@ -75,5 +80,6 @@ if (isset($_POST['register']))
      print "<p>Alle velden moeten worden ingevuld</p>";
 
   }
+
 }
  ?>

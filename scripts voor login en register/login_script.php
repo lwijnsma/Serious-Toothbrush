@@ -4,37 +4,32 @@ include 'connection.php';
 // controleren of pagina correct is aangeroepen en of er waarden in de velden staan.
   if (!empty($_POST)&& $_POST['user']!=""&& $_POST['password']!="")
   {
-         $user = mysqli_real_escape_string($db, $_POST['user']);
-         $password = mysqli_real_escape_string($db, $_POST['password']);
-     //sql query//
-     $query = 	"SELECT * FROM USERS
-     WHERE username ='" . $user ."'
-     AND password='" . $password ."''";
+    //maakt variable
+    $user=$_POST['user'];
+    $password=$_POST['password'];
+    //hier wordt de hash opgehaalt
+    $query = 	"SELECT password FROM USERS
+    WHERE BINARY username ='" .$user."'";
+    $password_result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+    $password_result=mysqli_fetch_assoc($password_result)or die("FOUT : " . mysqli_error());
 
 
-     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
-
-     if (mysqli_num_rows($result) > 0)
+    //hier wordt gekeken of het wachtwoord klopt
+    $password = password_verify($password,$password_result['password']);
+     if ($password==1)
      {
-          // gebruikersnaam gevonden, registreer gegevens in session
+
+       echo "je bent ingelogd";
        $_SESSION["auth"]=true; //auth controleert of een klant is ingelogd
        $_SESSION["timeout"]=time() + 120;
-       $_SESSION["gebruiker"]=$gebruiker;
-       while($row = mysqli_fetch_assoc($result))
-       {
-          $roll = $row['is_admin'];
-       }
-       // Doorsturen naar beveiligde pagina
-       if(($roll) == "0")
-       {
-          header("Location: user_home.php");
-          exit();
-       }
-       elseif(($rol =="1"))
-       {
-          header("Location: admin.php");
-          exit();
-       }
+       $_SESSION["gebruiker"]=$user;
+
+
+
+
+
+
+
 
     }
     else

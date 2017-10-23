@@ -1,3 +1,5 @@
+<?php include 'include/profile_script.php' ?>
+
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-2 sidenav">
@@ -24,24 +26,24 @@
                         <legend>Account Details</legend>
                         <div class="row">
       <div class="form-group col-md-4">
-      <label for=""> Username </label><input type="text" class="form-control" name="user" value="<?php if(isset($_POST['user'])){echo$_POST['user'];}?>" size="20">
+      <label for=""> Username </label><input type="text" class="form-control" name="user" value="<?php print $_SESSION["gerbruiker_informatie"]["username"]; ?>" size="20" disabled="true">
       </div>
     </div>
     <div class="row">
   <div class="form-group col-md-4">
-       <label for=""> Voornaam </label><input type="text" class="form-control" name="name" value="<?php if(isset($_POST['name'])){echo$_POST['name']; }?>">
+       <label for=""> Voornaam </label><input type="text" class="form-control" name="profile_name" value="<?php  print $_SESSION["gerbruiker_informatie"]["first_name"]?>">
       </div>
     <div class="form-group col-md-4">
-       <label for="">Achternaam </label><input type="text" class="form-control" name="lastname" value="<?php if(isset($_POST['lastname'])){echo$_POST['lastname'];}?>">
+       <label for="">Achternaam </label><input type="text" class="form-control" name="profile_lastname" value="<?php  print $_SESSION["gerbruiker_informatie"]["last_name"]?>">
       </div>
     </div>
     <div class="row">
     <div class="form-group col-md-8">
-       <label for="">email </label><input type="text" class="form-control" name="email" value="<?php if(isset($_POST['email'])){echo$_POST['email'];}?>" size="20p">
+       <label for="">email </label><input type="text" class="form-control" name="profile_email" value="<?php  print $_SESSION["gerbruiker_informatie"]["email"]?>" size="20p">
       </div>
     </div>
  <div class="row">
-     &nbsp;&nbsp;&nbsp; <input class="btn btn-success" type="submit" name="change" value="change">
+     &nbsp;&nbsp;&nbsp; <input class="btn btn-success" type="submit" name="profile_change" value="Profile_change">
  </div>
       </form>
     </div>
@@ -49,4 +51,3 @@
 </div>
 </div>
 </div>
-    

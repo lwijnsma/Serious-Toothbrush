@@ -17,7 +17,7 @@
 include 'include/header.php';
 ?>
 <?php
-include 'include/navbar_button.php';
+include 'include/navbarbuttons.php';
 ?>
 <?php
 

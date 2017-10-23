@@ -13,6 +13,7 @@ if (isset($_POST['register']))
   if (!empty($_POST)&& $_POST['user']!=""&& $_POST['password']!=""&& $_POST['repassword']!=""&& $_POST['name']!="" )
   {
 
+
            $user=htmlspecialchars($_POST['user']);
            $user=stripslashes ($user);
            $user=trim($user);
@@ -40,6 +41,13 @@ if (isset($_POST['register']))
            $password = mysqli_real_escape_string($db, $password);
 
            $IS_ADMIN = mysqli_real_escape_string($db, 0);
+
+           $query = 	"SELECT * FROM USERS
+           WHERE BINARY username ='" . $user ."'";
+           //dit geeft aan of username bestaat
+           $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+
+
            if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
            {
             if ($_POST['password']==$_POST['repassword'])
@@ -47,11 +55,8 @@ if (isset($_POST['register']))
 
            if (strlen($password) >6 )
            {
-             $query = 	"SELECT * FROM USERS
-             WHERE BINARY username ='" . $user ."'";
-             //dit geeft aan of username bestaat
-             $unique = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
-               if (mysqli_num_rows($unique) == 0)
+
+               if (mysqli_num_rows($result) == 0)
                {
 
                   $query1 = 	"INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
@@ -67,11 +72,7 @@ if (isset($_POST['register']))
         }
       }
 
-        $query = 	"SELECT * FROM USERS
-        WHERE BINARY username ='" . $user ."'";
-        //dit geeft aan of username bestaat
-        $unique = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
-          if (mysqli_num_rows($unique) != 0)
+        if (mysqli_num_rows($result) != 0)
         {
            echo '<p>Deze gebruikersnaam Bestaat al</p>';
         }
@@ -83,7 +84,7 @@ if (isset($_POST['register']))
       echo '<p>email is niet correct</p>';
     }
 
-    if ($_POST['password']!=$_POST['repassword'])
+    if ($_POST['password']!=$_POST['repassword']&& $_POST['password']>6)
     {
       print '<p>wachtwoorden zijn niet gelijk<p>';
     }

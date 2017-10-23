@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <head>
   <title>serious toothbrush</title>
   <meta charset="utf-8">

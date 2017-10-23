@@ -11,6 +11,12 @@
       <p>Lorem ipsum...</p>
     </div>
 </div>
+</br>
+<div class="card">
+      <div class="card-body">
+      	player
+      	</div>
+      </div>
 </div>
 
     <div class="col-2 sidenav">

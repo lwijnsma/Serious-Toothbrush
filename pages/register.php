@@ -40,5 +40,5 @@
 </div>
 </div>
 
-      <?php include 'Register_script.php'; ?>
+      <?php include 'include/register_script.php'; ?>
 

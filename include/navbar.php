@@ -5,7 +5,7 @@
 	<span class="navbar-toggler-icon"></span>
 	</button>
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Store</a></li>
@@ -13,23 +13,9 @@
         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user" aria-hidden="true"></i>  Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			<form class="form-inline">
-				<input type="text" class="form-control" placeholder="Username/Email">			
-				<input type="password" class="form-control" placeholder="Password">
-			</form>
-			
-			<button style="margin:1px;" class="btn btn-sm align-middle btn-outline-success" type="submit">Login</button>
-			<button style="margin:1px;" class="btn btn-sm align-middle btn-outline-secondary">Register</button></br>
-			
-			<a href="#" style="color:grey; margin:5px;">forgot password</a>			
-        </div>
-	    </li>
-        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart</a> </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i>  Account</a></li>
+       <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart</a> </li>
       </ul>
     </div>
   </div>

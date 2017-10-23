@@ -1,9 +1,11 @@
 <?php
     $dbhost = "localhost";
-	$dbuser = "project";
+	$dbuser = "root";
 	$dbpass = "";
 	$dbname = "project";
 	$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+
 //	Test of de verbinding werkt!
 	if (mysqli_connect_errno()) {
 		die("De verbinding met de database is mislukt: " .

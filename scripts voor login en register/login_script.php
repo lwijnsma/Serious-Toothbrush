@@ -1,62 +1,47 @@
 <?php
 session_start(); // sessie beginnen
-include 'cfg/connection.php';
+include 'connection.php';
 // controleren of pagina correct is aangeroepen en of er waarden in de velden staan.
-  if (!empty($_POST)&& $_POST['user']!="")
+  if (!empty($_POST)&& $_POST['user']!=""&& $_POST['password']!="")
   {
-    //maakt variable
-    $user=htmlspecialchars($_POST['user']);
-    $user=stripslashes ($user);
-    $user=trim($user);
-    $user = mysqli_real_escape_string($db, $user);
-
-    $password=$_POST['password'];
-    //hier wordt de hash opgehaalt
-    $query = 	"SELECT password FROM USERS
-    WHERE BINARY username ='" .$user."'";
-    $password_result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+         $user = mysqli_real_escape_string($db, $_POST['user']);
+         $password = mysqli_real_escape_string($db, $_POST['password']);
+     //sql query//
+     $query = 	"SELECT * FROM USERS
+     WHERE username ='" . $user ."'
+     AND password='" . $password ."''";
 
 
-    if (mysqli_num_rows($password_result)==1)
-    {
-      $password_result=mysqli_fetch_assoc($password_result)or die("FOUT : " . mysqli_error());
+     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 
-
-      //hier wordt gekeken of het wachtwoord klopt
-      $password = password_verify($password,$password_result['password']);
-       if ($password==1)
+     if (mysqli_num_rows($result) > 0)
+     {
+          // gebruikersnaam gevonden, registreer gegevens in session
+       $_SESSION["auth"]=true; //auth controleert of een klant is ingelogd
+       $_SESSION["timeout"]=time() + 120;
+       $_SESSION["gebruiker"]=$gebruiker;
+       while($row = mysqli_fetch_assoc($result))
        {
-
-
-         $query_roll = 	"SELECT is_admin FROM USERS
-         WHERE BINARY username ='" .$user."'";
-         $roll_result = mysqli_query($db, $query_roll) or die("FOUT : " . mysqli_error());
-         $roll_result=mysqli_fetch_assoc($roll_result)or die("FOUT : " . mysqli_error());
-
-
-         echo "je bent ingelogd";
-         $_SESSION["auth"]=true; //auth controleert of een klant is ingelogd
-         $_SESSION["timeout"]=time() + 120;
-         $_SESSION["gebruiker"]=$user;
-         $_SESSION["rol"]=$roll_result["is_admin"];
-
-
-
-
+          $roll = $row['is_admin'];
+       }
+       // Doorsturen naar beveiligde pagina
+       if(($roll) == "0")
+       {
+          header("Location: user_home.php");
+          exit();
+       }
+       elseif(($rol =="1"))
+       {
+          header("Location: admin.php");
+          exit();
        }
 
-       else
-       {
-         echo 'Gebruikersnaam of wachtwoord niet correct';
-          die();
-     }
-   }
-     else {
-       echo 'Gebruikersnaam of wachtwoord niet correct';
+    }
+    else
+    {
+        print "gebruikersnaam of wachtwoord niet correct";
        die();
-     }
 
-
+    }
   }
-
 ?>

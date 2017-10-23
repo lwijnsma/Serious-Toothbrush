@@ -3,21 +3,24 @@
   <div class="row justify-content-md-center"">
 <div class="card">
   <div class="card-body"
-      <form class="form-signin">
+      <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
         <h2 class="form-signin-heading">Login</h2>
         </br>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+        <input type="text" name="user" value="" size="20" class="form-control" placeholder="Username" >
       </br>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" value="" size="20" class="form-control" placeholder="Password" >
       </br>
       <div class="row justify-content-md-center"">
         <div class="col">
-        <button class="btn btn-lg btn-success" type="submit">Sign in</button>
+        <input type="submit" name="" class="btn btn-lg btn-success" value="login">
+
       </div>
         <div class="col">
-		<button class="btn btn-lg btn-primary" type="Button">Register</button>
+		<a class="btn btn-lg btn-primary" href="#">Register</a>
   </div>
   </div>
+<br>
+<?php include 'include/login_script.php'; ?>
       </form>
 </div>
 </div>

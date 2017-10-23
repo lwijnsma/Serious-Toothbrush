@@ -1,7 +1,5 @@
  </br>
-
  <div class="container">
- 	
         <div class="row justify-content-md-center"">
           <div class="card" style="width: 40rem;">
   <div class="card-body">
@@ -34,11 +32,12 @@
     	</div>
     </div>
        <input class="btn btn-success" type="submit" name="register" value="registreer">
+     </br>
+       <?php include 'include/register_script.php'; ?>
       </form>
   </div>
 </div>
 </div>
 </div>
 
-      <?php include 'include/register_script.php'; ?>
 

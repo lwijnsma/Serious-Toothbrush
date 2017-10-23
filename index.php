@@ -20,7 +20,7 @@ include 'include/header.php';
 include 'include/navbar.php';
 ?>
 <?php
-include 'pages/home.php';
+
 ?>
 <footer class="footer">
 <div class="container">

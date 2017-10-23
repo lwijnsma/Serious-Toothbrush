@@ -1,10 +1,6 @@
 <?php
 
-include 'connection.php';
-
-
-
-
+include 'cfg/connection.php';
 
 // controleren of pagina correct is aangeroepen en of er waarden in de velden staan.
 if (isset($_POST['register']))

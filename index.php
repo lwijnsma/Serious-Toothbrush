@@ -23,7 +23,7 @@ include 'pages/home.php';
 ?>
 <footer class="footer">
 <div class="container">
-  <p>Footer Text</p>
+  <p><?php echo date("Y"); ?> serious toothbrush</p>
   </div>
 </footer>
 </body>

@@ -1,6 +1,6 @@
 <?php
 session_start(); // sessie beginnen
-include 'cfg/connection.php';
+include 'connection.php';
 // controleren of pagina correct is aangeroepen en of er waarden in de velden staan.
   if (!empty($_POST)&& $_POST['user']!=""&& $_POST['password']!="")
   {
@@ -19,22 +19,14 @@ include 'cfg/connection.php';
      if ($password==1)
      {
 
-       echo "je bent ingelogd";
+       echo '<div class="alert alert-success" role="alert">succesful ingelogd</div>';
        $_SESSION["auth"]=true; //auth controleert of een klant is ingelogd
        $_SESSION["timeout"]=time() + 120;
        $_SESSION["gebruiker"]=$user;
-
-
-
-
-
-
-
-
     }
     else
     {
-        print "gebruikersnaam of wachtwoord niet correct";
+        print '<div class="alert alert-danger" role="alert"> gebruikersnaam of wachtwoord niet correct </div>';
        die();
 
     }

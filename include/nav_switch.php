@@ -1,6 +1,13 @@
 <?php
-if(!empty($_POST)){
-switch ($_POST['submit']) {
+
+
+if (isset($_POST['page'])) {
+$_SESSION["pages"]=$_POST['page'];
+}
+
+if(!empty($_SESSION["pages"])){
+
+switch ($_SESSION["pages"]) {
   case 'Home':
     include './pages/home.php';
     break;

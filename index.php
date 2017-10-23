@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <?php
-session_start();
+
+
+session_start( );
+session_regenerate_id();
 ?>
+
 <head>
   <title>serious toothbrush</title>
   <meta charset="utf-8">

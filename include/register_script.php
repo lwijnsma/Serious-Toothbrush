@@ -27,7 +27,9 @@ if (isset($_POST['register']))
            $password=trim($password);
            $password = mysqli_real_escape_string($db, $password);
            $IS_ADMIN = mysqli_real_escape_string($db, 0);
+
            $query =   "SELECT * FROM USERS
+
            WHERE BINARY username ='" . $user ."'";
            //dit geeft aan of username bestaat
            $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
@@ -42,10 +44,16 @@ if (isset($_POST['register']))
                   $query1 =   "INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
                   VALUES('".$user."','".$email."','".$name."','".$last_name."','".$password."','".$IS_ADMIN."','".date('Y-m-d')."','".date('Y-m-d')."')";
                   mysqli_query($db, $query1) or die("FOUT : " . mysqli_error());
-                  $_POST=array();
                   echo '<div class="alert alert-success" role="alert">uw bent geregistreed</div>';
-                  $_SESSION['page']='Login';
-                  header("location: index.php");
+                  $_POST['page']='Login';
+                  $_SESSION['pages']='Login';
+                  header('location: redirect.php');
+
+
+
+
+
+
                }
 
 

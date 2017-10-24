@@ -50,7 +50,8 @@ break;
     else{
       //include './scripts voor login en register/login.php';
       include './pages/login.php';
-  
+  }
+  break;
 
 
 }

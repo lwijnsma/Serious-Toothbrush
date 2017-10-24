@@ -45,10 +45,6 @@ break;
   break;
   
   case 'Cart':
-    include './pages/login.php';
-    break;
-
-  case 'Cart':
     include './pages/Cart.php';
     break;
 

@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<?php
-
-
-session_start( );
-session_regenerate_id();
-?>
-
+<html>
 <head>
   <title>serious toothbrush</title>
   <meta charset="utf-8">
@@ -18,16 +12,35 @@ session_regenerate_id();
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="js/data-tables/data-tables.bootstrap4.min.css">
 </head>
 <body>
 <?php
 include 'include/header.php';
 ?>
 <?php
-include 'include/navbarbuttons.php';
+include 'include/navbar.php';
 ?>
 <?php
+if (! isset($_GET['page']))
+    {
+        include('pages/home.php');
 
+    } else {    
+        $page = $_GET['page']; 
+}
+switch ($page) {
+    case 'store':
+        include ("pages/store.php");
+        break;
+    case 'library':
+        include ('pages/library.php');
+        break;
+    case 'home':
+    default:
+        include ('pages/home.php');
+        
+}
 ?>
 <footer class="footer">
 <div class="container">

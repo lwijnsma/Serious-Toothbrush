@@ -18,22 +18,20 @@
       	</div>
       </div>
 </div>
-
-    <div class="col-2 sidenav">
-	<div class="card">
-      <div class="card-body">
-        <h3 class="card-title">Top 10</h3>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-	  </div>
-	  </br>
-	  <div class="card">
-      <div class="card-body">
-        <h3 class="card-title">Top 10</h3>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-	  </div>
+    <div class="col-sm-2 sidenav">
+      <h4>Top 10</h4>
+      <ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Song 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Song 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Song 3</a>
+  </li>
+</ul><br>
     </div>
-
-  </div>
 </div>
+  </div>
+

@@ -3,7 +3,7 @@
 session_start( );
 session_regenerate_id();
 ?>
-
+<html>
 <head>
   <title>serious toothbrush</title>
   <meta charset="utf-8">
@@ -23,9 +23,6 @@ include 'include/header.php';
 ?>
 <?php
 include 'include/navbarbuttons.php';
-?>
-<?php
-  
 ?>
 <footer class="footer">
 <div class="container">

@@ -18,18 +18,21 @@ body {
 		color: white;
 }
 
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
 .sidenav {
       padding: 20px;
       background-color: #f1f1f1;
+      height: 100%;
 }
 
 .jumbotron {
       margin-bottom: 0;
 }
 
-.row.content {
-      height:auto;
-}
 
 /*  dit is vanaf hier gemaakt door jeroen  */
 .nav-item

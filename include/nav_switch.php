@@ -23,8 +23,12 @@ switch ($_SESSION["pages"]) {
     break;
 //////////////////////////
   case 'Library':
-    include './pages/library.php';
-    break;
+    if(isset($_SESSION["auth"]))
+    {  include './pages/library.php';}
+    else{
+      include './pages/login.php';
+}
+break;
 
   case 'Register':
     include './pages/register.php';

@@ -45,8 +45,12 @@ break;
   break;
   
   case 'Cart':
-    include './pages/Cart.php';
-    break;
+   if(isset($_SESSION["auth"]))
+    {  include './pages/cart.php';}
+    else{
+      //include './scripts voor login en register/login.php';
+      include './pages/login.php';
+  
 
 
 }

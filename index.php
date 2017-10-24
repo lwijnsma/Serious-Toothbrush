@@ -30,6 +30,12 @@ if (! isset($_GET['page']))
         $page = $_GET['page']; 
 }
 switch ($page) {
+    case 'account':
+        include ("pages/login.php");
+        break;
+    case 'cart':
+        include ("pages/cart.php");
+        break;
     case 'store':
         include ("pages/store.php");
         break;

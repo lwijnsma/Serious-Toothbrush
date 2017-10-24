@@ -26,9 +26,12 @@
         </div>
         <div class="container scroll">
      <nav aria-label="Page navigation ">
-      <form class="form-inline">
+      <form class="form-inline" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+
+
   </form>
   <ul class="pagination">
     <li class="page-item">
@@ -49,8 +52,8 @@
   </ul>
 </nav>     <table class="table" cellspacing="0">
             <thead>
-              <tr class="table-heads ">   
-                  
+              <tr class="table-heads ">
+
               <th class="head-item mbr-fonts-style display-7">
                       NAME</th><th class="head-item mbr-fonts-style display-7">
                       Artist</th><th class="head-item mbr-fonts-style display-7">
@@ -58,13 +61,13 @@
                       Price</th></tr>
             </thead>
             <tbody>
-            <tr> 
-                  
+            <tr>
+
               <td class="body-item mbr-fonts-style display-7"><a href="#">song 1</a></td><td class="body-item mbr-fonts-style display-7">rick</td><td class="body-item mbr-fonts-style display-7">2016-10-17</td><td class="body-item mbr-fonts-style display-7">4</td></tr><tr>
-                 
+
               <td class="body-item mbr-fonts-style display-7">Song 2</td><td class="body-item mbr-fonts-style display-7">ice-t</td><td class="body-item mbr-fonts-style display-7">2013-04-12</td><td class="body-item mbr-fonts-style display-7">5</td></tr><tr>
-                
-              <td class="body-item mbr-fonts-style display-7">Song 3</td><td class="body-item mbr-fonts-style display-7">morty</td><td class="body-item mbr-fonts-style display-7">2016-05-22</td><td class="body-item mbr-fonts-style display-7">9</td></tr><tr>  
+
+              <td class="body-item mbr-fonts-style display-7">Song 3</td><td class="body-item mbr-fonts-style display-7">morty</td><td class="body-item mbr-fonts-style display-7">2016-05-22</td><td class="body-item mbr-fonts-style display-7">9</td></tr><tr>
 
               <td class="body-item mbr-fonts-style display-7">Song 4</td><td class="body-item mbr-fonts-style display-7">meesix</td><td class="body-item mbr-fonts-style display-7">2016-05-15</td><td class="body-item mbr-fonts-style display-7">5</td></tr></tbody>
           </table>
@@ -91,4 +94,3 @@
     </div>
 </div>
 </div>
-    

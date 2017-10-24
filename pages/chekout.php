@@ -1,9 +1,12 @@
 
+
+
+
 <div class="container" style="margin-top: 20px;">
 	<h3>Products</h3>
 	<div class="row">
 		<div class="col">
-			<div class="card card-info">	
+			<div class="card card-info">
 				<div class="card-body">
 						<div class="row">
 						<div class="col"><img class="img-responsive" src="http://placehold.it/100x70">
@@ -40,7 +43,7 @@
 <h3>Paymen method</h3>
       <div class="list-group">
         <div class="list-group-item">
-          <div class="list-group-item-heading">          
+          <div class="list-group-item-heading">
               <div class="row radio">
                 <div class="col">
                   <label>
@@ -48,7 +51,7 @@
                     iDeal
                   </label>
                 </div>
-                    <div class="col"> 
+                    <div class="col">
                      <div class="form-group">
     				<label for="exampleFormControlSelect1">select bank</label>
     				<select class="form-control" id="exampleFormControlSelect1">
@@ -67,7 +70,7 @@
               </div>
           </div>
            <div class="list-group-item">
-          <div class="list-group-item-heading">          
+          <div class="list-group-item-heading">
               <div class="row radio">
                 <div class="col">
                   <label>
@@ -75,8 +78,8 @@
                     Creddit Card
                   </label>
                 </div>
-                     
-                    <div class="col"> 
+
+                    <div class="col">
                      <div class="form-group">
     				<label for="exampleFormControlSelect1">select Credditcard</label>
     				<select class="form-control" id="exampleFormControlSelect1">
@@ -94,7 +97,7 @@
               </div>
           </div>
            <div class="list-group-item">
-          <div class="list-group-item-heading">          
+          <div class="list-group-item-heading">
               <div class="row radio">
                 <div class="col">
                   <label>
@@ -102,7 +105,7 @@
                     PayPal
                   </label>
                 </div>
-                    <div class="col"> 
+                    <div class="col">
                     <input type="text" class="form-control" placeholder="PayPal e-mail" >
                     </div>
                     <div class="col">
@@ -112,7 +115,7 @@
               </div>
           </div>
            <div class="list-group-item">
-          <div class="list-group-item-heading">          
+          <div class="list-group-item-heading">
               <div class="row radio">
                 <div class="col">
                   <label>
@@ -120,7 +123,7 @@
                     Voucher
                   </label>
                 </div>
-                    <div class="col"> 
+                    <div class="col">
                     <input type="text" class="form-control" placeholder="Code" >
                     </div>
                     <div class="col">
@@ -132,4 +135,3 @@
       </br>
    </div>
 </div>
-         

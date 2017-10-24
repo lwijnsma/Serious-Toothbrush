@@ -1,6 +1,6 @@
  </br>
  <div class="container">
-        <div class="row justify-content-md-center"">
+        <div class="row justify-content-md-center">
           <div class="card" style="width: 40rem;">
   <div class="card-body">
  <form class="" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
@@ -39,5 +39,3 @@
 </div>
 </div>
 </div>
-
-

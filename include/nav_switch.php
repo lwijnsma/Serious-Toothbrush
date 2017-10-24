@@ -54,12 +54,16 @@ break;
   break;
 
 case 'Login':
-   if(isset($_SESSION["auth"]))
-    {  include './pages/profile.php';}
-    else{
+
+//je gebruikt alleen login als je naar het loginscherm wil, anders gebruik je Account.
+//   if(isset($_SESSION["auth"]))
+  //  {
+  //  include './pages/profile.php';
+  //  }
+  //  else{
       //include './scripts voor login en register/login.php';
       include './pages/login.php';
-  }
+//  }
   break;
 
 }

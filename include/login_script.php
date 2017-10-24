@@ -1,9 +1,8 @@
 <?php
-
+session_start(); // sessie beginnen
 include 'cfg/connection.php';
 // controleren of pagina correct is aangeroepen en of er waarden in de velden staan.
-
-  if (isset($_POST['user']))
+  if (!empty($_POST)&& $_POST['user']!="")
   {
     //maakt variable
     $user=htmlspecialchars($_POST['user']);
@@ -13,7 +12,7 @@ include 'cfg/connection.php';
 
     $password=$_POST['password'];
     //hier wordt de hash opgehaalt
-    $query = 	"SELECT * FROM USERS
+    $query =  "SELECT password, is_admin FROM USERS
     WHERE BINARY username ='" .$user."'";
     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 
@@ -36,7 +35,6 @@ include 'cfg/connection.php';
          $_SESSION["timeout"]=time() + 120;
          $_SESSION["gebruiker"]=$user;
          $_SESSION["rol"]=$result["is_admin"];
-         $_SESSION["gerbruiker_informatie"]=$result;
 
        }
 

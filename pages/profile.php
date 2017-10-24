@@ -43,7 +43,9 @@
       </div>
     </div>
  <div class="row">
-     &nbsp;&nbsp;&nbsp; <button class="btn btn-success" type="submit" name="profile_change" value="Profile_change">change</buttton>
+ 	<div class="col">
+      <button class="btn btn-success" type="submit" name="profile_change" value="Profile_change">change</buttton>
+     	</div
  </div>
       </form>
     </div>

@@ -1,5 +1,6 @@
 <?php
 
+
 if (isset($_POST['page'])) {
 $_SESSION["pages"]=$_POST['page'];
 }
@@ -11,6 +12,10 @@ switch ($_SESSION["pages"]) {
     include './pages/home.php';
     break;
 
+
+  case 'Home':
+    include './pages/home.php';
+      break;
   case 'Store':
   ///deze moet nog aangepast worden
     include './pages/store.php';
@@ -18,15 +23,13 @@ switch ($_SESSION["pages"]) {
     break;
 //////////////////////////
   case 'Library':
-  if(isset($_SESSION["auth"])) {
-    include './pages/library.php';}
-    else{
-      include './pages/login.php';}
+    include './pages/library.php';
     break;
 
   case 'Register':
     include './pages/register.php';
     break;
+
 
   case 'Account':
     if(isset($_SESSION["auth"]))
@@ -45,6 +48,7 @@ switch ($_SESSION["pages"]) {
     include './pages/Cart.php';
     break;
 
+
 }
 
 }
@@ -52,5 +56,16 @@ else {
 
   include './pages/home.php';
 }
+
+
+
+
+
+
+
+
+
+
+
 
  ?>

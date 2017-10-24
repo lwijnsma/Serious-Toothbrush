@@ -22,7 +22,7 @@ session_regenerate_id();
 include 'include/header.php';
 ?>
 <?php
-include 'include/navbarbuttons.php';
+include 'include/navbar.php';
 ?>
 <?php
   include 'include/nav_switch.php';

@@ -6,7 +6,7 @@
 	</button>
 
 <div class="collapse navbar-collapse" id="navbarNav">
-<form class="navbar-nav mr-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+<form class="navbar-nav mr-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" style="height: 30px;">
   <button type="submit" class="nav-item" name="page" value="Home">Home</button>
   <button type="submit" class="nav-item" name="page" value="Store">Store</button>
   <button type="submit" class="nav-item" name="page" value="Library">Library</button>

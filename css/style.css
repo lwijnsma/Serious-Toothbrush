@@ -27,14 +27,10 @@ body {
       margin-bottom: 0;
 }
 
-		 .row.content {height:auto;}
+.row.content {
+      height:auto;
 }
-.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-	  background-color:#33cccc;
 
-}
 /*  dit is vanaf hier gemaakt door jeroen  */
 .nav-item
 {

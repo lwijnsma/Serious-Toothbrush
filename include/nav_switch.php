@@ -43,7 +43,7 @@ break;
       include './pages/login.php';
     }
   break;
-  
+
   case 'Cart':
    if(isset($_SESSION["auth"]))
     {  include './pages/cart.php';}

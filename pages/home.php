@@ -19,8 +19,10 @@
       </div>
 </div>
     <div class="col-sm-2 sidenav">
-      <h4>Top 10</h4>
-      <ul class="nav flex-column">
+    	<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Top 10</h4>
+     <ul class="nav flex-column">
   <li class="nav-item">
     <a class="nav-link active" href="#">Song 1</a>
   </li>
@@ -30,8 +32,12 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Song 3</a>
   </li>
-</ul><br>
+</ul><br
+  </div>
+</div>
     </div>
 </div>
   </div>
+
+  
 

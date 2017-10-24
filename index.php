@@ -25,7 +25,7 @@ include 'include/header.php';
 include 'include/navbarbuttons.php';
 ?>
 <?php
-  include 'include/nav_switch.php';
+  
 ?>
 <footer class="footer">
 <div class="container">

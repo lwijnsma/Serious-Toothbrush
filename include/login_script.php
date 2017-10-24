@@ -30,7 +30,7 @@ include 'cfg/connection.php';
 
          echo '<div class="alert alert-success" role="alert"> je bent ingelogd </div>';
 
-          header('location:index.php');
+
 
          $_SESSION["auth"]=true; //auth controleert of een klant is ingelogd
          $_SESSION["timeout"]=time() + 120;
@@ -38,6 +38,25 @@ include 'cfg/connection.php';
          $_SESSION["rol"]=$result["is_admin"];
          $_SESSION["gerbruiker_informatie"]=$result;
 
+
+
+                  if($_SESSION['pages']=='Cart')
+                  {
+                  $_POST['page']='Cart';
+                  $_SESSION['pages']='Cart';
+                  header('location: redirect.php');
+                  }
+                  elseif($_SESSION['pages']=='Library')
+                  {
+                  $_POST['page']='Library';
+                  $_SESSION['pages']='Library';
+                  header('location: redirect.php');
+                  }
+                  else {
+                    $_POST['page']='Home';
+                    $_SESSION['pages']='Home';
+                    header('location: redirect.php');
+                  }
        }
 
        else

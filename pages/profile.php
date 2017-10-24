@@ -43,7 +43,7 @@
       </div>
     </div>
  <div class="row">
-     &nbsp;&nbsp;&nbsp; <input class="btn btn-success" type="submit" name="profile_change" value="Profile_change">
+     &nbsp;&nbsp;&nbsp; <button class="btn btn-success" type="submit" name="profile_change" value="Profile_change">change</buttton>
  </div>
       </form>
     </div>

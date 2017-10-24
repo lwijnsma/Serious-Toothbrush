@@ -11,9 +11,6 @@ switch ($_SESSION["pages"]) {
     include './pages/home.php';
     break;
 
-  case 'Home':
-    include './pages/home.php';
-      break;
   case 'Store':
   ///deze moet nog aangepast worden
     include './pages/store.php';

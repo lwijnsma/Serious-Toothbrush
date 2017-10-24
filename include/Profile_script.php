@@ -17,11 +17,12 @@ $email=stripslashes ($email);
 $email=trim($email);
 $email = mysqli_real_escape_string($db, $email);
 
+if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 $query= "update USERS set first_name='".$first_name."',last_name='".$last_name."',email='".$email."' where id='".$_SESSION["gerbruiker_informatie"]["id"]."'";
 mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 
 $query = 	"SELECT * FROM USERS
-WHERE id ='8'";
+WHERE id ='".$_SESSION["gerbruiker_informatie"]["id"]."'";
 $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 $result=mysqli_fetch_assoc($result)or die("FOUT : " . mysqli_error());
 $_SESSION["gerbruiker_informatie"]=$result;
@@ -29,9 +30,13 @@ $_SESSION["gerbruiker_informatie"]=$result;
 
 
 
+else
+{
+  echo '<div class="alert alert-danger" role="alert">email is niet correct</div>';
+}
 
 
-
+}
 
 
 

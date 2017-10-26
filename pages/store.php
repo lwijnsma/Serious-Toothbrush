@@ -27,7 +27,7 @@
         <div class="container scroll">
      <nav aria-label="Page navigation ">
       <form class="form-inline" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2" type="search" name="store_search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
 
@@ -40,7 +40,7 @@
         <span class="sr-only">Previous</span>
       </a>
     </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li  class="page-item"><a class="page-link" href="#">1</a></li>
     <li class="page-item"><a class="page-link" href="#">2</a></li>
     <li class="page-item"><a class="page-link" href="#">3</a></li>
     <li class="page-item">
@@ -50,7 +50,10 @@
       </a>
     </li>
   </ul>
-</nav>     <table class="table" cellspacing="0">
+</nav>
+
+
+          <table class="table" cellspacing="0">
             <thead>
               <tr class="table-heads ">
 
@@ -61,15 +64,9 @@
                       Price</th></tr>
             </thead>
             <tbody>
-            <tr>
 
-              <td class="body-item mbr-fonts-style display-7"><a href="#">song 1</a></td><td class="body-item mbr-fonts-style display-7">rick</td><td class="body-item mbr-fonts-style display-7">2016-10-17</td><td class="body-item mbr-fonts-style display-7">4</td></tr><tr>
+            <?php include("include/store_table_input.php"); ?>
 
-              <td class="body-item mbr-fonts-style display-7">Song 2</td><td class="body-item mbr-fonts-style display-7">ice-t</td><td class="body-item mbr-fonts-style display-7">2013-04-12</td><td class="body-item mbr-fonts-style display-7">5</td></tr><tr>
-
-              <td class="body-item mbr-fonts-style display-7">Song 3</td><td class="body-item mbr-fonts-style display-7">morty</td><td class="body-item mbr-fonts-style display-7">2016-05-22</td><td class="body-item mbr-fonts-style display-7">9</td></tr><tr>
-
-              <td class="body-item mbr-fonts-style display-7">Song 4</td><td class="body-item mbr-fonts-style display-7">meesix</td><td class="body-item mbr-fonts-style display-7">2016-05-15</td><td class="body-item mbr-fonts-style display-7">5</td></tr></tbody>
           </table>
         </div>
     </div>

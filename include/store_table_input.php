@@ -10,7 +10,7 @@ $search=stripslashes ($search);
 $search=trim($search);
 $search = mysqli_real_escape_string($db, $search);
 
-$query="SELECT * FROM `songs` WHERE title LIKE '%".$search."%' or album_title LIKE '%".$search."%' or artiest LIKE '%".$search."%'
+$query="SELECT  title, artiest, album_title, price  FROM `songs` WHERE title LIKE '%".$search."%' or album_title LIKE '%".$search."%' or artiest LIKE '%".$search."%'
 ORDER BY title";
  $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 

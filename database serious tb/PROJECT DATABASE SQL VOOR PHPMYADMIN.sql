@@ -90,7 +90,9 @@ CREATE TABLE songs (
     genre_title    VARCHAR(50) NOT NULL,
     quality_name   VARCHAR(25) NOT NULL,
     price          decimal(4,2)  NOT NULL,
-    description    longtext    NOT NULL
+    description    longtext    NOT NULL,
+    picture_location VARCHAR(50),
+    file_location  VARCHAR(50)
 );
 
 ALTER TABLE songs ADD CONSTRAINT songs_pk PRIMARY KEY ( title );

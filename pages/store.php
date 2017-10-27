@@ -1,17 +1,7 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <ul class="nav flex-column">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Categories</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Albums</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Songs</a>
-  </li>
-</ul><br>
+      <br>
     </div>
     <div class="col">
     </br>

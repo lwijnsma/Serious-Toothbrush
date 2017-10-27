@@ -32,8 +32,8 @@ while ($row = $result->fetch_assoc())
   echo '</div>';
   echo '<div class="col text-right">';
 
-  echo '';
-  echo '<button type="submit" name="cart_remove" class="btn btn-sm btn-dark">';
+  echo "<form action="."'".htmlspecialchars($_SERVER["PHP_SELF"])."'"."method='post'>";
+  echo '<button type="submit" name="cart_item_delete" value="'.$row['songs_title'].'" class="btn btn-sm btn-dark">';
   echo '<i class="fa fa-trash fa-2x" aria-hidden="true"></i>';
   echo '</button>';
   echo '</form>';
@@ -43,10 +43,20 @@ while ($row = $result->fetch_assoc())
   echo '';
 
 }
+
+
     /* free result set */
     $result->free();
 }
-
+if(!empty($_POST['cart_item_delete'])){
+var_dump($_SESSION['gerbruiker_informatie']['id']);
+var_dump($_POST['cart_item_delete']);
+$query="DELETE  FROM cart_songs where cart_id=".$_SESSION['gerbruiker_informatie']['id']."  AND songs_title='".$_POST['cart_item_delete']."'";
+$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+$_POST['page']='Cart';
+$_SESSION['pages']='Cart';
+header('location: redirect.php');
+}
 
 
 

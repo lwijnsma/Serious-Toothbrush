@@ -7,15 +7,15 @@
                         <legend>Account Details</legend>
                         <div class="row">
       <div class="form-group col-md-4">
-      <label for="">Existing Password </label><input type="password" class="form-control" name="user" >
+      <label for="">Existing Password </label><input type="password" class="form-control" name="ppassword" >
       </div>
     </div>
     <div class="row">
   <div class="form-group col-md-4">
-       <label for=""> password </label><input type="password" class="form-control" name="profile_name" >
+       <label for=""> password </label><input type="password" class="form-control" name="password" >
       </div>
     <div class="form-group col-md-4">
-       <label for="">re password </label><input type="password" class="form-control" name="profile_lastname" >
+       <label for="">re password </label><input type="password" class="form-control" name="repassword" >
       </div>
     </div>
  <div class="row">

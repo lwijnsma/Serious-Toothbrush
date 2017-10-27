@@ -13,8 +13,8 @@ switch ($_SESSION["pages"]) {
     break;
 
 
-  case 'Home':
-    include './pages/home.php';
+  case 'Song':
+    include './pages/Song.php';
       break;
   case 'Store':
   ///deze moet nog aangepast worden

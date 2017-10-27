@@ -89,7 +89,7 @@ CREATE TABLE songs (
     album_title    VARCHAR(50) NOT NULL,
     genre_title    VARCHAR(50) NOT NULL,
     quality_name   VARCHAR(25) NOT NULL,
-    price          decimal(3,2)  NOT NULL  
+    price          decimal(4,2)  NOT NULL  
 );
 
 ALTER TABLE songs ADD CONSTRAINT songs_pk PRIMARY KEY ( title );

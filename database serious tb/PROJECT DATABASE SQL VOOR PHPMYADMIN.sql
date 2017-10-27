@@ -22,7 +22,7 @@ CREATE TABLE cart_songs (
     cart_id       INTEGER(5) NOT NULL
 );
 
-ALTER TABLE cart_songs ADD CONSTRAINT cart_songs_pk PRIMARY KEY ( songs_title );
+ALTER TABLE cart_songs ADD CONSTRAINT cart_songs_pk PRIMARY KEY ( songs_title,cart_id );
 
 CREATE TABLE genre (
     title         VARCHAR(50) NOT NULL,

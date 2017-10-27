@@ -1,11 +1,27 @@
 <?php
 include 'cfg/connection.php';
+
+if(!empty($_POST['cart_item_delete']))
+{
+$query="DELETE  FROM cart_songs where cart_id=".$_SESSION['gerbruiker_informatie']['id']."  AND songs_title='".$_POST['cart_item_delete']."'";
+$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+$_POST['page']="Cart";
+ob_end_clean();
+header("location:redirect.php");
+}
+
+
+
+
+
+
 $query="SELECT * FROM songs
 LEFT JOIN cart_songs
 ON songs.title = cart_songs.songs_title
 WHERE cart_songs.cart_id = ".$_SESSION['gerbruiker_informatie']['id']."
 ORDER BY songs_title";
 $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+
 
 
 if ($result = $db->query($query))
@@ -31,33 +47,21 @@ while ($row = $result->fetch_assoc())
   echo '<h6><strong>'."€ ".$price.'</strong></h6>';
   echo '</div>';
   echo '<div class="col text-right">';
-
-  echo "<form action="."'".htmlspecialchars($_SERVER["PHP_SELF"])."'"."method='post'>";
-  echo '<button type="submit" name="cart_item_delete" value="'.$row['songs_title'].'" class="btn btn-sm btn-dark">';
+  echo '<form action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'"method="post">';
+  //hier onstaat een error
+  echo'<button type="submit" name="cart_item_delete" value="'.$title.'" class="btn btn-sm btn-dark">';
   echo '<i class="fa fa-trash fa-2x" aria-hidden="true"></i>';
   echo '</button>';
   echo '</form>';
   echo '</div>';
   echo '</div>';
   echo '</div>';
-  echo '';
 
 }
-
-
     /* free result set */
     $result->free();
 }
-if(!empty($_POST['cart_item_delete'])){
-var_dump($_SESSION['gerbruiker_informatie']['id']);
-var_dump($_POST['cart_item_delete']);
-$query="DELETE  FROM cart_songs where cart_id=".$_SESSION['gerbruiker_informatie']['id']."  AND songs_title='".$_POST['cart_item_delete']."'";
-$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
-$_POST['page']='Cart';
-$_SESSION['pages']='Cart';
-header('location: redirect.php');
-}
 
 
 
- ?>
+?>

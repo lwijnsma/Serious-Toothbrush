@@ -18,7 +18,9 @@ ORDER BY title";
 
      /* fetch associative array */
      while ($row = $result->fetch_assoc()) {
-          echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7">'."€ ". $row['price'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></td></tr><tr>';
+       echo "<form action="."'".htmlspecialchars($_SERVER["PHP_SELF"])."'"."method='post'>";
+          echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7">'."€ ". $row['price'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="store_add" value="'.$row['title'].'"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></td></tr><tr>';
+      echo "</form>";
      }
 
      /* free result set */
@@ -36,7 +38,9 @@ else
 
        /* fetch associative array */
        while ($row = $result->fetch_assoc()) {
-            echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"> '."€ ". $row['price'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></td></tr><tr>';
+         echo"<form action="."'".htmlspecialchars($_SERVER["PHP_SELF"])."'"."method='post'>";
+            echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"> '."€ ". $row['price'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="store_add" value="'.$row['title'].'" ><i class="fa fa-cart-plus fa-2x" aria-hidden="true" ></i></button></td></tr><tr>';
+            echo "</form>";
        }
 
        /* free result set */
@@ -45,10 +49,37 @@ else
 
 }
 
+if(!empty($_POST['store_add']))
 
+{
+if ($_SESSION['auth']=false)
+{
+  $_POST['page']='Login';
+  $_SESSION['pages']='Login';
+  header('location:redirect.php');
+}
+  else{
+$query="SELECT * FROM library_songs where songs_title ='".$_POST['store_add']."'and libraries_users_id = ".$_SESSION['gerbruiker_informatie']['id']."";
+$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 
+if(mysqli_num_rows($result)==0)
 
-
+{
+$query="SELECT * from cart_songs where songs_title='".$_POST['store_add']."'and cart_id =".$_SESSION['gerbruiker_informatie']['id']."";
+var_dump($_POST['store_add']);
+var_dump($_SESSION['gerbruiker_informatie']['id']);
+$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+if(mysqli_num_rows($result)==0)
+{
+$query="INSERT into cart_songs values('".$_POST['store_add']."',".$_SESSION['gerbruiker_informatie']['id'].")";
+$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+echo 'song aa shoppingcart toegevoegd';
+}
+else{echo'dit nummer zit al in je shoppincart';}
+}
+else{echo'dit nummer zit al in je library';}
+}
+}
 
 }
  ?>

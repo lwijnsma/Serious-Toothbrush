@@ -22,7 +22,7 @@ body {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
+
 .sidenav {
       padding: 20px;
       background-color: #f1f1f1;
@@ -49,12 +49,30 @@ body {
 	border: none;
 	color:grey;
 }
+
+
+.store-item
+{
+	background: none;
+	text-align: left;
+	border: none;
+	color:black;
+}
+
+
+.store-item:hover{
+	background: none;
+	border: none;
+	color:darkgrey;
+}
+
 /*  dit is tot hier gemaakt door jeroen  */
 .form-signin {
     max-width: 330px;
   	padding: 15px;
   	margin: 0 auto;
 }
+
 
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -95,5 +113,5 @@ body {
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;} 
+      .row.content {height:auto;}
     }

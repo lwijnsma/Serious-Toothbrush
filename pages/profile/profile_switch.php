@@ -14,10 +14,6 @@ switch ($_SESSION["profiles"]) {
     include 'edit_password.php';
       break;
 
-  case 'Orders':
-    include 'orders.php';
-    break;
-
 }
 
 }

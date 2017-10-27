@@ -21,7 +21,6 @@
       <form class="nav flex-column" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
   <li class="nav-item"><button class="nav-link active" type="submit" name="profile" value="Edit">Edit Profile</button></li>
   <li class="nav-item"><button class="nav-link" type="submit" name="profile" value="Password" >Change password</button></li>
-  <li class="nav-item"><button class="nav-link" type="submit" name="profile" value="Orders" >Orders</button></li>
   <li class="nav-item"><b><a class="nav-link" href="logout.php" style="color:#dc143c;">Logout</a></b></li>
 </form><br>
     </div>

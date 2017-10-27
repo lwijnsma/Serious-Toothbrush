@@ -18,7 +18,7 @@ ORDER BY title";
 
      /* fetch associative array */
      while ($row = $result->fetch_assoc()) {
-          echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7">'."€ ". $row['price'] .'</td></tr><tr>';
+          echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7">'."€ ". $row['price'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></td></tr><tr>';
      }
 
      /* free result set */
@@ -36,7 +36,7 @@ else
 
        /* fetch associative array */
        while ($row = $result->fetch_assoc()) {
-            echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"> '."€ ". $row['price'] .'</td></tr><tr>';
+            echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"> '."€ ". $row['price'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></td></tr><tr>';
        }
 
        /* free result set */

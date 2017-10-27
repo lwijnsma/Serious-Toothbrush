@@ -8,11 +8,16 @@ $search=stripslashes ($search);
 $search=trim($search);
 $search = mysqli_real_escape_string($db, $search);
 
-$query="SELECT  title, artiest, album_title  FROM `songs` WHERE title LIKE '%".$search."%' or album_title LIKE '%".$search."%' or artiest LIKE '%".$search."%'
-ORDER BY title";
- $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+$query="SELECT * FROM songs
+FULL JOIN library_songs
+ON title = songs_title
+WHERE libraries_users_id = ".$_SESSION['gerbruiker_informatie']['id']."
+ORDER BY songs_title";
+$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 
- if ($result = $db->query($query)) {
+if ($result = $db->query($query))
+
+{
 
      /* fetch associative array */
      while ($row = $result->fetch_assoc()) {
@@ -26,11 +31,16 @@ ORDER BY title";
 else
 {
 
-  $query="SELECT * FROM `songs` WHERE title LIKE '%%'
-  ORDER BY title";
-   $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+$query="SELECT * FROM songs
+FULL JOIN library_songs
+ON title = songs_title
+WHERE libraries_users_id = ".$_SESSION['gerbruiker_informatie']['id']."
+ORDER BY songs_title";
+$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 
-   if ($result = $db->query($query)) {
+if ($result = $db->query($query))
+
+{
 
        /* fetch associative array */
        while ($row = $result->fetch_assoc()) {

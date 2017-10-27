@@ -1,5 +1,4 @@
-<?php include 'include/password_script.php' ?>
-    <div class="col">
+ <div class="col">
     </br>
        <div class="card">
   <div class="card-body">
@@ -7,12 +6,12 @@
                         <legend>Account Details</legend>
                         <div class="row">
       <div class="form-group col-md-4">
-      <label for="">Existing Password </label><input type="password" class="form-control" name="ppassword" >
+      <label for="">Existing Password </label><input type="password" class="form-control" name="password" >
       </div>
     </div>
     <div class="row">
   <div class="form-group col-md-4">
-       <label for=""> password </label><input type="password" class="form-control" name="password" >
+       <label for=""> password </label><input type="password" class="form-control" name="npassword" >
       </div>
     <div class="form-group col-md-4">
        <label for="">re password </label><input type="password" class="form-control" name="repassword" >
@@ -25,5 +24,7 @@
  </div>
       </form>
     </div>
+</br>
+    <?php include 'include/password_script.php' ?>
   </div>
 </div>

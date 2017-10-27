@@ -1,24 +1,38 @@
 <?php
 include 'cfg/connection.php';
-  if (isset($_POST['user']))
+  if (isset($_POST['password_change']))
   {
-           $ppassword = password_hash($_POST['ppassword'],PASSWORD_DEFAULT);
-           $ppassword=htmlspecialchars($ppassword);
-           $ppassword=stripslashes ($ppassword);
-           $ppassword=trim($ppassword);
-           $ppassword = mysqli_real_escape_string($db, $ppassword);
 
-           $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-           $password=htmlspecialchars($password);
-           $password=stripslashes ($password);
-           $password=trim($password);
-           $password = mysqli_real_escape_string($db, $password);
-  
-  $ppassword = password_verify($ppassword,$result['ppassword']); 
-  if ($ppassword==1)
-  {
-  if ($_POST['password']==$_POST['repassword']){
-$query= "update USERS set password='".$password."' where id='".$_SESSION["gerbruiker_informatie"]["id"]."'";
+      $npassword = password_hash($_POST['npassword'],PASSWORD_DEFAULT);
+      $npassword=htmlspecialchars($npassword);
+      $npassword=stripslashes ($npassword);
+      $npassword=trim($npassword);
+      $npassword = mysqli_real_escape_string($db, $npassword);
+
+    $user=htmlspecialchars($_SESSION["gerbruiker_informatie"]["username"]);
+    $user=stripslashes ($user);
+    $user=trim($user);
+    $user = mysqli_real_escape_string($db, $user);
+
+    $password=$_POST['password'];
+    //hier wordt de hash opgehaalt
+    $query =  "SELECT * FROM USERS
+    WHERE BINARY username ='" .$user."'";
+    $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+
+
+    if (mysqli_num_rows($result)==1)
+    {
+      $result=mysqli_fetch_assoc($result)or die("FOUT : " . mysqli_error());
+
+
+      //hier wordt gekeken of het wachtwoord klopt
+      $password = password_verify($password,$result['password']);
+       if ($password==1)
+       {
+
+  if ($_POST['npassword']==$_POST['repassword']){
+$query= "update users set password='".$npassword."' where id='".$_SESSION["gerbruiker_informatie"]["id"]."'";
 mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 
 $query = 	"SELECT * FROM USERS
@@ -41,5 +55,6 @@ else {
          echo '<div class="alert alert-danger" role="alert">wachtwoord niet correct</div>';
           die();
     }
+}
 }
 ?>

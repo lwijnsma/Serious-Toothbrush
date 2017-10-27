@@ -14,6 +14,9 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Orders</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="pages/logout.php">Logout</a>
+  </li>
 </ul><br>
     </div>
 

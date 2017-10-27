@@ -49,11 +49,6 @@ if (isset($_POST['register']))
                   $_SESSION['pages']='Login';
                   header('location: redirect.php');
 
-
-
-
-
-
                }
 
 

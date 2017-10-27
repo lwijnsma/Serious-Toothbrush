@@ -20,12 +20,7 @@
     <input class="form-control mr-sm-2" type="search" name="store_search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
-
-
   </form>
-  
-
-
           <table class="table" cellspacing="0">
             <thead>
               <tr class="table-heads ">
@@ -33,13 +28,12 @@
               <th class="head-item mbr-fonts-style display-7">
                       NAME</th><th class="head-item mbr-fonts-style display-7">
                       Artist</th><th class="head-item mbr-fonts-style display-7">
-                      Album</th><th class="head-item mbr-fonts-style display-7">
-                      Price</th></tr>
+                      Album</th><th class="head-item mbr-fonts-style display-7">      
+                      Price</th><th class="head-item mbr-fonts-style display-7">
+                      </th></tr>
             </thead>
             <tbody>
-
             <?php include("include/store_table_input.php"); ?>
-
           </table>
         </div>
     </div>

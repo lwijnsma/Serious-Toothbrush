@@ -29,17 +29,18 @@
 					<div class="row text-center">
 						<div class="col">
 
-							<h4 class="text-right">Total € <strong><?php echo number_format($total,2) ?></strong></h4>
+							<h4 class="text-right">Total &euro; <strong><?php echo number_format($total,2) ?></strong></h4>
 						</div>
 
 						<div class="col">
-							<button type="button" class="btn btn-success btn-block">
-								Checkout
-							</button>
+							<form action='<?php echo $_SERVER['PHP_SELF'] ?>' method='POST'>
+								<input type='hidden' name='page' value='Checkout' />
+								<button type="submit" class="btn btn-success btn-block">Checkout</button>
+							</form>
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

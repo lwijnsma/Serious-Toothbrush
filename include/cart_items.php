@@ -93,6 +93,7 @@ function generate_songrow($title, $picture, $album, $price, $file)
     if ($file !== null)
     {
         echo "
+            </br>
             <div class='row'>
                 <div class='col'>
                     <audio controls>
@@ -103,6 +104,8 @@ function generate_songrow($title, $picture, $album, $price, $file)
             </div>
         ";
     }
+
+    echo "</br></br>";
 
     /*
         Alleen als er een bestand bestaat wordt de audio row toegevoegd.

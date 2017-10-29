@@ -8,6 +8,7 @@
 							<div class="col" style="margin-left: 20px;">
 								<h5><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart</h5>
 							</div>
+
 							<div class="col" style="margin-right: 20px;">
 								<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 								<button type="submit" name="page" class="btn btn-primary btn-sm btn-block" value="Store">
@@ -18,19 +19,19 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="card-body">
-
-
-
-<?php include 'include/cart_items.php'; ?>
+				<?php include 'include/cart_items.php'; ?>
 					<hr>
 				</div>
+
 				<div class="card-footer">
 					<div class="row text-center">
 						<div class="col">
 
 							<h4 class="text-right">Total € <strong><?php echo number_format($total,2) ?></strong></h4>
 						</div>
+
 						<div class="col">
 							<button type="button" class="btn btn-success btn-block">
 								Checkout
@@ -38,6 +39,7 @@
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -5,7 +5,6 @@
 .idea/modules.xml
 .idea/dataSources.xml
 .idea/php.xml
-*.xml
 .idea/dataSources.xml
 .idea/php.xml
 .idea/project.iml

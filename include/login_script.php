@@ -26,19 +26,19 @@ if (isset($_POST['user']))
 
     /*$query = 	"SELECT * FROM USERS
     WHERE username ='" .$user."'";*/
-    $query  = "SELECT * FROM `USERS` WHERE `username` = '$user';";
+    $query  = "SELECT * FROM `users` WHERE `username` = '$user';";
     /*
         In PHP als je dubbele quotes gebruikt kun je variabelen toevoegen.
         Daarom is bad practice om ze voor tekst te gebruiken maar is het bijvoorbeeld
         perfect voor de query.
     */
 
-    $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
+    $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 
 
     if (mysqli_num_rows($result)==1)
     {
-        $result = mysqli_fetch_assoc($result) or die("FOUT : " . mysqli_error());
+        $result = mysqli_fetch_assoc($result) or die("FOUT : " . mysqli_error($db));
 
 
         //hier wordt gekeken of het wachtwoord klopt

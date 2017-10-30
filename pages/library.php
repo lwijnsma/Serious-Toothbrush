@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <h4>User Name</h4>
+      <h4><?php print $_SESSION["gerbruiker_informatie"]["username"]; ?></h4>
       <ul class="nav flex-column">
   <li class="nav-item">
     <a class="nav-link active" href="#">Categories</a>

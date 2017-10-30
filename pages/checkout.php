@@ -52,7 +52,7 @@
             }
             else
             {
-                $error = 'code is te klein!';
+                $error = '<br><div class="alert alert-danger" role="alert">voucher code is te klein!</div>';
             }
         }
     }
@@ -96,9 +96,9 @@
                     <?php endwhile; ?>
 
                     <div clas='row'>
-                        <div class='col'>
-                            <b>Totaal prijs :</b>
-                            <small>&euro; <?php echo $total; ?></small>
+                        <div class='col text-right'>
+                            <b>Totaal prijs :</b>&nbsp;
+                            <b>&euro; <?php echo $total; ?></b>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
 <div class='container'>
     <div class='row'>
         <div class='col'>
-            <h3>Betaal methodieken</h3>
+            <h3>Selecteer betaal methode</h3>
         </div>
     </div>
 
@@ -124,7 +124,7 @@
                         <div class="row radio">
                             <div class="col">
                             <label>
-                            <input type="radio" name="checkout" id="option1" value="iDeal" />
+                            <input type="radio" name="checkout" id="option1" value="iDeal" disabled>
                                 iDeal
                             </label>
                             </div>
@@ -149,13 +149,13 @@
                         </div>
                     </div>
                 </div>
-
+<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='POST'>
             <div class="list-group-item">
                 <div class="list-group-item-heading">
                     <div class="row radio">
                         <div class="col">
                             <label>
-                            <input type="radio" name="checkout" id="option2" value="CC"/>
+                            <input type="radio" name="checkout" id="option2" value="CC" disabled>
                                 Credit Card
                             </label>
                         </div>
@@ -184,13 +184,13 @@
                     <div class="row radio">
                         <div class="col">
                             <label>
-                                <input type="radio" name="checkout" id="option3" value="paypal" >
+                                <input type="radio" name="checkout" id="option3" value="paypal" disabled>
                                 PayPal
                             </label>
                         </div>
 
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="PayPal e-mail" >
+                            <input type="text" class="form-control" placeholder="PayPal e-mail" disabled>
                         </div>
 
                         <div class="col">
@@ -202,7 +202,6 @@
 
             <div class="list-group-item">
                 <div class="list-group-item-heading">
-                    <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='POST'>
                         <div class="row radio">
                             <div class="col">
                                 <label>

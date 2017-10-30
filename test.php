@@ -24,9 +24,7 @@ include 'include/header.php';
 <?php
 include 'include/navbar.php';
 ?>
-<?php
-include 'pages/song.php';
-?>
+
 <footer class="footer">
 <div class="container">
   <div class="row justify-content-md-center"">

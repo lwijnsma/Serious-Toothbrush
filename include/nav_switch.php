@@ -36,6 +36,12 @@ if(!empty($_SESSION["pages"]))
             (statement) ? true : false
 
             Dus als auth gezet is laadt library anders login.
+
+
+            Dus op dit moment kunnen we de auth niet op false zetten op het moment dat iemand ergens niet mag zijn like in pages niet via index.php
+            note: pages moeten nog beveiligd worden.
+
+
         */
 
         case 'Register':

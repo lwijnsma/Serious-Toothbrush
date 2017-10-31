@@ -34,28 +34,25 @@ header('location:redirect.php');
     <body>
       <?php
       if (!isset($_COOKIE['freecookies'])) {
-
-  echo '<div class="alert alert-info">
+  echo '<div class="alert alert-info" style="height:50px;">
         <div class="text-center ">
           <form class="" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="post">
-            <p>dont forget to brush your teeth after this delicious cookie
-            <button class="btn btn-sm btn-primary " type="submit" name="holycookies">yum!!</button></p>
+            <p>dont forget to brush your teeth after this delicious cookie &nbsp
+            <button class="btn btn-sm btn-primary" type="submit" name="holycookies">yum!!</button></p>
           </form>
         </div>
       </div>';}   ?>
-
-
     <?php
         include 'include/header.php';
         include 'include/navbarbuttons.php';
     ?>
 
+</div>
+<br>
     <footer class="footer">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <p> &copy; <?php echo date("Y"); ?> serious toothbrush</p>
+            <div class="text-center">
+                &copy; <?php echo date("Y"); ?> serious toothbrush
             </div>
-        </div>
     </footer>
     </body>
 </html>

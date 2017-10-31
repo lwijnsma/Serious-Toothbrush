@@ -3,7 +3,12 @@
     session_start( );
     session_regenerate_id();
 ?>
-
+<?
+if (isset($_GET['accept-cookies'])){
+    setcookie('accept-cookies', 'true', time() + 31556925);
+    header('location: index.php');
+}
+?>
 <html>
     <head>
         <title>serious toothbrush</title>
@@ -17,9 +22,22 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
     </head>
 
     <body>
+        <?php
+if (!isset($_COKKIE['accept-cookies'])) {
+?>
+<div class="cookie-banner">
+<div class="container">
+<p> we use cookies</p>
+<a href="?accept-cookies" class="button">ok, continue</a>
+</div>
+</div>
+<?php   
+}
+?>
     <?php
         include 'include/header.php';
         include 'include/navbarbuttons.php';

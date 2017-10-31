@@ -58,10 +58,10 @@
     }
 ?>
 
-<div class='container' style='margin-top: 20px'>
+<div class='container' style='margin-top: 50px'>
     <div class='row'>
         <div class='col'>
-            <h3>Product(en)</h3>
+            <h3 id="white">Product(en)</h3>
         </div>
     </div>
 
@@ -112,7 +112,7 @@
 <div class='container'>
     <div class='row'>
         <div class='col'>
-            <h3>Selecteer betaal methode</h3>
+            <h3 id="white">Selecteer betaal methode</h3>
         </div>
     </div>
 

@@ -47,7 +47,7 @@
       ?>
     </div>
     <br>
-    <footer class="footer">
+    <footer class="footer" style="background-color: black;">
       <div class="text-center">
         &copy; <?php echo date("Y"); ?> serious toothbrush
       </div>

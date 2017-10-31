@@ -26,13 +26,13 @@ if (isset($_GET['accept-cookies'])){
     </head>
 
     <body>
-        <?php
+<?php
 if (!isset($_COKKIE['accept-cookies'])) {
 ?>
 <div class="cookie-banner">
 <div class="container">
 <p> we use cookies</p>
-<a href="?accept-cookies" class="button">ok, continue</a>
+<a href="index.php?accept-cookies" class="button">ok, continue</a>
 </div>
 </div>
 <?php   

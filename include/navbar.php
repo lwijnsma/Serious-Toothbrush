@@ -5,7 +5,7 @@
 	</button>
 <div class="collapse navbar-collapse" id="navbarNav">
 	<ul class="navbar-nav ml-auto">
-<form class="form-inline" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" style="height: 30px;">
+<form class="form-inline" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" style="height: 40px;">
    <li class="nav-item"><button type="submit" class="nav-link" name="page" value="Home">Home</button></li>
    <li class="nav-item"><button type="submit" class="nav-link" name="page" value="Store">Store</button></li>
    <li class="nav-item"><button type="submit" class="nav-link" name="page" value="Library">Library</button></li>

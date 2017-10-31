@@ -18,6 +18,10 @@ if(!empty($_SESSION["pages"]))
             include './pages/Song.php';
             break;
 
+        case 'Song_own':
+            include './pages/Song_own.php';
+            break;
+
         case 'Store':
             //TODO: deze moet nog aangepast worden
             include './pages/store.php';

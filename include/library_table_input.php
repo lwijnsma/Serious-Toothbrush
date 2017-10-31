@@ -1,5 +1,14 @@
 <?php include 'cfg/connection.php';
 
+if(!empty($_POST['song_item_button']))
+{
+
+$_SESSION['Song_own']=$_POST['song_item_button'];
+$_POST['page']='Song_own';
+$_SESSION['pages']='Song_own';
+header('location:redirect.php');
+}
+
 if(!empty($_POST['library_search']))
 {
 
@@ -21,7 +30,9 @@ if ($result = $db->query($query))
 
      /* fetch associative array */
      while ($row = $result->fetch_assoc()) {
-          echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-play" aria-hidden="true"></i></button></td></tr><tr>';
+      echo "<form action="."'".htmlspecialchars($_SERVER["PHP_SELF"])."'"."method='post'>";
+          echo  '<td class="body-item mbr-fonts-style display-7"><button class="store-item" type="submit" name="song_item_button" value="'.$row['title'].'">' .$row['title'] .'</button></td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-play" aria-hidden="true"></i></button></td></tr><tr>';
+          echo "</form>";
      }
 
      /* free result set */
@@ -44,7 +55,9 @@ if ($result = $db->query($query))
 
        /* fetch associative array */
        while ($row = $result->fetch_assoc()) {
-            echo  '<td class="body-item mbr-fonts-style display-7">'.$row['title'] .'</td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-play" aria-hidden="true"></i></button></td></tr><tr>';
+        echo "<form action="."'".htmlspecialchars($_SERVER["PHP_SELF"])."'"."method='post'>";
+            echo  '<td class="body-item mbr-fonts-style display-7"><button class="store-item" type="submit" name="song_item_button" value="'.$row['title'].'">' .$row['title'] .'</button></td><td class="body-item mbr-fonts-style display-7">'. $row['artiest']  .'</td><td class="body-item mbr-fonts-style display-7">'. $row['album_title'] .'</td><td class="body-item mbr-fonts-style display-7"><button class="btn btn-sm btn-dark" type="submit" name="add"><i class="fa fa-play" aria-hidden="true"></i></button></td></tr><tr>';
+            echo "</form>";
        }
 
        /* free result set */

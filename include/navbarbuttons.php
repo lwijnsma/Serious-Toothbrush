@@ -22,4 +22,3 @@
     </div>
   </div>
 </nav>
-<?php include 'nav_switch.php' ?>

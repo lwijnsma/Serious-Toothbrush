@@ -45,8 +45,7 @@ header('location:redirect.php');
     <?php
     include 'include/header.php';
     include 'include/navbarbuttons.php';
-
-
+    include 'include/nav_switch.php';
     ?>
 
 </div>

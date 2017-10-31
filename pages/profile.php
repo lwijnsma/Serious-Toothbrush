@@ -20,7 +20,8 @@
          <br>
       </div>
       <?php include 'profile/profile_switch.php' ?>
-      <div class="col-sm-2 sidenav">
+      <div class="col-sm-2 sidenav" style="color:white;">
+         boo
       </div>
    </div>
 </div>

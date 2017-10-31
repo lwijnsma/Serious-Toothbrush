@@ -13,7 +13,6 @@ switch ($_SESSION["profiles"]) {
   case 'Password':
     include 'edit_password.php';
       break;
-
 }
 
 }

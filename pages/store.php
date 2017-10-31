@@ -5,7 +5,7 @@
     </div>
     <div class="col">
     </br>
-    <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Store</h2>
+    <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Store</h2>
        <div class="card">
   <div class="card-body">
      <div class="container container-table">

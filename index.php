@@ -34,17 +34,19 @@ header('location:redirect.php');
     <body>
       <?php
       if (!isset($_COOKIE['freecookies'])) {
-  echo '<div class="alert alert-info" style="height:50px; margin-bottom:0;">
-        <div class="text-center ">
-          <form class="" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="post">
-            <p style="margin-bottom:0;">dont forget to brush your teeth after this delicious cookie &nbsp
-            <button class="btn btn-sm btn-primary" type="submit" name="holycookies">yum!!</button></p>
-          </form>
-        </div>
-      </div>';}   ?>
+            echo '<div class="alert alert-info" style="height:50px; margin-bottom:0;">
+                    <div class="text-center ">
+                     <form class="" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="post">
+                      <p style="margin-bottom:0;">dont forget to brush your teeth after this delicious cookie &nbsp
+                      <button class="btn btn-sm btn-primary" type="submit" name="holycookies">yum!!</button></p>
+                     </form>
+                    </div>
+                  </div>';}  
+      ?>
+
     <?php
+    include 'include/navbar.php';
     include 'include/header.php';
-    include 'include/navbarbuttons.php';
     include 'include/nav_switch.php';
     ?>
 

@@ -6,6 +6,8 @@
 </div>
 <div class="container-fluid text-center">
    <div class="row content">
+      <div class="col-sm-2">
+      </div>
       <div class="col text-left">
          </br>
          <div class="card">
@@ -30,13 +32,13 @@
                <h4 class="card-title">Top 10</h4>
                <ul class="nav flex-column">
                   <li class="nav-item">
-                     <a class="nav-link active" href="#">Song 1</a>
+                     <a class="nav-link dark" href="#">Song 1</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Song 2</a>
+                     <a class="nav-link dark" href="#">Song 2</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">Song 3</a>
+                     <a class="nav-link dark" href="#">Song 3</a>
                   </li>
                </ul>
                <br

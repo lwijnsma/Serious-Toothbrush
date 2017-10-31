@@ -1,5 +1,6 @@
+<br><br>
 <div class="container-fluid">
-   <div class="row">
+   <div class="row content">
       <div class="col-sm-2 sidenav">
          <h4 id="white"><?php print $_SESSION["gerbruiker_informatie"]["username"]; ?></h4>
          <br>
@@ -20,8 +21,7 @@
          <br>
       </div>
       <?php include 'profile/profile_switch.php' ?>
-      <div class="col-sm-2 sidenav" style="color:white;">
-         boo
+      <div class="col-sm-2">
       </div>
    </div>
 </div>

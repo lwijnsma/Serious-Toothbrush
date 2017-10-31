@@ -1,10 +1,9 @@
-
 <div class="col">
+   <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Account Details</h2>
    </br>
    <div class="card">
       <div class="card-body">
          <form class="" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-            <legend>Account Details</legend>
             <div class="row">
                <div class="col-md-4">
                   <label for=""> Username </label><input type="text" class="form-control" name="user" value="<?php print $_SESSION["gerbruiker_informatie"]["username"]; ?>" size="20" disabled="true">

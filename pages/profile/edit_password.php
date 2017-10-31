@@ -1,9 +1,11 @@
  <div class="col">
-    </br>
+  <br>
+  <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Change Password</h2>
+    <br>
        <div class="card">
   <div class="card-body">
      <form class="" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-                        <legend>Account Details</legend>
+                        
                         <div class="row">
       <div class="form-group col-md-4">
       <label for="">Existing Password </label><input type="password" class="form-control" name="password" >
@@ -27,4 +29,5 @@
 </br>
     <?php include 'include/password_script.php' ?>
   </div>
+</div>
 </div>

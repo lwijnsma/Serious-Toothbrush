@@ -15,6 +15,7 @@ background-position: center;
 color: white;
 }
 
+
 .header {
 height: auto;
 margin: 0;
@@ -130,6 +131,13 @@ text-shadow: 2px 2px black;
   	border-top-right-radius: 0;
 }
 
+.dark {
+  color: black;
+}
+
+.dark:hover {
+  color: darkgrey;
+}
 @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;

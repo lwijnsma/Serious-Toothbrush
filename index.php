@@ -32,11 +32,11 @@
   <body>
     <?php
       if (!isset($_COOKIE['freecookies'])) {
-            echo '<div class="alert alert-info" style="height:50px; margin-bottom:0;">
+            echo '<div class="alert alert-dark" style="height:50px; margin-bottom:0;" role="alert">
                     <div class="text-center ">
                      <form class="" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="post">
                       <p style="margin-bottom:0;">dont forget to brush your teeth after this delicious cookie &nbsp
-                      <button class="btn btn-sm btn-primary" type="submit" name="holycookies">yum!!</button></p>
+                      <button class="btn btn-sm btn-dark" type="submit" name="holycookies">yum!!</button></p>
                      </form>
                     </div>
                   </div>';}  

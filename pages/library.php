@@ -1,4 +1,13 @@
-<div class="container-fluid">
+<br><br><div class="container-fluid">
+   <div class="row content">
+      <div class="col-sm-2 sidenav">
+      </div>
+      <div class="col">
+          <h4 id="white" class="mbr-section-title mbr-fonts-style align-center display-4">Library</h4>
+      </div>
+      <div class="col-sm-2 sidenav">
+      </div>
+   </div>
    <div class="row content">
       <div class="col-sm-2 sidenav">
          <h4 id="white"><?php print $_SESSION["gerbruiker_informatie"]["username"]; ?></h4>
@@ -13,11 +22,8 @@
                <a class="nav-link" href="#">Songs</a>
             </li>
          </ul>
-         <br>
       </div>
       <div class="col">
-         </br>
-         <h4 id="white" class="mbr-section-title mbr-fonts-style align-center display-4">Library</h4>
          <br>
          <div class="card">
             <div class="card-body">
@@ -58,7 +64,7 @@
                </div>
             </div>
          </div>
-         </br>
+         <br>
          <div class="card">
             <div class="card-body">
                Player
@@ -66,12 +72,11 @@
          </div>
       </div>
       <div class="col-sm-2 sidenav">
-         <div class="card">
-            <div class="card-body">
-               <h4 class="card-title">Que</h4>
+         
+               <h4 style="color: white;">Que</h4>
                <ul class="nav flex-column">
                   <li class="nav-item">
-                     <a class="nav-link active" href="#">Song 1</a>
+                     <a class="nav-link" href="#">Song 1</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#">Song 2</a>
@@ -80,9 +85,7 @@
                      <a class="nav-link" href="#">Song 3</a>
                   </li>
                </ul>
-               <br
-            </div>
-         </div>
+           
       </div>
    </div>
 </div>

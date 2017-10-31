@@ -1,11 +1,19 @@
-<div class="container-fluid">
+<br><br><div class="container-fluid">
+  <div class="row content">
+      <div class="col-sm-2 sidenav">
+      </div>
+      <div class="col">
+          <h4 id="white" class="mbr-section-title mbr-fonts-style align-center display-4">Store</h4>
+      </div>
+      <div class="col-sm-2 sidenav">
+      </div>
+   </div>
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <br>
     </div>
     <div class="col">
-    </br>
-    <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Store</h2>
+      <br>
        <div class="card">
   <div class="card-body">
      <div class="container container-table">
@@ -43,12 +51,11 @@
 </div>
 </div>
 <div class="col-sm-2 sidenav">
-      <div class="card">
-  <div class="card-body">
-    <h4 class="card-title">Top 10</h4>
+
+    <h4 style="color: white;">Top 10</h4>
      <ul class="nav flex-column">
   <li class="nav-item">
-    <a class="nav-link active" href="#">Song 1</a>
+    <a class="nav-link" href="#">Song 1</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Song 2</a>
@@ -57,8 +64,7 @@
     <a class="nav-link" href="#">Song 3</a>
   </li>
 </ul><br
-  </div>
-</div>
+ 
     </div>
 </div>
 </div>

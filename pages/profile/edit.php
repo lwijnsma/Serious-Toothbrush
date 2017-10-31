@@ -1,4 +1,4 @@
-<?php include 'include/profile_script.php' ?>
+
 <div class="col">
    </br>
    <div class="card">
@@ -28,7 +28,8 @@
                   <button class="btn btn-success" type="submit" name="profile_change" value="Profile_change">change</buttton>
                </div>
             </div>
-         </form>
+            <?php include 'include/profile_script.php' ?>
+            </form>
       </div>
    </div>
 </div>

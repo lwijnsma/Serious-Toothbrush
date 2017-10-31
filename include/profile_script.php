@@ -28,19 +28,11 @@ $result=mysqli_fetch_assoc($result)or die("FOUT : " . mysqli_error());
 $_SESSION["gerbruiker_informatie"]=$result;
 }
 
-
-
 else
 {
   echo '<div class="alert alert-danger" role="alert">email is niet correct</div>';
 }
 
-
 }
-
-
-
-
-
 
  ?>

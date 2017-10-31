@@ -6,7 +6,6 @@ if(!empty($_POST['cart_item_delete']))
     $query  = "DELETE FROM cart_songs where `cart_id`={$_SESSION['gerbruiker_informatie']['id']} AND `songs_title`='{$_POST['cart_item_delete']}';";
     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
     $_POST['page']  = "Cart";
-
     ob_end_clean();
     header("location:redirect.php");
 }

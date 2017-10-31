@@ -19,19 +19,15 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="card-body">
 				<?php include 'include/cart_items.php'; ?>
 					<hr>
 				</div>
-
 				<div class="card-footer">
 					<div class="row text-center">
 						<div class="col">
-
 							<h4 class="text-right">Total &euro; <strong><?php echo number_format($total,2) ?></strong></h4>
 						</div>
-
 						<div class="col">
 							<form action='<?php echo $_SERVER['PHP_SELF'] ?>' method='POST'>
 								<input type='hidden' name='page' value='Checkout' />
@@ -40,7 +36,6 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

@@ -11,7 +11,7 @@ $search = mysqli_real_escape_string($db, $search);
 $query="SELECT * FROM songs
 FULL JOIN library_songs
 ON title = songs_title
-WHERE libraries_users_id = ".$_SESSION['gerbruiker_informatie']['id']."
+WHERE libraries_users_id = {$_SESSION['gerbruiker_informatie']['id']}
 ORDER BY songs_title";
 $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 

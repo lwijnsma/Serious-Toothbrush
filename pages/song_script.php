@@ -27,15 +27,6 @@
 </div>
 <?php
 
-
-
-
-
-
-
-
-
-
 unset($_SESSION['song']);
 
 

@@ -20,5 +20,7 @@
          <br>
       </div>
       <?php include 'profile/profile_switch.php' ?>
+      <div class="col-sm-2 sidenav">
+      </div>
    </div>
 </div>

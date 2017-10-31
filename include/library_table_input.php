@@ -3,9 +3,9 @@
 if(!empty($_POST['song_item_button']))
 {
 
-$_SESSION['Song']=$_POST['song_item_button'];
-$_POST['page']='Song';
-$_SESSION['pages']='Song';
+$_SESSION['Song_own']=$_POST['song_item_button'];
+$_POST['page']='Song_own';
+$_SESSION['pages']='Song_own';
 header('location:redirect.php');
 }
 

@@ -3,10 +3,16 @@
     session_start( );
     session_regenerate_id();
 ?>
-<?
-if (isset($_GET['accept-cookies'])){
-    setcookie('accept-cookies', 'true', time() + 31556925);
-    header('location: index.php');
+<?php
+
+if (isset($_POST['holycookies']))
+{
+
+if(!isset($_COOKIE["freecookies"]))
+{
+setcookie("freecookies",time()+3600);
+header('location:redirect.php');
+}
 }
 ?>
 <html>
@@ -26,18 +32,19 @@ if (isset($_GET['accept-cookies'])){
     </head>
 
     <body>
-<?php
-if (!isset($_COKKIE['accept-cookies'])) {
-?>
-<div class="cookie-banner">
-<div class="container">
-<p> we use cookies</p>
-<a href="index.php?accept-cookies" class="button">ok, continue</a>
-</div>
-</div>
-<?php   
-}
-?>
+      <?php
+      if (!isset($_COOKIE['freecookies'])) {
+
+  echo '<div class="">
+        <div class="">
+          <form class="" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="post">
+            <p>dont forget to brush your teeth after this delicious cookie</p>
+            <button type="submit" name="holycookies">yum!!</button>
+          </form>
+        </div>
+      </div>';}   ?>
+
+
     <?php
         include 'include/header.php';
         include 'include/navbarbuttons.php';
@@ -45,7 +52,7 @@ if (!isset($_COKKIE['accept-cookies'])) {
 
     <footer class="footer">
         <div class="container">
-            <div class="row justify-content-md-center"">
+            <div class="row justify-content-md-center">
                 <p> &copy; <?php echo date("Y"); ?> serious toothbrush</p>
             </div>
         </div>

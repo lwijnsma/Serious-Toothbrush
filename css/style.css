@@ -17,7 +17,9 @@ background-size: cover;
 background-position: center;
 margin: 0;
 border-radius: 0;
-
+color: white;
+text-shadow: 2px 2px black;
+height: 500px;
 }
 
 .footer {

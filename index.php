@@ -35,11 +35,11 @@ header('location:redirect.php');
       <?php
       if (!isset($_COOKIE['freecookies'])) {
 
-  echo '<div class="">
-        <div class="">
+  echo '<div class="alert alert-info">
+        <div class="text-center ">
           <form class="" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="post">
-            <p>dont forget to brush your teeth after this delicious cookie</p>
-            <button type="submit" name="holycookies">yum!!</button>
+            <p>dont forget to brush your teeth after this delicious cookie
+            <button class="btn btn-sm btn-primary " type="submit" name="holycookies">yum!!</button></p>
           </form>
         </div>
       </div>';}   ?>

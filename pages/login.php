@@ -1,11 +1,14 @@
 
-</br>
+<br>
 <div class="container">
+    ,br>
+    <div class="row justify-content-md-center">
+          <h2 id="white" class="display-2">Login</h2>
+    </div><br>
     <div class="row justify-content-md-center">
         <div class="card">
             <div class="card-body">
                 <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-                    <h2 class="form-signin-heading">Login</h2>
                     </br>
 
                     <input type="text" name="user" value="" size="20" class="form-control" placeholder="Username" />

@@ -1,10 +1,13 @@
  </br>
  <div class="container">
+  <br>
+  <div class="row justify-content-md-center">
+          <h2 id="white" class="display-2">Account Details</h2>
+    </div><br>
         <div class="row justify-content-md-center">
           <div class="card" style="width: 40rem;">
   <div class="card-body">
  <form class="" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-                        <legend>Account Details</legend>
                         <div class="row">
       <div class="form-group col-md-6">
       <label for=""> Username </label><input type="text" class="form-control" name="user" value="<?php if(isset($_POST['user'])){echo$_POST['user'];}?>" size="20">
@@ -31,7 +34,7 @@
       <label for=""> Wachtwoord opnieuw  </label><input type="password" class="form-control"  name="repassword" value="" size="20">
     	</div>
     </div>
-       <input class="btn btn-success" type="submit" name="register" value="registreer">
+       <input class="btn btn-success" type="submit" name="register" value="Registreeren">
      </br>
        <?php include 'include/register_script.php'; ?>
       </form>

@@ -1,9 +1,9 @@
 <?php
 
 
-if (isset($_GET['page']))
+if (isset($_POST['page']))
 {
-    $_SESSION["pages"] = $_GET['page'];
+    $_SESSION["pages"] = $_POST['page'];
 }
 
 if(!empty($_SESSION["pages"]))

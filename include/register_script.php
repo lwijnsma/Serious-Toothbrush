@@ -33,7 +33,7 @@ if (isset($_POST['register']))
 
                         mysqli_query($db, $query1) or die("FOUT : " . mysqli_error());
 
-                        echo '<div class="alert alert-success" role="alert">uw bent geregistreed</div>';
+                        echo '<br><div class="alert alert-success" role="alert">uw bent geregistreed</div>';
 
                         include 'include/setting_up_account.php';
 

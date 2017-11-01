@@ -15,11 +15,11 @@ if(!empty($_SESSION["pages"]))
         break;
 
         case 'Song':
-        include './pages/Song.php';
+        include './pages/song.php';
         break;
 
         case 'Song_own':
-        include './pages/Song_own.php';
+        include './pages/song_own.php';
         break;
 
         case 'Store':

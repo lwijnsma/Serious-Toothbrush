@@ -3,13 +3,17 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse " id="navbarNav"> 
-			<ul class="navbar-nav ml-auto" style="">
-				<li class="nav-item"><a class="nav-link" href="index.php?page=Home">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="index.php?page=Store">Store</a></li>
-				<li class="nav-item"><a class="nav-link" href="index.php?page=Library">Library</a></li>
-				<li class="nav-item"><a class="nav-link" href="index.php?page=Account"><i class="fa fa-user" aria-hidden="true"></i> Account</a></li>
-				<li class="nav-item"><a class="nav-link" href="index.php?page=Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart</a></li>
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<form class="form-inline" action="<?php ($_SERVER["PHP_SELF"]);?>" method="post" style="height: 40px;">  
+					<li class="nav-item"><button type="submit" class="nav-link" name="page" value="Home">Home</button></li>
+					<li class="nav-item"><button type="submit" class="nav-link" name="page" value="Store">Store</button></li>
+					<li class="nav-item"><button type="submit" class="nav-link" name="page" value="Library">Library</button></li>
+					<li class="nav-item"><button  type="submit" class="nav-link" name="page" value="Account"><i class="fa fa-user" aria-hidden="true"></i> Account</button></li>
+					<li class="nav-item"><button type="submit" class="nav-link" name="page" value="Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart</button></li>
+				</form>
+
 			</ul>
 		</div>
 	</div>

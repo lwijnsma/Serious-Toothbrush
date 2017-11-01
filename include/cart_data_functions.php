@@ -2,7 +2,7 @@
 
 if(!empty($_POST['store_add'])){
 
-if($_SESSION['auth']==true){
+if(isset($_SESSION['auth'])){
 $query="SELECT * FROM library_songs where songs_title ='".$_POST['store_add']."'and libraries_users_id = ".$_SESSION['gerbruiker_informatie']['id']."";
 $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 

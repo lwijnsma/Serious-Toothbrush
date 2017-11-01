@@ -7,7 +7,7 @@
       </div>
       <div class="col-sm-2 sidenav">
       </div>
-   </div>
+  </div>
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <br>
@@ -23,12 +23,11 @@
             <div class="col-md-6"></div>
         </div>
         <div class="container scroll">
-     <nav aria-label="Page navigation ">
-      <form class="form-inline" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-    <input class="form-control mr-sm-2" type="search" name="store_search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-  </form>
+     <nav aria-label="Page navigation">
+      <form class="form-inline" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'method="post">
+         <input class="form-control mr-sm-2" type="search" name="store_search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
           <table class="table" cellspacing="0">
             <thead>
               <tr class="table-heads ">
@@ -36,7 +35,7 @@
               <th class="head-item mbr-fonts-style display-7">
                       NAME</th><th class="head-item mbr-fonts-style display-7">
                       Artist</th><th class="head-item mbr-fonts-style display-7">
-                      Album</th><th class="head-item mbr-fonts-style display-7">      
+                      Album</th><th class="head-item mbr-fonts-style display-7">
                       Price</th><th class="head-item mbr-fonts-style display-7">
                       </th></tr>
             </thead>
@@ -63,8 +62,8 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Song 3</a>
   </li>
-</ul><br
- 
-    </div>
+</ul><br>
+
+ </div>
 </div>
 </div>

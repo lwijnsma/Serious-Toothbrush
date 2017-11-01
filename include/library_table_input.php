@@ -68,9 +68,9 @@ else
         while ($row = $result->fetch_assoc())
         {
             echo "
-            <form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'>
+            
             <tr>
-            <td class='body-item mbr-fonts-style display-7'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></td>
+            <td class='body-item mbr-fonts-style display-7'><form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></form></td>
             <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
             <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
             <td class='body-item mbr-fonts-style display-7'>
@@ -80,7 +80,7 @@ else
             </button>
             </td>
             </tr>
-            </form>
+            
             ";
         }
 

@@ -2,6 +2,15 @@
 <div class="container-fluid">
    <div class="row content">
       <div class="col-sm-2 sidenav">
+      </div>
+      <div class="col">
+          <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-4">Account Details</h2>
+      </div>
+      <div class="col-sm-2 sidenav">
+      </div>
+   </div>
+   <div class="row content">
+      <div class="col-sm-2 sidenav">
          <h4 id="white"><?php print $_SESSION["gerbruiker_informatie"]["username"]; ?></h4>
          <br>
          <form class="nav flex-column" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

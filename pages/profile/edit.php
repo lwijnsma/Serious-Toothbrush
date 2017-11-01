@@ -1,5 +1,4 @@
 <div class="col">
-   <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Account Details</h2>
    </br>
    <div class="card">
       <div class="card-body">
@@ -19,7 +18,7 @@
             </div>
             <div class="row">
                <div class="form-group col-md-8">
-                  <label for="">email </label><input type="text" class="form-control" name="profile_email" value="<?php  print $_SESSION["gerbruiker_informatie"]["email"]?>" size="20p">
+                  <label for="">Email </label><input type="text" class="form-control" name="profile_email" value="<?php  print $_SESSION["gerbruiker_informatie"]["email"]?>" size="20p">
                </div>
             </div>
             <div class="row">

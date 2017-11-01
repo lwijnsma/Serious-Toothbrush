@@ -3,16 +3,6 @@
 session_start();
 session_regenerate_id();
 ?>
-<?php
-if (isset($_POST['holycookies']))
-{
-  if(!isset($_COOKIE["freecookies"]))
-  {
-    setcookie("freecookies",time()+3600);
-    header('location:redirect.php');
-  }
-}
-?>
 <html>
 <head>
   <title>serious toothbrush</title>
@@ -29,12 +19,7 @@ if (isset($_POST['holycookies']))
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <?php
-  if (!isset($_COOKIE['freecookies']))
-  {
-    echo'<div class="alert alert-dark" style="height:50px; margin-bottom:0;" role="alert"><div class="text-center"><form class="" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="post"><p style="margin-bottom:0;">dont forget to brush your teeth after this delicious cookie &nbsp<button class="btn btn-sm btn-dark" type="submit" name="holycookies">yum!!</button></p></form></div></div>';
-  }
-
+<?php
   include 'include/navbar.php';
   include 'include/nav_switch.php';
   ?>

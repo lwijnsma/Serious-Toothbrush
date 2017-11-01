@@ -145,3 +145,7 @@ text-shadow: 2px 2px black;
       }
       .row.content {height:auto;}
     }
+
+.btn:hover {
+        cursor: pointer;
+}

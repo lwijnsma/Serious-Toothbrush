@@ -1,4 +1,5 @@
-<br><br><div class="container-fluid">
+<br><br>
+<div class="container-fluid">
    <div class="row content">
       <div class="col-sm-2 sidenav">
       </div>
@@ -39,7 +40,7 @@
                               <input class="form-control mr-sm-2" type="search" name="library_search" placeholder="Search" aria-label="Search">
                               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                            </form>
-                           <table class="table" cellspacing="0">
+                           <table class="table" cellspacing="0" id='library-table'>
                               <thead>
                                  <tr class="table-heads ">
                                     <th class="head-item mbr-fonts-style display-7">
@@ -67,25 +68,26 @@
          <br>
          <div class="card">
             <div class="card-body">
-               Player
+               <div id='audio-player'>
+               </div>
             </div>
          </div>
       </div>
       <div class="col-sm-2 sidenav">
-         
-               <h4 style="color: white;">Que</h4>
-               <ul class="nav flex-column">
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">Song 1</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">Song 2</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">Song 3</a>
-                  </li>
-               </ul>
-           
+        <h4 style="color: white;">Que</h4>
+        <ul class="nav flex-column" id="queue">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Song 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Song 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Song 3</a>
+            </li>
+        </ul>
       </div>
    </div>
 </div>
+
+<script src='js/player.js'></script>

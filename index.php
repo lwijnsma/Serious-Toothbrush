@@ -23,10 +23,10 @@
     <link rel="stylesheet" href="css/normalize.css">
     <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <?php

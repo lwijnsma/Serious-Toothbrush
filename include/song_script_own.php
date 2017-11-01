@@ -13,7 +13,7 @@ echo "
 </div>
 </br></br>
 <form class='form-inline' action='".($_SERVER["PHP_SELF"])."' method='post'>
-<button type='submit'  name='page' value='Store'class='btn btn-primary btn-sm btn-block'><i class='fa fa-share' aria-hidden='true'></i> back to library</button>
+<button type='submit'  name='page' value='Library'class='btn btn-primary btn-sm btn-block'><i class='fa fa-share' aria-hidden='true'></i> back to library</button>
 </form>
 </div>
 ";

@@ -131,6 +131,21 @@ text-shadow: 2px 2px black;
   	border-top-right-radius: 0;
 }
 
+.library-item
+{
+  background: none;
+  text-align: left;
+  border: none;
+  color:black;
+}
+
+
+.library-item:hover{
+  background: none;
+  border: none;
+  color:darkgrey;
+}
+
 .dark {
   color: black;
 }

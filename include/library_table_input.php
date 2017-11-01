@@ -1,8 +1,8 @@
 <?php include 'cfg/connection.php';
 
-if(!empty($_POST['song_item_button']))
+if(!empty($_POST['song_own_button']))
 {
-    $_SESSION['Song_own']   = $_POST['song_item_button'];
+    $_SESSION['Song_own']   = $_POST['song_own_button'];
     $_POST['page']          = 'Song_own';
     $_SESSION['pages']      = 'Song_own';
     header('location:redirect.php');
@@ -31,13 +31,11 @@ if(!empty($_POST['library_search']))
         while ($row = $result->fetch_assoc())
         {
             echo "
+            <form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'>
             <tr>
-            <td class='body-item mbr-fonts-style display-7'>{$row['title']}</td>
-
+            <td class='body-item mbr-fonts-style display-7'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></td>
             <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
-
             <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
-
             <td class='body-item mbr-fonts-style display-7'>
             <button class='btn btn-sm btn-dark' x-link='{$row['file_location']}'>
             <i class='fa fa-play' aria-hidden='true'>
@@ -45,7 +43,7 @@ if(!empty($_POST['library_search']))
             </button>
             </td>
             </tr>
-            ";
+            </form>";
         }
 
         /* free result set */
@@ -71,14 +69,11 @@ else
         while ($row = $result->fetch_assoc())
         {
             echo "
+            <form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'>
             <tr>
-            <td class='body-item mbr-fonts-style display-7'>{$row['title']}</td>
-
+            <td class='body-item mbr-fonts-style display-7'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></td>
             <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
-
             <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
-
-
             <td class='body-item mbr-fonts-style display-7'>
             <button class='btn btn-sm btn-dark' x-link='{$row['file_location']}'>
             <i class='fa fa-play' aria-hidden='true'>
@@ -86,6 +81,7 @@ else
             </button>
             </td>
             </tr>
+            </form>
             ";
         }
 

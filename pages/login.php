@@ -1,7 +1,7 @@
 
 <br>
 <div class="container">
-    ,br>
+    <br>
     <div class="row justify-content-md-center">
       <h2 id="white" class="display-2">Login</h2>
   </div><br>

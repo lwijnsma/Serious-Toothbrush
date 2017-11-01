@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="row content">
-		<div class="col-sm-auto">
+		<div class="col-sm-2">
 		</div>
 		<div class="col">
 			<div class="card-body">
@@ -8,7 +8,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-sm-2">
 	</div>
 </div>
 </div>

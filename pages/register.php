@@ -20,7 +20,7 @@
     </div>
     <div class="row">
     <div class="form-group col-md-12">
-       <label for="">email </label><input type="text" class="form-control" name="email" value="<?php if(isset($_POST['email'])){echo$_POST['email'];}?>" size="20p">
+       <label for="">Email </label><input type="text" class="form-control" name="email" value="<?php if(isset($_POST['email'])){echo$_POST['email'];}?>" size="20p">
     	</div>
     </div>
     	<div class="row">

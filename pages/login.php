@@ -16,7 +16,7 @@
 
                     <div class="row justify-content-md-center">
                         <div class="col">
-                            <input type="submit" name="" class="btn btn-lg btn-success" value="login">
+                            <input type="submit" name="" class="btn btn-lg btn-success" value="Login">
                         </div>
 
                         <div class="col">

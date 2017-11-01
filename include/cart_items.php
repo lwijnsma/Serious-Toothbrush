@@ -23,93 +23,93 @@ $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
     zodat het nog leesbaar blijft voor anderen.
 */
 
-$query = "
+    $query = "
     SELECT *
     FROM `songs` s
     LEFT JOIN `cart_songs` cs
     ON s.`title` = cs.`songs_title`
     WHERE cs.`cart_id` = {$_SESSION['gerbruiker_informatie']['id']}
     ORDER BY cs.`songs_title`;
-";
+    ";
 
-$songs = mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
+    $songs = mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
 
 /*
     Daarnaast is het ook niet super handig om alle query results "query" te noemen
     dan zie je door de bomen het bos niet meer.
 */
 
-$total = 0;
-while ($song = $songs->fetch_assoc())
-{
-    $title      = $song['songs_title']      ?? 'No Title';
-    $picture    = $song['picture_location'] ?? 'images/song_placeholder.png';
-    $file       = $song['file_location']    ?? null;
-    $album      = $song['album_title']      ?? 'No Album';
-    $price      = $song['price']            ?? 0;
-    $total      += $price;
+    $total = 0;
+    while ($song = $songs->fetch_assoc())
+    {
+        $title      = $song['songs_title']      ?? 'No Title';
+        $picture    = $song['picture_location'] ?? 'images/song_placeholder.png';
+        $file       = $song['file_location']    ?? null;
+        $album      = $song['album_title']      ?? 'No Album';
+        $price      = $song['price']            ?? 0;
+        $total      += $price;
 
-    generate_songrow($title, $picture, $album, $price, $file);
+        generate_songrow($title, $picture, $album, $price, $file);
 
     /*
         Oke, omdat het vrij spammy werd en ik me herrinder dat iemand wou dat we functies toevoegen:
         een functie om de lap HTML te genereren gebasseerd op de variabelen.
         Ook een fallback gebouwd voor het geval er geen prijs, plaatje title etc. is.
     */
-}
-
-function generate_songrow($title, $picture, $album, $price, $file)
-{
-    echo "
-        <div class='row'>
-            <div class='col'>
-                <img class='img-responsive' height='70px' width='100px' src='$picture' />
-            </div>
-
-            <div class='col'>
-                <h4 class='product-name'>
-                    <strong>$title</strong>
-                    <small>$album</small>
-                </h4>
-            </div>
-
-            <div class='col'>
-                <div class='col text-right'>
-                    <h6><strong>&euro; $price</strong></h6>
-                </div>
-
-                <div class='col text-right'>
-                    <form action='{$_SERVER['PHP_SELF']}' method='POST'>
-                        <button type='submit' name='cart_item_delete' value='$title' class='btn btn-sm btn-dark'>
-                            <i class='fa fa-trash fa-2x' aria-hidden='true'></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    ";
-
-    if ($file !== null)
-    {
-        echo "
-            </br>
-            <div class='row'>
-                <div class='col'>
-                    <audio controls>
-                        <source src='$file' type='audio/mpeg' />
-                        Your browser does not support audio.
-                    </audio>
-                </div>
-            </div>
-        ";
     }
 
-    echo "</br></br>";
+    function generate_songrow($title, $picture, $album, $price, $file)
+    {
+        echo "
+        <div class='row'>
+        <div class='col'>
+        <img class='img-responsive' height='70px' width='100px' src='$picture' />
+        </div>
+
+        <div class='col'>
+        <h4 class='product-name'>
+        <strong>$title</strong>
+        <small>$album</small>
+        </h4>
+        </div>
+
+        <div class='col'>
+        <div class='col text-right'>
+        <h6><strong>&euro; $price</strong></h6>
+        </div>
+
+        <div class='col text-right'>
+        <form action='{$_SERVER['PHP_SELF']}' method='POST'>
+        <button type='submit' name='cart_item_delete' value='$title' class='btn btn-sm btn-dark'>
+        <i class='fa fa-trash fa-2x' aria-hidden='true'></i>
+        </button>
+        </form>
+        </div>
+        </div>
+        </div>
+        ";
+
+        if ($file !== null)
+        {
+            echo "
+            </br>
+            <div class='row'>
+            <div class='col'>
+            <audio controls>
+            <source src='$file' type='audio/mpeg' />
+            Your browser does not support audio.
+            </audio>
+            </div>
+            </div>
+            ";
+        }
+
+        echo "</br></br>";
 
     /*
         Alleen als er een bestand bestaat wordt de audio row toegevoegd.
         Normaal zouden we $file-preview moeten doen O.I.D.
     */
-}
+    }
 
-?>
+    ?>

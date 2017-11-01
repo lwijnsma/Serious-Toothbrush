@@ -3,12 +3,12 @@
 include 'cfg/connection.php';
 
 $query = "
-    SELECT *
-    FROM `songs` s
-    LEFT JOIN `cart_songs` cs
-    ON s.`title` = cs.`songs_title`
-    WHERE cs.`cart_id` = {$_SESSION['gerbruiker_informatie']['id']}
-    ORDER BY cs.`songs_title`;
+SELECT *
+FROM `songs` s
+LEFT JOIN `cart_songs` cs
+ON s.`title` = cs.`songs_title`
+WHERE cs.`cart_id` = {$_SESSION['gerbruiker_informatie']['id']}
+ORDER BY cs.`songs_title`;
 ";
 
 $songs      = mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
@@ -29,19 +29,19 @@ if (isset($_POST['submit']))
             while ($song = $songs->fetch_assoc())
             {
                 $query = "
-                    INSERT INTO `library_songs` (`songs_title`, `libraries_title`, `libraries_users_id`)
-                    VALUES (
-                        '{$song['title']}',
-                        'MAIN LIBRARY',
-                        {$_SESSION['gerbruiker_informatie']['id']}
-                    );
+                INSERT INTO `library_songs` (`songs_title`, `libraries_title`, `libraries_users_id`)
+                VALUES (
+                '{$song['title']}',
+                'MAIN LIBRARY',
+                {$_SESSION['gerbruiker_informatie']['id']}
+                );
                 ";
                 mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
             }
 
             $query = "
-                DELETE FROM `cart_songs`
-                WHERE `cart_id` = {$_SESSION['gerbruiker_informatie']['id']};
+            DELETE FROM `cart_songs`
+            WHERE `cart_id` = {$_SESSION['gerbruiker_informatie']['id']};
             ";
             mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
 

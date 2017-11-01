@@ -15,12 +15,12 @@ if(!empty($_POST['library_search']))
     $search = trim($search);
     $search = mysqli_real_escape_string($db, $search);
     $query  = "
-        SELECT *
-        FROM songs
-        FULL JOIN library_songs
-        ON `title` = `songs_title`
-        WHERE `libraries_users_id` = {$_SESSION['gerbruiker_informatie']['id']}
-        ORDER BY `songs_title`;
+    SELECT *
+    FROM songs
+    FULL JOIN library_songs
+    ON `title` = `songs_title`
+    WHERE `libraries_users_id` = {$_SESSION['gerbruiker_informatie']['id']}
+    ORDER BY `songs_title`;
     ";
     
     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
@@ -31,20 +31,20 @@ if(!empty($_POST['library_search']))
         while ($row = $result->fetch_assoc())
         {
             echo "
-                <tr>
-                    <td class='body-item mbr-fonts-style display-7'>{$row['title']}</td>
+            <tr>
+            <td class='body-item mbr-fonts-style display-7'>{$row['title']}</td>
 
-                    <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
+            <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
 
-                    <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
+            <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
 
-                    <td class='body-item mbr-fonts-style display-7'>
-                        <button class='btn btn-sm btn-dark' x-link='{$row['file_location']}'>
-                            <i class='fa fa-play' aria-hidden='true'>
-                            </i>
-                        </button>
-                    </td>
-                </tr>
+            <td class='body-item mbr-fonts-style display-7'>
+            <button class='btn btn-sm btn-dark' x-link='{$row['file_location']}'>
+            <i class='fa fa-play' aria-hidden='true'>
+            </i>
+            </button>
+            </td>
+            </tr>
             ";
         }
 
@@ -55,12 +55,12 @@ if(!empty($_POST['library_search']))
 else
 {
     $query  = "
-        SELECT *
-        FROM songs
-        FULL JOIN library_songs
-        ON `title` = `songs_title`
-        WHERE `libraries_users_id` = {$_SESSION['gerbruiker_informatie']['id']}
-        ORDER BY `songs_title`;
+    SELECT *
+    FROM songs
+    FULL JOIN library_songs
+    ON `title` = `songs_title`
+    WHERE `libraries_users_id` = {$_SESSION['gerbruiker_informatie']['id']}
+    ORDER BY `songs_title`;
     ";
     
     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
@@ -71,21 +71,21 @@ else
         while ($row = $result->fetch_assoc())
         {
             echo "
-                <tr>
-                    <td class='body-item mbr-fonts-style display-7'>{$row['title']}</td>
+            <tr>
+            <td class='body-item mbr-fonts-style display-7'>{$row['title']}</td>
 
-                    <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
+            <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
 
-                    <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
+            <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
 
 
-                    <td class='body-item mbr-fonts-style display-7'>
-                        <button class='btn btn-sm btn-dark' x-link='{$row['file_location']}'>
-                            <i class='fa fa-play' aria-hidden='true'>
-                            </i>
-                        </button>
-                    </td>
-                </tr>
+            <td class='body-item mbr-fonts-style display-7'>
+            <button class='btn btn-sm btn-dark' x-link='{$row['file_location']}'>
+            <i class='fa fa-play' aria-hidden='true'>
+            </i>
+            </button>
+            </td>
+            </tr>
             ";
         }
 

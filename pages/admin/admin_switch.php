@@ -13,7 +13,7 @@ switch ($_SESSION["profiles"]) {
   case 'accounts':
     include 'accounts.php';
       break;
-
+  
   case 'genre':
     include 'genre.php';
       break;
@@ -37,7 +37,7 @@ switch ($_SESSION["profiles"]) {
 }
 
 }
-else{
+else {
   include 'edit.php';
 }
 

@@ -3,12 +3,15 @@
 <title>ADMIN PAGE HOLY FUCK</title>
 </head>
 <body bgcolor="#FFEFF">
+<font color="white">
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data"> 
 <fieldset>
 <legend><h2>Upload New File:</h2></legend>
 Upload audio: <input type="file" accept="audio/*" name="audio"> <br>
 Artist: <input type="text" name="artist">  <br>
 Title:  <input type="text" name="title">  <br>
+Price: € <input type="number" name="price1" min="0"> , <input type="number" name="price2" min="0" max="99">  <br>
+Length: <input type="text" name="length"> <br>
 <?php #Genres ?> 
 <select name="genre">
 <option value="">Genre:</option>
@@ -27,6 +30,8 @@ if (empty($_POST["artist"])){
 $artist = htmlspecialchars($_POST["artist"]);
 $title = htmlspecialchars($_POST["title"]);
 $genre = htmlspecialchars($_POST["genre"]);
+$price = $_POST["price1"] . "." . $_POST["price2"];
+$length = $_POST["length"] ; 
 $upload = pathinfo($_FILES["audio"]["name"]);
 $tmpname = $_FILES["audio"]["tmp_name"] ;
 $ext = $upload["extension"];
@@ -51,5 +56,5 @@ else {
 };
 
 ?>
-
+</font>
 </body>

@@ -32,7 +32,7 @@ $tmpname = $_FILES["audio"]["tmp_name"] ;
 $ext = $upload["extension"];
 $newname = $artist . "_" . $title . "." . $ext ; 
 echo "<br/>" ;
-$target = '../songs/' . $newname ;
+$target = 'songs/' . $newname ;
 
 if (file_exists($target)) {
     echo "File already exists.";

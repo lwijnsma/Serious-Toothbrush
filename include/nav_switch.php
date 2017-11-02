@@ -40,15 +40,15 @@ if(!empty($_SESSION["pages"]))
             break;
 
             case 'Account':
-            if ($_SESSION["rol"]==1) 
+            if (isset($_SESSION["rol"]) && $_SESSION["rol"]==1) 
             {
-             include './pages/admin.php';          
+             include './pages/admin.php';
             }
             else
             {
-             isset($_SESSION['auth'])? include './pages/profile.php' : include './pages/login.php';    
+             isset($_SESSION['auth'])? include './pages/profile.php' : include './pages/login.php';
             }
-           
+
             break;
 
             case 'Cart':

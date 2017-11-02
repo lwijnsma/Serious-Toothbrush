@@ -1,8 +1,8 @@
 
 CREATE TABLE album (
     id           INTEGER(5) NOT NULL,
-    title        VARCHAR(50) NOT NULL,
-    artist       NVARCHAR(15),
+    title        VARCHAR(250) NOT NULL,
+    artist       NVARCHAR(250),
     year         VARCHAR(4),
     created_at   DATE,
     updated_at   DATE
@@ -31,7 +31,7 @@ ALTER TABLE cart_songs ADD CONSTRAINT cart_songs_pk PRIMARY KEY ( songs_id );
 
 CREATE TABLE genre (
     id            INTEGER(5) NOT NULL,
-    title         VARCHAR(50) NOT NULL,
+    title         VARCHAR(250) NOT NULL,
     description   VARCHAR(500),
     created_at    DATE,
     updated_at    DATE
@@ -42,8 +42,8 @@ ALTER TABLE genre ADD CONSTRAINT genre_pk PRIMARY KEY ( id );
 ALTER TABlE genre MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
 CREATE TABLE libraries (
-    title         VARCHAR(25) NOT NULL,
-    description   VARCHAR(250),
+    title         VARCHAR(250) NOT NULL,
+    description   VARCHAR(500),
     created_at    DATE,
     updated_at    DATE,
     users_id      INTEGER(5) NOT NULL
@@ -78,8 +78,8 @@ ALTER TABlE quality MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
 CREATE TABLE songs (
     id         INTEGER(5) NOT NULL,
-    title        VARCHAR(50) NOT NULL,
-    artiest      VARCHAR(50),
+    title        VARCHAR(250) NOT NULL,
+    artiest      VARCHAR(250),
     length       VARCHAR(40),
     created_at   DATE,
     updated_at   DATE,
@@ -94,10 +94,10 @@ ALTER TABlE songs MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
 CREATE TABLE users (
     id           INTEGER(5) NOT NULL,
-    username     VARCHAR(25) NOT NULL,
-    email        VARCHAR(40),
-    first_name   VARCHAR(25),
-    last_name    VARCHAR(25),
+    username     VARCHAR(250) NOT NULL,
+    email        VARCHAR(80),
+    first_name   VARCHAR(55),
+    last_name    VARCHAR(55),
     password     VARCHAR(64),
     is_admin     CHAR(1),
     created_at   DATE,

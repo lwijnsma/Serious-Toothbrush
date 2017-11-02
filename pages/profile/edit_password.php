@@ -1,7 +1,5 @@
  <div class="col">
-  <br>
-  <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Change Password</h2>
-    <br>
+  
        <div class="card">
   <div class="card-body">
      <form class="" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">

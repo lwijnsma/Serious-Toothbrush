@@ -12,7 +12,7 @@ INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_
 VALUES('testuser3','test@test.nl','Karst','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
 
 INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES('testuser4','test@test.nl','Jan','Klaasesn','dit wordt een hashed password',0,'2017-10-19','2017-10-19')
+VALUES('testuser4','test@test.nl','Jan','Klaasesn','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
 
 
 INSERT INTO QUALITY(NAME,BITRATE,FORMAT)

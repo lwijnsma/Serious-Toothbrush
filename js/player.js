@@ -35,14 +35,15 @@ $(document).ready(function(){
                 
                 song[3].click(function(){
                         oPlayer.empty();
+                        var song = $(this);
 
                         var jAudio      = $('<audio>');
                         var jSource     = $('<source>');
-                        console.log(song[3].attr('x-link'));
+                        console.log(song.attr('x-link'));
 
                         jAudio.attr('controls', true);
                         jAudio.attr('autoplay', true);
-                        jSource.attr('src', song[3].attr('x-link'));
+                        jSource.attr('src', song.attr('x-link'));
                         jSource.attr('type', 'audio/mpeg');
 
                         jSource.appendTo(jAudio);

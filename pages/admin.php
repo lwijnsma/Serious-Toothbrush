@@ -34,7 +34,7 @@
             </form>
             <br>
         </div>
-        <?php include 'admin/admin_switch.php' ?>
+        <?php include 'admin/admin_switch.php'; ?>
         <div class="col-sm-2">
         </div>
     </div>

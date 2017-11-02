@@ -30,6 +30,9 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+  </div>
+=======
       </div>
 <script type="text/javascript">
 	jQuery(function(){
@@ -49,3 +52,4 @@
 });
 
 </script>
+>>>>>>> 593230f434d79f4e76db8cf9e781232804648a69

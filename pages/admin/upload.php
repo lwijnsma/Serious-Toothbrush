@@ -73,11 +73,11 @@ else {
 		# - Injection
 		$inject = "INSERT INTO `songs` (title, artiest, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
-		mysqli_query($db, $inject) or die("FOUT : ."mysqli_error($db)) ;
+		mysqli_query($db, $inject) or die (mysqli_error());
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }
-};=
+};
 
 };
 

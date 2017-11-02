@@ -6,7 +6,7 @@
       <div class="card-body">
         <form action="<?php ($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data">
         <fieldset>
-<label>Upload audio:</label> <br><input class="" type="file" accept="audio/*" value="audio" name="audio"> <br><br>
+<label>Upload audio:</label> <br><input class="" type="file" accept="audio/*" name="audio"> <br><br>
 Title:  <input class="form-control" type="text" name="title">  <br>
 Artist: <input class="form-control" type="text" name="artist">  <br>
 <div class="form-group">
@@ -59,6 +59,8 @@ if (file_exists($target)) {
 else {
     if (move_uploaded_file($_FILES["audio"]["tmp_name"] , $target)) {
         echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div>";
+
+
 		#Register in database.
 		# - mysqli_real_escape_string
 			$artiste = mysqli_real_escape_string($db, $artist) ;
@@ -67,6 +69,7 @@ else {
 			$pricee  = mysqli_real_escape_string($db, $price)  ;
 			$albume  = mysqli_real_escape_string($db, $album)  ;
 			$location= mysqli_real_escape_string($db, $target) ;
+var_dump($albume);
 		# - Injection
 		$inject = "INSERT INTO `songs` (title, artiest, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";

@@ -15,38 +15,20 @@
                       Description
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
-                      edit
-                    </th>
-                    <th class="head-item mbr-fonts-style display-7">
-                      delete
+                      Date
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
                     </th>
                   </tr>
                   <tr>
-                  <?php include 'include/admin_edit_genre.php'; ?>
+                  <td class='body-item mbr-fonts-style display-7'><form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></form></td>
+                  <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
+                  <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
+                  <td class='body-item mbr-fonts-style display-7'>button</td>
                   </tr>
                 </table>
-                <a href="#" title="" class="add-genre">Add genre</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-<script type="text/javascript">
-  jQuery(function(){
-    var counter = 1;
-    jQuery('a.add-genre').click(function(event){
-        event.preventDefault();
-
-        var newRow = jQuery('<tr><td><input class="form-control" type="text" name="Title" placeholder="Genre' +
-            counter + '"/></td><td><input class="form-control" type="text" name="Artist" placeholder="Description' +
-            counter + '"/></td><td><input class="btn btn-dark" type="button" value="Add" name="Add'  +
-            counter + '"/></td></tr>');
-            counter++;
-        jQuery('table.table').append(newRow);
-
-    });
-});
-
-</script>

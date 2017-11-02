@@ -23,29 +23,12 @@
                       delete
                     </th>
                   </tr>
+
                   <?php include 'include/admin_edit_albums.php'; ?>
+
                 </table>
-                <a href="#" title="" class="add-album">Add Album</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-<script type="text/javascript">
-	jQuery(function(){
-    var counter = 1;
-    jQuery('a.add-album').click(function(event){
-        event.preventDefault();
-
-        var newRow = jQuery('<tr><td><input class="form-control" type="text" name="Title" placeholder="Title' +
-            counter + '"/></td><td><input class="form-control" type="text" name="Artist" placeholder="Artist' +
-            counter + '"/></td><td><input class="form-control" type="text" name="Year" placeholder="Year' +
-            counter + '"/></td><td><input class="btn btn-dark" type="button" value="Add" name="Add'  +
-            counter + '"/></td></tr>');
-            counter++;
-        jQuery('table.table').append(newRow);
-
-    });
-});
-
-</script>
+  </div>

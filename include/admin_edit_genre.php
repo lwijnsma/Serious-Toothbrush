@@ -1,32 +1,27 @@
-
 <?php
 include 'cfg/connection.php';
-
-
-$query="SELECT * from genre";
-$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
-
-if ($result = $db->query($query))
+if(!empty($_POST['something']))
 {
-    /* fetch associative array */
-    while ($row = $result->fetch_assoc())
-    {
-      echo "<tr><td class='body-item mbr-fonts-style display-7'>{$row['title']}</td><td class='body-item mbr-fonts-style display-7'>{$row['description']}</td><form  action='".($_SERVER['PHP_SELF'])."' method='post'><td class='body-item mbr-fonts-style display-7'><button type='submit'class='' name='admin_edit_genre_edit' value='edit'>edit</button></td><td class='body-item mbr-fonts-style display-7'><button type='submit'class='' name='admin_edit_genre_delete' value='".$row['title']."'>delete</button></td></form></tr>";
-    }
+$title=mysqli_real_escape_string('');
+$description=mysqli_real_escape_string('');
 
-    /* free result set */
-    $result->free();
-}
-if (!empty($_POST['admin_edit_genre_delete']))
-{
-$Delete_query="DELETE from genre where title ='".$_POST['admin_edit_genre_delete']."'";
-mysqli_query($db, $Delete_query) or die("FOUT : " . mysqli_error($db));
 
-$_POST['profile']='genre';
-$_SESSION['profiles']='genre';
-header('location:redirect.php');
+$check1_query="SELECT title FROM songs where title='".$title."'";
+$check1_result=mysqli_query($db, $check1_query) or die("FOUT : " . mysqli_error($db));
+
+
+if (mysqli_num_rows($check1_result) == 0) {
+  $query="INSERT INTO Genre (title,description,created_at,updated_at)
+  VALUES('$title','$description',".date('Y-m-d')."','".date('Y-m-d')."')";
+  mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
+
+
+
 
 }
-
+else {
+  echo 'This genre already exist';
+}
+}
 
  ?>

@@ -67,13 +67,13 @@ else {
 			$location= mysqli_real_escape_string($db, $target) ;
 
 		# - Injection
-		$inject = "INSERT INTO `songs` (TITLE, ARTIEST, CREATED_AT, UPDATED_AT, ALBUM_TITLE, GENRE_TITLE, QUALITY_NAME, PRICE, FILE_LOCATION)
+		$inject = "INSERT INTO `songs` (title, artiest, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
-		mysqli_query($db, $inject) or die("<div class='alert alert-danger'>FOUT : ."mysqli_error($db)."</div>") ;
+		mysqli_query($db, $inject) or die("FOUT : ."mysqli_error($db)) ;
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }
-};
+};=
 
 };
 

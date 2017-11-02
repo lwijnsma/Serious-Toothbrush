@@ -6,9 +6,6 @@
             <p></p>
             <form class="nav flex-column" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <li class="nav-item">
-                    <button class="nav-link active" type="submit" name="profile" value="upload">Upload</button>
-                </li>
-                <li class="nav-item">
                     <button class="nav-link" type="submit" name="profile" value="accounts">Manage Accounts</button>
                 </li>
 				<li class="nav-item">
@@ -19,6 +16,9 @@
                 </li>
                 <li class="nav-item">
                     <button class="nav-link" type="submit" name="profile" value="album">Edit Albums</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link active" type="submit" name="profile" value="upload">Upload</button>
                 </li>
                 <br>
                 <li class="nav-item">
@@ -34,7 +34,8 @@
             </form>
             <br>
         </div>
-        
         <?php include 'admin/admin_switch.php' ?>
+        <div class="col-sm-2">
+        </div>
     </div>
 </div>

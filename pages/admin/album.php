@@ -1,5 +1,5 @@
 <div class="col">
-  <h2 id="white" class="display-2">Users</h2>
+  <h2 id="white" class="display-2">album</h2>
       <br>
       <div class="card">
         <div class="card-body">
@@ -8,27 +8,23 @@
               <table class="table" cellspacing="0">
                   <tr class="table-heads">
                     <th class="head-item mbr-fonts-style display-7">
-                      Username
+                      Album Title
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
-                      First Name
+                      Artist
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
-                      Last Name
+                      Year
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
-                      Email
-                    </th>
-                    <th class="head-item mbr-fonts-style display-7">
-                      Admin
+                      edit | delete
                     </th>
                   </tr>
                 <tr>
-                <td class='body-item mbr-fonts-style display-7'>{$row['title']}'</td>
+                <td class='body-item mbr-fonts-style display-7'><form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></form></td>
                 <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
                 <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
                 <td class='body-item mbr-fonts-style display-7'>button</td>
-                <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
                 </tr>
                 </table>
               </div>

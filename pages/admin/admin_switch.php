@@ -15,7 +15,7 @@ switch ($_SESSION["profiles"]) {
       break;
   
   case 'genre':
-    include 'genrephp';
+    include 'genre.php';
       break;
 
   case 'album':
@@ -38,7 +38,7 @@ switch ($_SESSION["profiles"]) {
 
 }
 else {
-  include 'edit_tracklist.php';
+  include 'edit.php';
 }
 
  ?>

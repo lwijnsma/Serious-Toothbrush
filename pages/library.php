@@ -1,6 +1,4 @@
 <?php include('include/library_detail_navigation.php');?>
-
-
 <br><br>
 <div class="container-fluid">
    <div class="row content">

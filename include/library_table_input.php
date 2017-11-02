@@ -1,12 +1,6 @@
 <?php include 'cfg/connection.php';
 
-if(!empty($_POST['song_own_button']))
-{
-    $_SESSION['Song_own']   = $_POST['song_own_button'];
-    $_POST['page']          = 'Song_own';
-    $_SESSION['pages']      = 'Song_own';
-    header('location:redirect.php');
-}
+
 
 if(!empty($_POST['library_search']))
 {
@@ -22,7 +16,7 @@ if(!empty($_POST['library_search']))
     WHERE `libraries_users_id` = {$_SESSION['gerbruiker_informatie']['id']}
     ORDER BY `songs_title`;
     ";
-    
+
     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 
     if ($result = $db->query($query))
@@ -32,7 +26,7 @@ if(!empty($_POST['library_search']))
         {
             echo "
             <tr>
-            <td class='body-item mbr-fonts-style display-7'><form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></form></td> 
+            <td class='body-item mbr-fonts-style display-7'><form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></form></td>
             <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
             <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
             <td class='body-item mbr-fonts-style display-7'>
@@ -59,7 +53,7 @@ else
     WHERE `libraries_users_id` = {$_SESSION['gerbruiker_informatie']['id']}
     ORDER BY `songs_title`;
     ";
-    
+
     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 
     if ($result = $db->query($query))
@@ -68,7 +62,7 @@ else
         while ($row = $result->fetch_assoc())
         {
             echo "
-            
+
             <tr>
             <td class='body-item mbr-fonts-style display-7'><form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></form></td>
             <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
@@ -80,7 +74,7 @@ else
             </button>
             </td>
             </tr>
-            
+
             ";
         }
 

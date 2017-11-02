@@ -1,3 +1,6 @@
+<?php include('include/library_detail_navigation.php');?>
+
+
 <br><br>
 <div class="container-fluid">
    <div class="row content">
@@ -35,14 +38,14 @@
                         <div class="col-md-6"></div>
                      </div>
                      <div class="container scroll">
-                        <nav aria-label="Page navigation ">
+                        <nav aria-label="Page navigation">
                            <form class="form-inline" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                               <input class="form-control mr-sm-2" type="search" name="library_search" placeholder="Search" aria-label="Search">
                               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                            </form>
                            <table class="table" cellspacing="0" id='library-table'>
                               <thead>
-                                 <tr class="table-heads ">
+                                 <tr class="table-heads">
                                     <th class="head-item mbr-fonts-style display-7">
                                        NAME
                                     </th>

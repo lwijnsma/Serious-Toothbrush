@@ -15,7 +15,10 @@
                       Description
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
-                      Date
+                      edit
+                    </th>
+                    <th class="head-item mbr-fonts-style display-7">
+                      delete
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
                     </th>

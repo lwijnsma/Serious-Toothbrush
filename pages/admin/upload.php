@@ -3,6 +3,7 @@
 <title>ADMIN PAGE HOLY FUCK</title>
 </head>
 <body bgcolor="#FFEFF">
+<font color="white">
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data"> 
 <fieldset>
 <legend><h2>Upload New File:</h2></legend>
@@ -51,5 +52,5 @@ else {
 };
 
 ?>
-
+</font>
 </body>

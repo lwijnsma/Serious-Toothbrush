@@ -30,7 +30,7 @@
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
                       delete
-                    </th>
+                    </th>g
                   </tr>
                 <tr>
                 <?php include 'include/admin_edit_songs.php'; ?>

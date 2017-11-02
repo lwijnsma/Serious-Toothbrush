@@ -13,9 +13,18 @@ switch ($_SESSION["profiles"]) {
   case 'accounts':
     include 'accounts.php';
       break;
-	  
+  
+  case 'genre':
+    include 'genrephp';
+      break;
+
+  case 'album':
+    include 'album.php';
+      break;
+
+
   case 'tracklist':
-    include 'edit_tracklist.php';
+    include 'racklist.php';
       break;
 
   case 'Edit':

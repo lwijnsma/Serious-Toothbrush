@@ -19,7 +19,7 @@ Artist: <input class="form-control" type="text" name="artist">  <br>
 <?php
 $sql = mysqli_query($db, "SELECT title FROM album") ;
 while ($row = $sql->fetch_assoc()){
-echo "<option value=\"genre\">" . $row['title'] . "</option>";
+echo "<option value=\"album\">" . $row['title'] . "</option>";
 }
 ?>
 </select>

@@ -15,7 +15,7 @@ switch ($_SESSION["profiles"]) {
       break;
   
   case 'genre':
-    include 'genrephp';
+    include 'genre.php';
       break;
 
   case 'album':

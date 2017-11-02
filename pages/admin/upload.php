@@ -56,7 +56,11 @@ if (file_exists($target)) {
 }
 else {
     if (move_uploaded_file($_FILES["audio"]["tmp_name"] , $target)) {
+<<<<<<< HEAD
+        echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div> <br/>";
+=======
         echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div>";
+>>>>>>> 0a37289922d39c67dd13b3d4e7821f4fde4b26d7
 		#Register in database.
 		# - mysqli_real_escape_string
 			$artiste = mysqli_real_escape_string($db, $artist) ;

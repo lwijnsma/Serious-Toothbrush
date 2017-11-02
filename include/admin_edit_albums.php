@@ -32,6 +32,7 @@ if ($result = $db->query($query))
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -43,6 +44,8 @@ if ($result = $db->query($query))
 
 //add function
 
+=======
+>>>>>>> 593230f434d79f4e76db8cf9e781232804648a69
 if(!empty($_POST['something']))
 {
     $title=mysqli_real_escape_string('');

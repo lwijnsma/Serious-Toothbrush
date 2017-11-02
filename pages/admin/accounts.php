@@ -24,11 +24,7 @@
                     </th>
                   </tr>
                 <tr>
-                <td class='body-item mbr-fonts-style display-7'>{$row['title']}'</td>
-                <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
-                <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
-                <td class='body-item mbr-fonts-style display-7'>button</td>
-                <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
+                <?php include 'include/admin_edit_users.php'; ?>
                 </tr>
                 </table>
               </div>

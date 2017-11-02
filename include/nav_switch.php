@@ -35,25 +35,20 @@ if(!empty($_SESSION["pages"]))
         isset($_SESSION['auth'])? include './pages/library.php' : include './pages/login.php';
         break;
 
-        /*
-            Nog een labda functie.
-            (statement) ? true : false
-
-            Dus als auth gezet is laadt library anders login.
-
-
-            Dus op dit moment kunnen we de auth niet op false zetten op het moment dat iemand ergens niet mag zijn like in pages niet via index.php
-            note: pages moeten nog beveiligd worden.
-
-
-        */
-
             case 'Register':
             include './pages/register.php';
             break;
 
             case 'Account':
-            isset($_SESSION['auth'])? include './pages/profile.php' : include './pages/login.php';
+            if ($_SESSION["rol"]==1) 
+            {
+             include './pages/admin.php';          
+            }
+            else
+            {
+             isset($_SESSION['auth'])? include './pages/profile.php' : include './pages/login.php';    
+            }
+           
             break;
 
             case 'Cart':

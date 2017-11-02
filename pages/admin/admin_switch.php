@@ -22,7 +22,7 @@ switch ($_SESSION["profiles"]) {
 
 }
 else {
-  include 'edit.php';
+  include 'edit_tracklist.php';
 }
 
  ?>

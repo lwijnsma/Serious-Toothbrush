@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST['profile'])) {
 $_SESSION["profiles"]=$_POST['profile'];
 }
@@ -13,6 +14,7 @@ switch ($_SESSION["profiles"]) {
   case 'Password':
     include 'edit_password.php';
       break;
+      
 }
 
 }

@@ -69,7 +69,7 @@ else {
 			$pricee  = mysqli_real_escape_string($db, $price)  ;
 			$albume  = mysqli_real_escape_string($db, $album)  ;
 			$location= mysqli_real_escape_string($db, $target) ;
-
+var_dump($albume);
 		# - Injection
 		$inject = "INSERT INTO `songs` (title, artiest, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";

@@ -14,18 +14,6 @@
   </div>
   <div class="row content">
    <div class="col-sm-2 sidenav">
-      <h4 id="white"><?php print $_SESSION["gerbruiker_informatie"]["username"]; ?></h4>
-      <ul class="nav flex-column">
-         <li class="nav-item">
-            <a class="nav-link active" href="#">Categories</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Albums</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Songs</a>
-         </li>
-      </ul>
    </div>
    <div class="col">
       <br>

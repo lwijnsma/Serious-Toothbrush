@@ -47,10 +47,9 @@ if (isset($_POST['submit']))
 
             //Een klaar bericht laten zien of redirecten.
             //TODO: How fix?
-            $_POST['page']      = 'Home';
-            $_SESSION['page']   = 'Home';
+            $_POST['page']      = 'Library';
+            $_SESSION['pages']  = 'Library';
             header('location: redirect.php');
-            exit();
         }
         else
         {

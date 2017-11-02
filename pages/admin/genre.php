@@ -15,11 +15,6 @@
                       Description
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
-                      Date
-                    </th>
-                    <th class="head-item mbr-fonts-style display-7">
-                    </th>
-                    <th class="head-item mbr-fonts-style display-7">
                       edit
                     </th>
                     <th class="head-item mbr-fonts-style display-7">

@@ -1,30 +1,42 @@
 <?php include 'cfg/connection.php'; ?>
-<head>
-<title>ADMIN PAGE HOLY FUCK</title>
-</head>
-<body bgcolor="#FFEFF">
-<font color="white">
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data"> 
-<fieldset>
-<legend><h2>Upload New File:</h2></legend>
-Upload audio: <input type="file" accept="audio/*" name="audio"> <br>
-Artist: <input type="text" name="artist">  <br>
-Title:  <input type="text" name="title">  <br>
-Price: € <input type="number" name="price1" min="0"> , <input type="number" name="price2" min="0" max="99">  <br>
-Album: <input type="text" name="album"> <br>
-<?php #Genres ?> 
-<select name="genre">
+<div class="col">
+  <legend><h2 id="white" class="display-4">Upload New File:</h2></legend>
+   </br>
+   <div class="card">
+      <div class="card-body">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data">
+        <fieldset>
+<label>Upload audio:</label> <br><input class="" type="file" accept="audio/*" name="audio"> <br><br>
+Title:  <input class="form-control" type="text" name="title">  <br>
+Artist: <input class="form-control" type="text" name="artist">  <br>
+<div class="form-group">
+  <label> Price: € </label>
+  <div class="form-row">
+<div class="form-group col-sm-5"> <input class="form-control" type="number" name="price1" min="0"></div> <div class="form-group col-sm-3"> <input  class="form-control" type="number" name="price2" min="0" max="99"> </div>
+</div></div>
+<select class="form-control name="genre">
+<option value="">Album:</option>
+<?php
+$sql = mysqli_query($db, "SELECT title FROM album") ;
+while ($row = $sql->fetch_assoc()){
+echo "<option value=\"genre\">" . $row['title'] . "</option>";
+}
+?>
+</select>
+<br>
+<select class="form-control name="genre">
 <option value="">Genre:</option>
-<?php 
-$sql = mysqli_query($db, "SELECT title FROM genre") ; 
+<?php
+$sql = mysqli_query($db, "SELECT title FROM genre") ;
 while ($row = $sql->fetch_assoc()){
 echo "<option value=\"genre\">" . $row['title'] . "</option>";
 }
 ?>
 </select> <br>
-<input type="submit" name="upload" value="Upload">
+<input class="btn btn-success" type="submit" name="upload" value="Upload">
 </fieldset>
 </form>
+</div></div></div>
 
 <?php
 if (empty($_POST["artist"])){
@@ -37,7 +49,7 @@ $album = $_POST["album"] ;
 $upload = pathinfo($_FILES["audio"]["name"]);
 $tmpname = $_FILES["audio"]["tmp_name"] ;
 $ext = $upload["extension"];
-$newname = $artist . "_" . $title . "." . $ext ; 
+$newname = $artist . "_" . $title . "." . $ext ;
 echo "<br/>" ;
 $target = 'songs/' . $newname ;
 
@@ -56,7 +68,7 @@ else {
 			$albume  = mysqli_real_escape_string($db, $album)  ;
 			$exte    = mysqli_real_escape_string($db, $ext)    ;
 			$location= mysqli_real_escape_string($db, $target) ;
-		
+
 		# - Injection
 		$inject = "INSERT INTO `songs` (TITLE, ARTIEST, CREATED_AT, UPDATED_AT, ALBUM_TITLE, GENRE_TITLE, QUALITY_NAME, PRICE, FILE_LOCATION)
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , '$exte' , '$pricee' , '$location' )";
@@ -69,5 +81,3 @@ else {
 };
 
 ?>
-</font>
-</body>

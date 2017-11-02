@@ -36,8 +36,6 @@ echo "<option value='genre'>" . $row['title'] . "</option>";
 <input class="btn btn-success" type="submit" name="upload" value="Upload">
 </fieldset>
 </form>
-</div></div></div>
-
 <?php
 if (empty($_POST["artist"])){
 } else {
@@ -82,3 +80,6 @@ else {
 };
 
 ?>
+
+</div></div></div>
+

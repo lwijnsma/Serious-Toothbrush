@@ -22,7 +22,7 @@
                     </th>
                   </tr>
                   <tr>
-                  <?php include 'include/admin_edit_genre.php'; ?>
+                  <?php include 'include/admin/admin_edit_genre.php'; ?>
                   </tr>
                 </table>
                 <a href="#" title="" class="add-genre">Add genre</a>
@@ -36,15 +36,15 @@
      var counter = 1;
      jQuery('a.add-genre').click(function(event){
         event.preventDefault();
- 
+
          var newRow = jQuery('<tr><td><input class="form-control" type="text" name="Title" placeholder="Title' +
              counter + '"/></td><td><input class="form-control" type="text" name="Description" placeholder="Artist' +
              counter + '"/></td><td><input class="btn btn-dark" type="button" value="Add" name="Add'  +
              counter + '"/></td></tr>');
              counter++;
         jQuery('table.table').append(newRow);
- 
+
      });
  });
- 
+
  </script>

@@ -65,7 +65,7 @@ if ($result = $db->query($query))
     /* fetch associative array */
     while ($row = $result->fetch_assoc())
     {
-      echo "<tr><td class='body-item mbr-fonts-style display-7'>{$row['username']}</td><td class='body-item mbr-fonts-style display-7'>{$row['first_name']}</td><td class='body-item mbr-fonts-style display-7'>{$row['last_name']}</td><td class='body-item mbr-fonts-style display-7'>{$row['email']}</td><td class='body-item mbr-fonts-style display-7'>{$row['is_admin']}</td><form  action='".($_SERVER['PHP_SELF'])."' method='post'><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='admin_edit_users_edit' value='edit'>edit</button></td><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='admin_edit_users_delete' value='".$row['id']."'>delete</button></td></form></tr>";
+      echo "<tr><td class='body-item mbr-fonts-style display-7'>{$row['username']}</td><td class='body-item mbr-fonts-style display-7'>{$row['first_name']}</td><td class='body-item mbr-fonts-style display-7'>{$row['last_name']}</td><td class='body-item mbr-fonts-style display-7'>{$row['email']}</td><td class='body-item mbr-fonts-style display-7'>{$row['is_admin']}</td><form  action='".htmlspecialchars(($_SERVER['PHP_SELF']))."' method='post'><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='admin_edit_users_edit' value='edit'>edit</button></td><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='admin_edit_users_delete' value='".$row['id']."'>delete</button></td></form></tr>";
     }
 
     /* free result set */

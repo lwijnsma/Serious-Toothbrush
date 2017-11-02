@@ -33,7 +33,7 @@
                     </th>
                   </tr>
                 <tr>
-                <?php include 'include/admin_edit_songs.php'; ?>
+                <?php include 'include/admin/admin_edit_songs.php'; ?>
                 </table>
               </div>
             </div>

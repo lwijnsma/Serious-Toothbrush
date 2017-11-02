@@ -1,5 +1,5 @@
  <div class="col">
-  
+ 	<br>
        <div class="card">
   <div class="card-body">
      <form class="" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">

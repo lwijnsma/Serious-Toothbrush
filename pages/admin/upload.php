@@ -52,11 +52,15 @@ echo "<br/>" ;
 $target = 'songs/' . $newname ;
 
 if (file_exists($target)) {
-    echo "File already exists.";
+    echo "<div class='alert alert-danger'>File already exists.</div>";
 }
 else {
     if (move_uploaded_file($_FILES["audio"]["tmp_name"] , $target)) {
+<<<<<<< HEAD
         echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div> <br/>";
+=======
+        echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div>";
+>>>>>>> 0a37289922d39c67dd13b3d4e7821f4fde4b26d7
 		#Register in database.
 		# - mysqli_real_escape_string
 			$artiste = mysqli_real_escape_string($db, $artist) ;
@@ -69,7 +73,7 @@ else {
 		# - Injection
 		$inject = "INSERT INTO `songs` (title, artiest, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
-		mysqli_query($db, $inject) or die("FOUT : " . mysqli_error($db)) ;
+		mysqli_query($db, $inject) or die("<div class='alert alert-danger'>FOUT : ."mysqli_error($db)."</div>") ;
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }

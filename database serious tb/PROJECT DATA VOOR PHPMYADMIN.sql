@@ -84,22 +84,22 @@ INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_
 VALUES('DEFENITION OF INSANITY','NONAMES','1:15.5','2017-10-19','2017-10-19','JUST GRAB THEM BY THE PONY','BRITISH ROCK','high quality mp3',19.13,'this should also never have been made');
 
 INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Blimp','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','./songs/Blimp.mp3');
+VALUES('Blimp','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Blimp.mp3');
 
 INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('The Tiger','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','./songs/The-Tiger.mp3');
+VALUES('The Tiger','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/The-Tiger.mp3');
 
 INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('My Game','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','./songs/My-Game.mp3');
+VALUES('My Game','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/My-Game.mp3');
 
 INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Dreaming','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','./songs/Dreaming.mp3');
+VALUES('Dreaming','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Dreaming.mp3');
 
 INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Dance to it','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','./songs/Dance-to-it.mp3');
+VALUES('Dance to it','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Dance-to-it.mp3');
 
 INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Its You','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','./songs/Its-You.mp3');
+VALUES('Its You','VANVAR','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Its-You.mp3');
 
 
 INSERT INTO PLAYLIST(TITLE,DESCRIPTION,USERS_ID)

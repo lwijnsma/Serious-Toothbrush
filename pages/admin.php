@@ -14,6 +14,17 @@
 				<li class="nav-item">
                     <button class="nav-link" type="submit" name="profile" value="tracklist">Edit Tracklist</button>
                 </li>
+                <br>
+                <li class="nav-item">
+                  <button class="nav-link" type="submit" name="profile" value="Edit">Edit Profile</button>
+               </li>
+               <li class="nav-item">
+                  <button class="nav-link" type="submit" name="profile" value="Password">Change password</button>
+               </li>
+               <br>
+               <li class="nav-item">
+                  <b><a class="btn btn-danger" href="logout.php">Logout</a></b>
+               </li>
             </form>
             <br>
         </div>

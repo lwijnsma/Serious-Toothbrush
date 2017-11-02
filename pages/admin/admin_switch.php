@@ -18,6 +18,13 @@ switch ($_SESSION["profiles"]) {
     include 'edit_tracklist.php';
       break;
 
+  case 'Edit':
+    include 'edit.php';
+    break;
+
+  case 'Password':
+    include 'edit_password.php';
+      break;
 }
 
 }

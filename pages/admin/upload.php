@@ -36,8 +36,6 @@ echo "<option value='genre'>" . $row['title'] . "</option>";
 <input class="btn btn-success" type="submit" name="upload" value="Upload">
 </fieldset>
 </form>
-</div></div></div>
-
 <?php
 if (empty($_POST["artist"])){
 } else {
@@ -73,10 +71,11 @@ else {
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
 		mysqli_query($db, $inject) or die("FOUT : " . mysqli_error($db)) ;
     } else {
-        echo "Error occured, file not uploaded.";
+        echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }
 };
 
 };
 
 ?>
+</div></div></div>

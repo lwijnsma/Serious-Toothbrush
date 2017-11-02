@@ -22,8 +22,8 @@ if (!empty($_POST['admin_edit_users_delete']))
 $Delete_query="DELETE from users where username ='".$_POST['admin_edit_users_delete']."'";
 mysqli_query($db, $Delete_query) or die("FOUT : " . mysqli_error($db));
 
-$_POST['profile']='users';
-$_SESSION['profiles']='users';
+$_POST['profile']='accounts';
+$_SESSION['profiles']='accounts';
 header('location:redirect.php');
 
 }

@@ -29,13 +29,6 @@ header('location:redirect.php');
 
 }
 
-
-
-
-
-
-
-
 if(!empty($_POST['something']))
 {
     $title=mysqli_real_escape_string('');

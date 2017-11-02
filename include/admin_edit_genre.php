@@ -22,8 +22,8 @@ if (!empty($_POST['admin_edit_genre_delete']))
 $Delete_query="DELETE from genre where title ='".$_POST['admin_edit_genre_delete']."'";
 mysqli_query($db, $Delete_query) or die("FOUT : " . mysqli_error($db));
 
-$_POST['profile']='tracklist';
-$_SESSION['profiles']='tracklist';
+$_POST['profile']='genre';
+$_SESSION['profiles']='genre';
 header('location:redirect.php');
 
 }

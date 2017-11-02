@@ -25,6 +25,12 @@
                     <th class="head-item mbr-fonts-style display-7">
                       Price
                     </th>
+                    <th class="head-item mbr-fonts-style display-7">
+                      edit
+                    </th>
+                    <th class="head-item mbr-fonts-style display-7">
+                      delete
+                    </th>
                   </tr>
                 <tr>
                 <?php include 'include/admin_edit_songs.php'; ?>

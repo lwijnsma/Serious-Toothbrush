@@ -19,6 +19,12 @@
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
                     </th>
+                    <th class="head-item mbr-fonts-style display-7">
+                      edit
+                    </th>
+                    <th class="head-item mbr-fonts-style display-7">
+                      delete
+                    </th>
                   </tr>
                   <tr>
                   <?php include 'include/admin_edit_genre.php'; ?>

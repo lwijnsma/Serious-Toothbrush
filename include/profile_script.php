@@ -1,9 +1,8 @@
 <?php
 include 'cfg/connection.php';
-if ($_SESSION['edit_profile_succes']==1) {
+if (!empty($_SESSION['edit_profile_succes']) && $_SESSION['edit_profile_succes']==1) {
 	echo '<div class="alert alert-success" role="alert">gegevens gewijzigd</div>';
 $_SESSION['edit_profile_succes']=0;
-var_dump($_SESSION['edit_profile_succes']);
 }
 if(isset($_POST['profile_change']))
 {

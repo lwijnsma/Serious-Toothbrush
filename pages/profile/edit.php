@@ -1,8 +1,10 @@
 <div class="col">
    </br>
    <div class="card">
+
       <div class="card-body">
-         <form class="" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+          <?php include 'include/profile_script.php' ?>
+         <form class="" role="form" action="<?php ($_SERVER['PHP_SELF']);?>" method="post">
             <div class="row">
                <div class="col-md-4">
                   <label for=""> Username </label><input type="text" class="form-control" name="user" value="<?php print $_SESSION["gerbruiker_informatie"]["username"]; ?>" size="20" disabled="true">
@@ -26,7 +28,6 @@
                   <button class="btn btn-success" type="submit" name="profile_change" value="Profile_change">change</buttton>
                </div>
             </div>
-            <?php include 'include/profile_script.php' ?>
             </form>
       </div>
    </div>

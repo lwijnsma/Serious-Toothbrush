@@ -24,7 +24,7 @@ switch ($_SESSION["profiles"]) {
 
 
   case 'tracklist':
-    include 'racklist.php';
+    include 'tracklist.php';
       break;
 
   case 'Edit':

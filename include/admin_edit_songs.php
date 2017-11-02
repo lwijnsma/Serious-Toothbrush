@@ -32,7 +32,7 @@ if ($result = $db->query($query))
     $result->free();
 }
 
-
+//junk
 if(!empty($_POST['something']))
 {
     $title=mysqli_real_escape_string('');

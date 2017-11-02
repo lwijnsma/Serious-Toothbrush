@@ -1,4 +1,5 @@
 <?php include 'include/profile_script.php' ?>
+<?php /*
     <div class="col">
     </br>
        <div class="card">
@@ -32,3 +33,4 @@
     </div>
   </div>
 </div>
+?>

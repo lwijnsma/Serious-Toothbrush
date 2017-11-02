@@ -1,5 +1,5 @@
 <div class="col">
-  <h2 id="white" class="display-2">Users</h2>
+  <h2 id="white" class="display-4">Users</h2>
       <br>
       <div class="card">
         <div class="card-body">

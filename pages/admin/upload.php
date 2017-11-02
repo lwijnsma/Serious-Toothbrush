@@ -36,8 +36,6 @@ echo "<option value='genre'>" . $row['title'] . "</option>";
 <input class="btn btn-success" type="submit" name="upload" value="Upload">
 </fieldset>
 </form>
-</div></div></div>
-
 <?php
 if (empty($_POST["artist"])){
 } else {
@@ -54,11 +52,13 @@ echo "<br/>" ;
 $target = 'songs/' . $newname ;
 
 if (file_exists($target)) {
-    echo "File already exists.";
+    echo "<div class='alert alert-danger'>File already exists.</div>";
 }
 else {
     if (move_uploaded_file($_FILES["audio"]["tmp_name"] , $target)) {
-        echo "The file ". $newname . " has been uploaded.";
+        echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div>";
+
+
 		#Register in database.
 		# - mysqli_real_escape_string
 			$artiste = mysqli_real_escape_string($db, $artist) ;
@@ -69,14 +69,17 @@ else {
 			$location= mysqli_real_escape_string($db, $target) ;
 var_dump($albume);
 		# - Injection
-		$inject = "INSERT INTO `songs` (TITLE, ARTIEST, CREATED_AT, UPDATED_AT, ALBUM_TITLE, GENRE_TITLE, QUALITY_NAME, PRICE, FILE_LOCATION)
+		$inject = "INSERT INTO `songs` (title, artiest, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
-		mysqli_query($db, $inject) or die("FOUT : " . mysqli_error($db)) ;
+		mysqli_query($db, $inject) or die (mysqli_error($db));
     } else {
-        echo "Error occured, file not uploaded.";
+        echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }
 };
 
 };
 
 ?>
+
+</div></div></div>
+

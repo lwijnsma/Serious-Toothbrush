@@ -1,4 +1,5 @@
 <div class="col">
+  <h2 id="white" class="display-4">Change Account Details</h2>
    </br>
    <div class="card">
       <div class="card-body">

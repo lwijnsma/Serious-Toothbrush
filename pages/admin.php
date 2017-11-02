@@ -14,6 +14,12 @@
 				<li class="nav-item">
                     <button class="nav-link" type="submit" name="profile" value="tracklist">Edit Tracklist</button>
                 </li>
+                <li class="nav-item">
+                    <button class="nav-link" type="submit" name="profile" value="genre">Edit Genres</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" type="submit" name="profile" value="album">Edit Albums</button>
+                </li>
                 <br>
                 <li class="nav-item">
                   <button class="nav-link" type="submit" name="profile" value="Edit">Edit Profile</button>

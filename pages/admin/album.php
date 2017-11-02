@@ -17,15 +17,15 @@
                       Year
                     </th>
                     <th class="head-item mbr-fonts-style display-7">
-                      edit | delete
+                      edit
+                    </th>
+                    <th class="head-item mbr-fonts-style display-7">
+                      delete
                     </th>
                   </tr>
-                <tr>
-                <td class='body-item mbr-fonts-style display-7'><form action="."'".($_SERVER["PHP_SELF"])."'"."method='post'><button class='library-item' type='submit' name='song_own_button' value='{$row['title']}'> {$row['title'] }</button></form></td>
-                <td class='body-item mbr-fonts-style display-7'>{$row['artiest']}</td>
-                <td class='body-item mbr-fonts-style display-7'>{$row['album_title']}</td>
-                <td class='body-item mbr-fonts-style display-7'>button</td>
-                </tr>
+
+                  <?php include 'include/admin_edit_albums.php'; ?>
+
                 </table>
               </div>
             </div>

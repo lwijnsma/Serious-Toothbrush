@@ -14,7 +14,7 @@ Artist: <input class="form-control" type="text" name="artist">  <br>
   <div class="form-row">
 <div class="form-group col-sm-5"> <input class="form-control" type="number" name="price1" min="0"></div> <div class="form-group col-sm-3"> <input  class="form-control" type="number" name="price2" min="0" max="99"> </div>
 </div></div>
-<select class="form-control name="album">
+<select class="form-control" name="album">
 <option value="album">Album:</option>
 <?php
 $sql = mysqli_query($db, "SELECT title FROM album") ;
@@ -24,7 +24,7 @@ echo "<option value='album'>" . $row['title'] . "</option>";
 ?>
 </select>
 <br>
-<select class="form-control name="genre">
+<select class="form-control" name="genre">
 <option value="genre">Genre:</option>
 <?php
 $sql = mysqli_query($db, "SELECT title FROM genre") ;

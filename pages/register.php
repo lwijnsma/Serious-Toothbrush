@@ -34,7 +34,7 @@
               <label for=""> Wachtwoord opnieuw  </label><input type="password" class="form-control"  name="repassword" value="" size="20">
             </div>
           </div>
-          <input class="btn btn-success" type="submit" name="register" value="Registreeren">
+          <input class="btn btn-success" type="submit" name="register" value="Registreren">
         </br>
         <?php include 'include/register_script.php'; ?>
       </form>

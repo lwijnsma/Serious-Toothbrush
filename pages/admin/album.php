@@ -33,18 +33,18 @@
           </div>
         </div>
   </div>
-  <form  action='/index.php' method='post'>
+
 <script type="text/javascript">
  	jQuery(function(){
      var counter = 1;
      jQuery('a.add-album').click(function(event){
         event.preventDefault();
 
-         var newRow = jQuery('<tr><td><input class="form-control" type="text" name="Title" placeholder="Title' +
+         var newRow = jQuery('<tr><form  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"><td><input class="form-control" type="text" name="Title" placeholder="Title' +
              counter + '"/></td><td><input class="form-control" type="text" name="Artist" placeholder="Artist' +
              counter + '"/></td><td><input class="form-control" type="text" name="Year" placeholder="Year' +
-             counter + '"/></td><td><input class="btn btn-dark" type="submit" value="Add" name="Add'  +
-             counter + '"/></td></tr>');
+             counter + '"/></td><td><input class="btn btn-dark" type="submit" value="Add" name="admin_album_Add'  +
+             counter + '"/></td></form></tr>');
              counter++;
         jQuery('table.table').append(newRow);
 
@@ -52,5 +52,4 @@
  });
 
  </script>
-</form>
 <?php include 'include/admin/admin_add_albums.php'; ?>

@@ -4,7 +4,7 @@
    </br>
    <div class="card">
       <div class="card-body">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data">
+        <form action="<?php ($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data">
         <fieldset>
 <label>Upload audio:</label> <br><input class="" type="file" accept="audio/*" name="audio"> <br><br>
 Title:  <input class="form-control" type="text" name="title">  <br>
@@ -14,22 +14,22 @@ Artist: <input class="form-control" type="text" name="artist">  <br>
   <div class="form-row">
 <div class="form-group col-sm-5"> <input class="form-control" type="number" name="price1" min="0"></div> <div class="form-group col-sm-3"> <input  class="form-control" type="number" name="price2" min="0" max="99"> </div>
 </div></div>
-<select class="form-control name="genre">
-<option value="">Album:</option>
+<select class="form-control name="album">
+<option value="album">Album:</option>
 <?php
 $sql = mysqli_query($db, "SELECT title FROM album") ;
 while ($row = $sql->fetch_assoc()){
-echo "<option value=\"album\">" . $row['title'] . "</option>";
+echo "<option value='album'>" . $row['title'] . "</option>";
 }
 ?>
 </select>
 <br>
 <select class="form-control name="genre">
-<option value="">Genre:</option>
+<option value="genre">Genre:</option>
 <?php
 $sql = mysqli_query($db, "SELECT title FROM genre") ;
 while ($row = $sql->fetch_assoc()){
-echo "<option value=\"genre\">" . $row['title'] . "</option>";
+echo "<option value='genre'>" . $row['title'] . "</option>";
 }
 ?>
 </select> <br>
@@ -41,9 +41,9 @@ echo "<option value=\"genre\">" . $row['title'] . "</option>";
 <?php
 if (empty($_POST["artist"])){
 } else {
-$artist = htmlspecialchars($_POST["artist"]);
-$title = htmlspecialchars($_POST["title"]);
-$genre = htmlspecialchars($_POST["genre"]);
+$artist = $_POST["artist"];
+$title = $_POST["title"];
+$genre = $_POST["genre"];
 $price = $_POST["price1"] . "." . $_POST["price2"];
 $album = $_POST["album"] ;
 $upload = pathinfo($_FILES["audio"]["name"]);
@@ -66,13 +66,12 @@ else {
 			$genree  = mysqli_real_escape_string($db, $genre)  ;
 			$pricee  = mysqli_real_escape_string($db, $price)  ;
 			$albume  = mysqli_real_escape_string($db, $album)  ;
-			$exte    = mysqli_real_escape_string($db, $ext)    ;
 			$location= mysqli_real_escape_string($db, $target) ;
 
 		# - Injection
 		$inject = "INSERT INTO `songs` (TITLE, ARTIEST, CREATED_AT, UPDATED_AT, ALBUM_TITLE, GENRE_TITLE, QUALITY_NAME, PRICE, FILE_LOCATION)
-		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , '$exte' , '$pricee' , '$location' )";
-		mysqli_query($db, $inject) ;
+		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
+		mysqli_query($db, $inject) or die("FOUT : " . mysqli_error($db)) ;
     } else {
         echo "Error occured, file not uploaded.";
     }

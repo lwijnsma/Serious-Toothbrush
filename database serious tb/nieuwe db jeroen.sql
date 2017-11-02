@@ -1,138 +1,146 @@
 
-INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES('supertatje','tatje@test.nl','Henk','Tatje','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
-
-INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES('testuser1','test@test.nl','Jan','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
-
-INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES('testuser2','test@test.nl','klaas','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
-
-INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES('testuser3','test@test.nl','Karst','Test','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
-
-INSERT INTO USERS(USERNAME,EMAIL,FIRST_NAME,LAST_NAME,PASSWORD,IS_ADMIN,CREATED_AT,UPDATED_AT)
-VALUES('testuser4','test@test.nl','Jan','Klaasesn','dit wordt een hashed password',0,'2017-10-19','2017-10-19');
+CREATE TABLE album (
+    id           INTEGER(5) NOT NULL,
+    title        VARCHAR(50) NOT NULL,
+    artist       NVARCHAR(15),
+    year         VARCHAR(4),
+    created_at   DATE,
+    updated_at   DATE
+);
 
 
-INSERT INTO QUALITY(NAME,BITRATE,FORMAT)
-VALUES('low quality mp3',95,'.mp3');
-
-INSERT INTO QUALITY(NAME,BITRATE,FORMAT)
-VALUES('low quality wma',95,'.wma');
-
-INSERT INTO QUALITY(NAME,BITRATE,FORMAT)
-VALUES('medium quality mp3',128,'.mp3');
+ALTER TABLE album ADD CONSTRAINT album_pk PRIMARY KEY ( id );
+ALTER TABlE album MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
 
-INSERT INTO QUALITY(NAME,BITRATE,FORMAT)
-VALUES('medium quality wma',195,'.wma');
+CREATE TABLE cart (
+    created_at   DATE,
+    updated_at   DATE,
+    users_id     INTEGER(5) NOT NULL
+);
 
 
-INSERT INTO QUALITY(NAME,BITRATE,FORMAT)
-VALUES('high quality mp3',320,'.mp3');
+ALTER TABLE cart ADD CONSTRAINT cart_pk PRIMARY KEY ( users_id );
+
+CREATE TABLE cart_songs (
+    cart_id      INTEGER(5) NOT NULL,
+    songs_id   INTEGER(5) NOT NULL
+);
+
+ALTER TABLE cart_songs ADD CONSTRAINT cart_songs_pk PRIMARY KEY ( songs_id );
+
+CREATE TABLE genre (
+    id            INTEGER(5) NOT NULL,
+    title         VARCHAR(50) NOT NULL,
+    description   VARCHAR(500),
+    created_at    DATE,
+    updated_at    DATE
+);
 
 
-INSERT INTO ALBUM(TITLE,ARTIST,YEAR,CREATED_AT, UPDATED_AT)
-VALUES('VANVAR','VANVAR','2007','2017-10-19','2017-10-19');
+ALTER TABLE genre ADD CONSTRAINT genre_pk PRIMARY KEY ( id );
+ALTER TABlE genre MODIFY COLUMN id integer(5) AUTO_INCREMENT;
+
+CREATE TABLE libraries (
+    title         VARCHAR(25) NOT NULL,
+    description   VARCHAR(250),
+    created_at    DATE,
+    updated_at    DATE,
+    users_id      INTEGER(5) NOT NULL
+);
 
 
-INSERT INTO GENRE (TITLE,DESCRIPTION,CREATED_AT, UPDATED_AT)
-VALUES('SOMEWHAT HARD ROCK','THIS MAKES YOUR EARS BLEED ONLY A BIT','2017-10-19','2017-10-19');
+CREATE UNIQUE INDEX libraries__idx ON
+    libraries ( users_id ASC );
 
-INSERT INTO GENRE (TITLE,DESCRIPTION,CREATED_AT, UPDATED_AT)
-VALUES('HARDER ROCK','THIS MAKES YOUR EARS BLEED QUITE A BIT','2017-10-19','2017-10-19');
+ALTER TABLE libraries ADD CONSTRAINT libraries_pk PRIMARY KEY ( title,users_id );
 
-INSERT INTO GENRE (TITLE,DESCRIPTION,CREATED_AT, UPDATED_AT)
-VALUES('BRITISH ROCK','THIS MAKES YOUR EARS BLEED QUITE A BIT, BUT IN A BRITISH WAY','2017-10-19','2017-10-19');
-
-INSERT INTO GENRE (TITLE,DESCRIPTION,CREATED_AT, UPDATED_AT)
-VALUES('DUTCH ROCK','THIS MAKES YOUR EARS BLEED AN INSANE AMOUNT, ITS QUITE HORRIBLE','2017-10-19','2017-10-19');
-
-INSERT INTO GENRE (TITLE,DESCRIPTION,CREATED_AT, UPDATED_AT)
-VALUES('HARD ROCK','THIS KIND OF MUSIC IS USED BY KOREA IN INTEREGATION','2017-10-19','2017-10-19');
-
-INSERT INTO GENRE (TITLE,DESCRIPTION,CREATED_AT, UPDATED_AT)
-VALUES('EDM','Dance to it','2017-10-19','2017-10-19');
+CREATE TABLE library_songs (
+    libraries_title      VARCHAR(25) NOT NULL,
+    libraries_users_id   INTEGER(5) NOT NULL,
+    songs_id             INTEGER(5) NOT NULL
+);
 
 
-INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Blimp','<a href="https://soundcloud.com/vanvarmusic">VANVAR</a>','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Blimp.mp3');
-
-INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('The Tiger','<a href="https://soundcloud.com/vanvarmusic">VANVAR</a>','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/The-Tiger.mp3');
-
-INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('My Game','<a href="https://soundcloud.com/vanvarmusic">VANVAR</a>','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/My-Game.mp3');
-
-INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Dreaming','<a href="https://soundcloud.com/vanvarmusic">VANVAR</a>','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Dreaming.mp3');
-
-INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Dance to it','<a href="https://soundcloud.com/vanvarmusic">VANVAR</a>','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Dance-to-it.mp3');
-
-INSERT INTO SONGS(TITLE, ARTIEST,LENGTH,CREATED_AT,UPDATED_AT,ALBUM_TITLE,GENRE_TITLE,QUALITY_NAME,PRICE,description,file_location)
-VALUES('Its You','<a href="https://soundcloud.com/vanvarmusic">VANVAR</a>','1:25.5','2017-10-19','2017-10-19','VANVAR','EDM','high quality mp3',17.12,'wow','songs/Its-You.mp3');
+ALTER TABLE library_songs ADD CONSTRAINT library_songs_pk PRIMARY KEY ( libraries_title,songs_id );
 
 
-INSERT INTO CART(CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('2017-10-19','2017-10-19',1);
-
-INSERT INTO CART(CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('2017-10-19','2017-10-19',2);
-
-INSERT INTO CART(CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('2017-10-19','2017-10-19',3);
-
-INSERT INTO CART(CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('2017-10-19','2017-10-19',4);
-
-INSERT INTO CART(CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('2017-10-19','2017-10-19',5);
-
--- TESTDATA CART_SONGS---
-INSERT INTO CART_SONGS(SONGS_TITLE,CART_ID)
-VALUES('Blimp', 1);
-
-INSERT INTO CART_SONGS(SONGS_TITLE,CART_ID)
-VALUES('Dreaming', 1);
-
-INSERT INTO CART_SONGS(SONGS_TITLE,CART_ID)
-VALUES('Blimp', 3);
-
-INSERT INTO CART_SONGS(SONGS_TITLE,CART_ID)
-VALUES('Dreaming', 3);
-
-INSERT INTO CART_SONGS(SONGS_TITLE,CART_ID)
-VALUES('Blimp', 5);
+CREATE TABLE quality (
+    id        INTEGER(5) NOT NULL,
+    name      VARCHAR(25),
+    bitrate   VARCHAR(5),
+    format    VARCHAR(6)
+);
 
 
-INSERT INTO LIBRARIES(TITLE,DESCRIPTION,CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('MAIN LIBRARY','','2017-10-19','2017-10-19',1);
+ALTER TABLE quality ADD CONSTRAINT quality_pk PRIMARY KEY ( id );
+ALTER TABlE quality MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
-INSERT INTO LIBRARIES(TITLE,DESCRIPTION,CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('MAIN LIBRARY','','2017-10-19','2017-10-19',2);
+CREATE TABLE songs (
+    id         INTEGER(5) NOT NULL,
+    title        VARCHAR(50) NOT NULL,
+    artiest      VARCHAR(50),
+    length       VARCHAR(40),
+    created_at   DATE,
+    updated_at   DATE,
+    album_id     INTEGER(5) NOT NULL,
+    genre_id     INTEGER(5) NOT NULL,
+    quality_id   INTEGER(5) NOT NULL
+);
 
-INSERT INTO LIBRARIES(TITLE,DESCRIPTION,CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('MAIN LIBRARY','','2017-10-19','2017-10-19',3);
 
-INSERT INTO LIBRARIES(TITLE,DESCRIPTION,CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('MAIN LIBRARY','','2017-10-19','2017-10-19',4);
+ALTER TABLE songs ADD CONSTRAINT songs_pk PRIMARY KEY ( id);
+ALTER TABlE songs MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
-INSERT INTO LIBRARIES(TITLE,DESCRIPTION,CREATED_AT,UPDATED_AT,USERS_ID)
-VALUES('MAIN LIBRARY','','2017-10-19','2017-10-19',5);
+CREATE TABLE users (
+    id           INTEGER(5) NOT NULL,
+    username     VARCHAR(25) NOT NULL,
+    email        VARCHAR(40),
+    first_name   VARCHAR(25),
+    last_name    VARCHAR(25),
+    password     VARCHAR(64),
+    is_admin     CHAR(1),
+    created_at   DATE,
+    updated_at   DATE
+);
 
-INSERT INTO LIBRARY_SONGS(SONGS_TITLE,LIBRARIES_TITLE,LIBRARIES_USERS_ID)
-VALUES('Dreaming','MAIN LIBRARY',1);
 
-INSERT INTO LIBRARY_SONGS(SONGS_TITLE,LIBRARIES_TITLE,LIBRARIES_USERS_ID)
-VALUES('Blimp','MAIN LIBRARY',1);
+ALTER TABLE users ADD CONSTRAINT users_pk PRIMARY KEY ( id );
+ALTER TABlE users MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
-INSERT INTO LIBRARY_SONGS(SONGS_TITLE,LIBRARIES_TITLE,LIBRARIES_USERS_ID)
-VALUES('Dreaming','MAIN LIBRARY',3);
 
-INSERT INTO LIBRARY_SONGS(SONGS_TITLE,LIBRARIES_TITLE,LIBRARIES_USERS_ID)
-VALUES('Blimp','MAIN LIBRARY',5);
+ALTER TABLE cart_songs
+    ADD CONSTRAINT cart_songs_cart_fk FOREIGN KEY ( cart_id )
+        REFERENCES cart ( users_id );
 
-INSERT INTO LIBRARY_SONGS(SONGS_TITLE,LIBRARIES_TITLE,LIBRARIES_USERS_ID)
-VALUES('Dreaming','MAIN LIBRARY',1);
+ALTER TABLE cart_songs
+    ADD CONSTRAINT cart_songs_songs_fk FOREIGN KEY ( songs_id )
+        REFERENCES songs ( id );
+
+ALTER TABLE cart
+    ADD CONSTRAINT cart_users_fk FOREIGN KEY ( users_id )
+        REFERENCES users ( id );
+
+ALTER TABLE libraries
+    ADD CONSTRAINT libraries_users_fk FOREIGN KEY ( users_id )
+        REFERENCES users ( id );
+
+ALTER TABLE library_songs
+    ADD CONSTRAINT library_songs_libraries_fk FOREIGN KEY ( libraries_title,libraries_users_id )
+        REFERENCES libraries ( title,users_id );
+
+ALTER TABLE library_songs
+    ADD CONSTRAINT library_songs_songs_fk FOREIGN KEY ( songs_id )
+        REFERENCES songs ( id );
+
+ALTER TABLE songs
+    ADD CONSTRAINT songs_album_fk FOREIGN KEY ( album_id )
+        REFERENCES album ( id );
+
+ALTER TABLE songs
+    ADD CONSTRAINT songs_genre_fk FOREIGN KEY ( genre_id )
+        REFERENCES genre ( id );
+
+ALTER TABLE songs
+    ADD CONSTRAINT songs_quality_fk FOREIGN KEY ( quality_id )
+        REFERENCES quality ( id );

@@ -38,7 +38,7 @@ switch ($_SESSION["profiles"]) {
 
 }
 else {
-  include 'edit_tracklist.php';
+  include 'edit.php';
 }
 
  ?>

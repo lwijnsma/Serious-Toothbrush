@@ -1,8 +1,22 @@
 
 <?php
 include 'cfg/connection.php';
+include 'include/function.php';
+//this deletes a record if the button is pushed
+if (!empty($_POST['admin_edit_songs_delete']))
+{
+$Delete_query="DELETE from songs where title ='".$_POST['admin_edit_songs_delete']."'";
+
+set_error_handler("custom_error_ErrorHandler_for_songs");
+mysqli_query($db, $Delete_query) or trigger_error('an in use error');
 
 
+$_POST['profile']='tracklist';
+$_SESSION['profiles']='tracklist';
+}
+
+
+  //this fills the table
 $query="SELECT * from songs";
 $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 
@@ -17,16 +31,7 @@ if ($result = $db->query($query))
     /* free result set */
     $result->free();
 }
-if (!empty($_POST['admin_edit_songs_delete']))
-{
-$Delete_query="DELETE from songs where title ='".$_POST['admin_edit_songs_delete']."'";
-mysqli_query($db, $Delete_query) or die("FOUT : " . mysqli_error($db));
 
-$_POST['profile']='tracklist';
-$_SESSION['profiles']='tracklist';
-header('location:redirect.php');
-
-}
 
 if(!empty($_POST['something']))
 {

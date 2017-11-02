@@ -24,7 +24,7 @@
                     </th>
                   </tr>
                 <tr>
-                 <?php include 'include/admin_users_albums.php'; ?>
+                 <?php include 'include/admin_edit_users.php'; ?>
                 </tr>
                 </table>
               </div>

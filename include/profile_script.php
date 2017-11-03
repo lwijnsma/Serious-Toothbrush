@@ -6,6 +6,11 @@ $_SESSION['edit_profile_succes']=0;
 }
 if(isset($_POST['profile_change']))
 {
+if (!empty($_POST['profile_name']) && !empty($_POST['profile_lastname'])) {
+	# code...
+
+
+
 	$first_name=htmlspecialchars($_POST['profile_name']);
 	$first_name=stripslashes ($first_name);
 	$first_name=trim($first_name);
@@ -44,7 +49,10 @@ if(isset($_POST['profile_change']))
 	{
 		echo '<div class="alert alert-danger" role="alert">email is niet correct</div>';
 	}
-
+}
+else {
+	echo '<div class="alert alert-danger" role="alert">Velden mogen niet leeg zijn</div>';
+}
 }
 
 ?>

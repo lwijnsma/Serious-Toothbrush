@@ -45,16 +45,21 @@ function custom_error_ErrorHandler_for_users($errno, $errstr, $errfile, $errline
 
 function custom_error_ErrorHandler_for_upload($errno, $errstr, $errfile, $errline)
 {
-    echo '<div class="alert alert-danger" role="alert">something went wrong trying to insert this record the uploaded record has been removed</div>';
-    if (file_exists($errstr)){
+$error_array=explode("|",$errstr);
 
-          unlink($errstr);
+var_dump($error_array);
+foreach ($error_array as $value) {
+
+    echo '<div class="alert alert-danger" role="alert">something went wrong trying to insert this record the uploaded record has been removed</div>';
+    if (file_exists($value)){
+
+          unlink($value);
     }
     else
     {
-        echo '<div class="alert alert-danger" role="alert">something went wrong trying to delete the uploaded file, pls delete this file manualy, <b>file location:</b>'.$errstr.'</div>';
+        echo '<div class="alert alert-danger" role="alert">something went wrong trying to delete the uploaded file, pls delete this file manualy, <b>file location:</b>'.$value.'</div>';
     }
-
+}
 
 }
 

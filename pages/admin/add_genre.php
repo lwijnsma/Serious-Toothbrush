@@ -14,6 +14,9 @@
                <textarea class="form-control" name="decription"
    rows="10" cols="50">Description</textarea>
                </div>
+               <div class="row">
+                   <button class="btn btn-success" type="submit" name="password_change" value="password_change">Change</buttton>
+                  	</div>
             </form>
       </div>
    </div>

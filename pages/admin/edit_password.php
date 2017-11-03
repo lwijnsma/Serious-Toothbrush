@@ -21,7 +21,7 @@
  <div class="row">
  	<div class="col">
       <button class="btn btn-success" type="submit" name="password_change" value="password_change">Change</buttton>
-     	</div
+     	</div>
  </div>
       </form>
     </div>

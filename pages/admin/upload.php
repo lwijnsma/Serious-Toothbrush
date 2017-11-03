@@ -9,6 +9,8 @@
 <label>Upload audio:</label> <br><input class="" type="file" accept="audio/*" name="audio"> <br><br>
 Title:  <input class="form-control" type="text" name="title">  <br>
 Artist: <input class="form-control" type="text" name="artist">  <br>
+<textarea name="decription"
+   rows="10" cols="50">Description</textarea>
 <div class="form-group">
   <label> Price: € </label>
   <div class="form-row">
@@ -46,6 +48,7 @@ $title = $_POST["title"];
 $genre = $_POST["genre"];
 $price = $_POST["price1"] . "." . $_POST["price2"];
 $album = $_POST["album"] ;
+$description = $_POST["decription"];
 $upload = pathinfo($_FILES["audio"]["name"]);
 $tmpname = $_FILES["audio"]["tmp_name"] ;
 $ext = $upload["extension"];
@@ -67,12 +70,13 @@ else {
 			$titlee  = mysqli_real_escape_string($db, $title)  ;
 			$genree  = mysqli_real_escape_string($db, $genre)  ;
 			$pricee  = mysqli_real_escape_string($db, $price)  ;
+			$descriptione = mysqli_real_escape_string($db, $description);
 			$albume  = mysqli_real_escape_string($db, $album)  ;
 			$location= mysqli_real_escape_string($db, $target) ;
 var_dump($albume);
 		# - Injection
-		$inject = "INSERT INTO `songs` (title, artiest, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
-		VALUES ('$titlee', '$artiste' , '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
+		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
+		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
 		mysqli_query($db, $inject) or die (mysqli_error($db));
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";

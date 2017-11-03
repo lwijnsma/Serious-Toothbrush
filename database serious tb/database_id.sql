@@ -7,9 +7,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Table `project`.`album`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `project`.`album` (
-  `id` VARCHAR(50) NOT NULL,
+  `id` VARCHAR(50) NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NULL,
-  `artist` TINYTEXT(250) NULL DEFAULT NULL,
+  `artist` TEXT(250) NULL DEFAULT NULL,
   `year` VARCHAR(4) NULL DEFAULT NULL,
   `created_at` DATE NULL DEFAULT NULL,
   `updated_at` DATE NULL DEFAULT NULL,
@@ -57,7 +57,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `project`.`genre`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `project`.`genre` (
-  `id` VARCHAR(50) NOT NULL,
+  `id` VARCHAR(50) NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NULL,
   `description` VARCHAR(500) NOT NULL,
   `created_at` DATE NULL DEFAULT NULL,
@@ -71,7 +71,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `project`.`quality`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `project`.`quality` (
-  `id` VARCHAR(25) NOT NULL,
+  `id` VARCHAR(25) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `bitrate` VARCHAR(5) NULL DEFAULT NULL,
   `format` VARCHAR(6) NULL DEFAULT NULL,
@@ -84,9 +84,9 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `project`.`songs`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `project`.`songs` (
-  `id` VARCHAR(50) NOT NULL,
+  `id` VARCHAR(50) NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NULL,
-  `artist` TINYTEXT(250) NULL DEFAULT NULL,
+  `artist` TEXT(250) NULL DEFAULT NULL,
   `length` VARCHAR(40) NULL DEFAULT NULL,
   `created_at` DATE NULL DEFAULT NULL,
   `updated_at` DATE NULL DEFAULT NULL,
@@ -136,7 +136,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `project`.`libraries`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `project`.`libraries` (
-  `id` VARCHAR(25) NOT NULL,
+  `id` VARCHAR(25) NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(250) NULL DEFAULT NULL,
   `created_at` DATE NULL DEFAULT NULL,
   `updated_at` DATE NULL DEFAULT NULL,

@@ -9,9 +9,6 @@ include 'include/function.php';?>
         <form action="<?php ($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data">
         <fieldset>
 
-
-
-
 <label class="custom-file-upload">
   <input class="" type="file" accept=".mp3,.wav,.ogg,.flac" name="audio">
     Select Audio
@@ -22,7 +19,6 @@ include 'include/function.php';?>
     Select Coverart
 </label>
 <br><br>
-
 
 <style media="screen">
 input[type="file"] {
@@ -157,6 +153,7 @@ else {
 		set_error_handler("custom_error_ErrorHandler_for_upload");
 		if(mysqli_query($db, $inject)) {
 		echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded. <br/> <img src='" . $ctarget ."' height='50' width='50'></div>";
+		header( "refresh:5; url=redirect.php" ); 
 		} else {trigger_error("$target|$ctarget");};
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";

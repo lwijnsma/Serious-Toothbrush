@@ -6,9 +6,46 @@
       <div class="card-body">
         <form action="<?php ($_SERVER["PHP_SELF"]);?>" method='POST' enctype="multipart/form-data">
         <fieldset>
-<label>Upload audio:</label> <br><input class="" type="file" accept="audio/*" name="audio"> <br><br>
+
+
+
+
+<label>Upload audio:</label> <br>
+<label class="custom-file-upload">
+  <input class="" type="file" accept="audio/*" name="audio">
+    Browse files
+</label>
+<br><br>
+
+<style media="screen">
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid rgb(40, 167, 69);
+    color: white;
+    background-color: rgb(40, 167, 69);
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 9px;
+    cursor: pointer;}
+</style>
+
+
+
+
+
+
+
 Title:  <input class="form-control" type="text" name="title">  <br>
 Artist: <input class="form-control" type="text" name="artist">  <br>
+
+
+
+
+
+
 <textarea name="decription"
    rows="10" cols="50">Description</textarea>
 <div class="form-group">

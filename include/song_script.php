@@ -39,6 +39,9 @@ echo "<div class='card'>
     </div>
     <div class='row'>
       <div class='col-sm-6 ml-auto'>
+	  <audio controls>
+	  <source src='".$result['file_location']."' type='audio/mpeg'>
+	  </audio>
       </div>
       <div class='col-sm-4 mr-auto'>
         <h4>Price <small><b>€ ".number_format($result['price'],2)."</b></small></h4>

@@ -138,8 +138,7 @@ if (file_exists($target)) {
 }
 else {
     if (move_uploaded_file($_FILES["audio"]["tmp_name"] , $target)) {
-        echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div>";
-
+        echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded. <br/> <img src='" . $ctarget ."' height='50' width='50'></div>";
 
 
 		#Register in database.
@@ -151,12 +150,13 @@ else {
 			$descriptione = mysqli_real_escape_string($db, $description);
 			$albume  = mysqli_real_escape_string($db, $album)  ;
 			$location= mysqli_real_escape_string($db, $target) ;
+			$clocation=mysqli_real_escape_string($db, $ctarget);
 
 		# - Injection
-		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
-		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
+		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, picture_location, file_location)
+		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$clocation' , '$location' )";
 		set_error_handler("custom_error_ErrorHandler_for_upload");
-		mysqli_query($db, $inject) or trigger_error($target);
+		mysqli_query($db, $inject) or trigger_error("$target:$ctarget");
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }

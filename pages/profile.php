@@ -1,7 +1,5 @@
 <br><br>
-
-          <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-4">Change Account Details</h2>
-
+<div class="row">
       <div class="col-sm-2 sidenav">
          <h4 id="white"><?php print $_SESSION["gerbruiker_informatie"]["username"]; ?></h4>
          <br>

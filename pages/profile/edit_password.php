@@ -1,4 +1,5 @@
  <div class="col">
+        <h2 id="white" class="mbr-section-title mbr-fonts-style align-center pb-3 display-4">Edit Password</h2>
  	<br>
        <div class="card">
   <div class="card-body">

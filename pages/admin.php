@@ -17,9 +17,6 @@
                 <li class="nav-item">
                     <button class="nav-link" type="submit" name="profile" value="album">Edit Albums</button>
                 </li>
-                <li class="nav-item">
-                    <button class="nav-link active" type="submit" name="profile" value="upload">Upload</button>
-                </li>
                 <br>
                 <li class="nav-item">
                   <button class="nav-link" type="submit" name="profile" value="Edit">Edit Profile</button>

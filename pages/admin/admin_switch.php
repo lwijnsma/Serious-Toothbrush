@@ -6,8 +6,12 @@ if (isset($_POST['profile'])) {
 if(!empty($_SESSION["profiles"])){
 
   switch ($_SESSION["profiles"]) {
-    case 'upload':
+    case 'add_song':
     include 'upload.php';
+    break;
+
+    case 'edit_song':
+    include 'edit_song.php';
     break;
 
     case 'accounts':

@@ -156,7 +156,7 @@ else {
 		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, picture_location, file_location)
 		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$clocation' , '$location' )";
 		set_error_handler("custom_error_ErrorHandler_for_upload");
-		mysqli_query($db, $inject) or trigger_error("$target:$ctarget");
+		mysqli_query($db, $inject) or trigger_error("$target|$ctarget");
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }

@@ -7,7 +7,7 @@
          <form class="" role="form" action="<?php ($_SERVER['PHP_SELF']);?>" method="post">
             <div class="row">
                <div class="col-md-4">
-                  <label for=""> Genre </label><input type="text" class="form-control" name="user" value="" size="20" >
+                  <label for=""> Genre </label><input type="text" class="form-control" name="titel" value="" size="20" >
                </div>
             </div>
             <div class="row">
@@ -15,7 +15,7 @@
    rows="10" cols="50">Description</textarea>
                </div>
                <div class="row">
-                   <button class="btn btn-success" type="submit" name="password_change" value="password_change">Change</buttton>
+                   <button class="btn btn-success" type="submit" name="genre_change" value="genre_change">Change</buttton>
                   	</div>
             </form>
       </div>

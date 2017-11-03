@@ -43,8 +43,8 @@ Title:  <input class="form-control" type="text" name="title">  <br>
 Artist: <input class="form-control" type="text" name="artist">  <br>
 
 
-<textarea name="decription"
-   rows="10" cols="50">Description</textarea>
+<textarea class="form-control" name="decription"
+   rows="10" cols="50">Description</textarea><br>
 <div class="form-group">
   <label> Price: € </label>
   <div class="form-row">

@@ -42,4 +42,20 @@ function custom_error_ErrorHandler_for_users($errno, $errstr, $errfile, $errline
     echo '<div class="alert alert-danger" role="alert">something went wrong trying to delete the user record</div>';
 }
 
+
+function custom_error_ErrorHandler_for_upload($errno, $errstr, $errfile, $errline) {
+    echo '<div class="alert alert-danger" role="alert">something went wrong trying to insert this record</div>';
+    if (file_exists($target))
+
+          unlink($target);
+    }
+    else
+    {
+        echo '<div class="alert alert-danger" role="alert">something went wrong trying to delete the uploaded file, pls delete this file manualy, <b>file location:</b>'.$target.'</div>'
+    }
+
+
+}
+
+
  ?>

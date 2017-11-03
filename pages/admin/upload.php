@@ -114,7 +114,7 @@ if  ($ext != "mp3" &&
 	 $ext != "ogg" &&
 	 $ext != "flac" )
 {
-echo "<div class='alert alert-danger'>Jeroen tried to bypass the system again. Please select an MP3, WAV, OGG or FLAC file.</div>";
+echo "<div class='alert alert-danger'>".$_SESSION["gerbruiker_informatie"]['username']." tried to bypass the system again. Please select an MP3, WAV, OGG or FLAC file.</div>";
 		unlink($_FILES["audio"]["tmp_name"]);
 		unlink($ctarget);
 }
@@ -126,7 +126,7 @@ if  ($cext != "png" &&
 	 $cext != "gif" &&
 	 $cext != "bmp"  )
 {
-echo "<div class='alert alert-danger'><b>Jeroen!</b> Stop trying to bypass the system! Please select a PNG, WAV, OGG or FLAC file.</div>";
+echo "<div class='alert alert-danger'><b>".$_SESSION["gerbruiker_informatie"]['username']."</b> Stop trying to bypass the system! Please select a PNG, WAV, OGG or FLAC file.</div>";
 		unlink($_FILES["cover"]["tmp_name"]);
 		unlink($ctarget);
 }

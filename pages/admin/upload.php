@@ -42,9 +42,9 @@ input[type="file"] {
 Title:  <input class="form-control" type="text" name="title">  <br>
 Artist: <input class="form-control" type="text" name="artist">  <br>
 
-
+Description: <br>
 <textarea class="form-control" name="decription"
-   rows="10" cols="50">Description</textarea><br>
+   rows="10" cols="50"></textarea><br>
 <div class="form-group">
   <label> Price: € </label>
   <div class="form-row">
@@ -138,8 +138,7 @@ if (file_exists($target)) {
 }
 else {
     if (move_uploaded_file($_FILES["audio"]["tmp_name"] , $target)) {
-        echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded. <br/> <img src='" . $ctarget ."' height='50' width='50'></div>";
-
+        
 
 		#Register in database.
 		# - mysqli_real_escape_string
@@ -156,7 +155,9 @@ else {
 		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, picture_location, file_location)
 		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$clocation' , '$location' )";
 		set_error_handler("custom_error_ErrorHandler_for_upload");
-		mysqli_query($db, $inject) or trigger_error("$target|$ctarget");
+		if(mysqli_query($db, $inject)) {
+		echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded. <br/> <img src='" . $ctarget ."' height='50' width='50'></div>";
+		} else {trigger_error("$target|$ctarget");};
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }

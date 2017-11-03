@@ -10,10 +10,14 @@
 
 
 
-<label>Upload audio:</label> <br>
 <label class="custom-file-upload">
   <input class="" type="file" accept="audio/*" name="audio">
-    Browse files
+    Select Audio
+</label>
+
+<label class="custom-file-upload">
+  <input class="" type="file" accept="image/*" name="cover">
+    Select Coverart
 </label>
 <br><br>
 
@@ -114,7 +118,8 @@ var_dump($albume);
 		# - Injection
 		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
-		mysqli_query($db, $inject) or die (mysqli_error($db));
+		$deathcomes = set_error_handeler"custom_error_ErrorHandler_for_upload" ;
+		mysqli_query($db, $inject) or trigger_error($deathcomes);
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }

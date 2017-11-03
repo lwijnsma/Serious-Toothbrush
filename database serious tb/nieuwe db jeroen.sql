@@ -2,7 +2,7 @@
 CREATE TABLE album (
     id           INTEGER(5) NOT NULL,
     title        VARCHAR(250) NOT NULL,
-    artist       NVARCHAR(250),
+    artist       VARCHAR(250),
     year         VARCHAR(4),
     created_at   DATE,
     updated_at   DATE
@@ -98,8 +98,7 @@ CREATE TABLE users (
     email        VARCHAR(80),
     first_name   VARCHAR(55),
     last_name    VARCHAR(55),
-    password     VARCHAR(64),
-    is_admin     CHAR(1),
+    password     VARCHAR(64) NOT NULL,
     created_at   DATE,
     updated_at   DATE
 );

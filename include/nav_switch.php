@@ -29,12 +29,15 @@ if(!empty($_SESSION["pages"]))
 
         case 'Checkout':
         include 'cfg/connection.php';
-        $query  =   "SELECT * FROM `cart_songs`";
+        $query  =   "SELECT * FROM `cart_songs`  where cart_id =".$_SESSION["gerbruiker_informatie"]["id"]."";
             //dit kijkt of songs in de cart staan
         $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
-        if (mysqli_num_rows($result) != 0);
-
-        {include './pages/checkout.php';}
+        if (mysqli_num_rows($result) != 0){include './pages/checkout.php';}
+        else{
+          $_POST['page']="Cart";
+          $_SESSION['pages']="Cart";
+          header('location:redirect.php');
+        }
         break;
 
         case 'Library':

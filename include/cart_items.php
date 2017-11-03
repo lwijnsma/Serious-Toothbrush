@@ -44,12 +44,11 @@ $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
     {
         $title      = $song['songs_title']      ?? 'No Title';
         $picture    = $song['picture_location'] ?? 'images/song_placeholder.png';
-        $file       = $song['file_location']    ?? null;
         $album      = $song['album_title']      ?? 'No Album';
         $price      = $song['price']            ?? 0;
         $total      += $price;
 
-        generate_songrow($title, $picture, $album, $price, $file);
+        generate_songrow($title, $picture, $album, $price);
 
     /*
         Oke, omdat het vrij spammy werd en ik me herrinder dat iemand wou dat we functies toevoegen:
@@ -58,7 +57,7 @@ $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
     */
     }
 
-    function generate_songrow($title, $picture, $album, $price, $file)
+    function generate_songrow($title, $picture, $album, $price)
     {
         echo "
         <div class='row'>
@@ -89,27 +88,10 @@ $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
         </div>
         ";
 
-        if ($file !== null)
-        {
-            echo "
-            </br>
-            <div class='row'>
-            <div class='col'>
-            <audio controls>
-            <source src='$file' type='audio/mpeg' />
-            Your browser does not support audio.
-            </audio>
-            </div>
-            </div>
-            ";
-        }
+        
 
         echo "</br></br>";
 
-    /*
-        Alleen als er een bestand bestaat wordt de audio row toegevoegd.
-        Normaal zouden we $file-preview moeten doen O.I.D.
-    */
     }
 
     ?>

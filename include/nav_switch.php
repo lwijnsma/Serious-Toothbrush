@@ -28,7 +28,13 @@ if(!empty($_SESSION["pages"]))
         break;
 
         case 'Checkout':
-        include './pages/checkout.php';
+        include 'cfg/connection.php';
+        $query  =   "SELECT * FROM `cart_songs`";
+            //dit kijkt of songs in de cart staan
+        $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
+        if (mysqli_num_rows($result) != 0);
+
+        {include './pages/checkout.php';}
         break;
 
         case 'Library':
@@ -40,7 +46,7 @@ if(!empty($_SESSION["pages"]))
             break;
 
             case 'Account':
-            if (isset($_SESSION["rol"]) && $_SESSION["rol"]==1) 
+            if (isset($_SESSION["rol"]) && $_SESSION["rol"]==1)
             {
              include './pages/admin.php';
             }

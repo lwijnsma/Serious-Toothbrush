@@ -1,4 +1,6 @@
-<?php include 'cfg/connection.php'; ?>
+<?php include 'cfg/connection.php';
+include 'include/function.php';?>
+
 <div class="col">
   <legend><h2 id="white" class="display-4">Upload New File:</h2></legend>
    </br>
@@ -105,6 +107,7 @@ else {
         echo "<div class='alert alert-success'>The file ". $newname . " has been uploaded.</div>";
 
 
+
 		#Register in database.
 		# - mysqli_real_escape_string
 			$artiste = mysqli_real_escape_string($db, $artist) ;
@@ -114,12 +117,13 @@ else {
 			$descriptione = mysqli_real_escape_string($db, $description);
 			$albume  = mysqli_real_escape_string($db, $album)  ;
 			$location= mysqli_real_escape_string($db, $target) ;
+
 var_dump($albume);
 		# - Injection
 		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
-		$deathcomes = set_error_handeler"custom_error_ErrorHandler_for_upload" ;
-		mysqli_query($db, $inject) or trigger_error($deathcomes);
+		set_error_handler("custom_error_ErrorHandler_for_upload");
+		mysqli_query($db, $inject) or trigger_error($target);
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }

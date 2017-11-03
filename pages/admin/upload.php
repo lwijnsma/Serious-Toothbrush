@@ -13,15 +13,16 @@ include 'include/function.php';?>
 
 
 <label class="custom-file-upload">
-  <input class="" type="file" accept="audio/*" name="audio">
+  <input class="" type="file" accept=".mp3,.wav,.ogg,.flac" name="audio">
     Select Audio
 </label>
 
 <label class="custom-file-upload">
-  <input class="" type="file" accept="image/*" name="cover">
+  <input class="" type="file" accept=".png,.jpg,.jpeg,.gif,.bmp" name="cover">
     Select Coverart
 </label>
 <br><br>
+
 
 <style media="screen">
 input[type="file"] {
@@ -38,18 +39,8 @@ input[type="file"] {
     cursor: pointer;}
 </style>
 
-
-
-
-
-
-
 Title:  <input class="form-control" type="text" name="title">  <br>
 Artist: <input class="form-control" type="text" name="artist">  <br>
-
-
-
-
 
 
 <textarea name="decription"
@@ -84,6 +75,7 @@ echo "<option value='" . $genrerow . "'>" . $genrerow . "</option>";
 </fieldset>
 </form>
 <?php
+#Check if Artist is filled in.
 if (empty($_POST["artist"])){
 } else {
 $artist = $_POST["artist"];
@@ -99,6 +91,48 @@ $newname = $artist . "_" . $title . "." . $ext ;
 echo "<br/>" ;
 $target = 'songs/' . $newname ;
 
+#Coverart doesn't need to be set, but if it is it will check if it's a valid file.
+if (empty($_FILES["cover"]["name"])){
+$stockimg = 'images/stock.png';
+$cext = "png" ;
+$cunlink = " " ;
+$cnewname = $artist . "_" . $title . "." . $cext ;
+$ctarget = 'images/album_covers/' . $cnewname ;
+copy ($stockimg, $ctarget) ;
+} else {
+$coveru = pathinfo($_FILES["cover"]["name"]);
+$cext = $coveru["extension"];
+$cunlink = $_FILES["cover"]["tmp_name"];
+$cnewname = $artist . "_" . $title . "." . $cext ;
+$ctarget = 'images/album_covers/' . $cnewname ;
+move_uploaded_file($cunlink, $ctarget);
+} ;
+
+#Check if Audio Input is correct.
+if  ($ext != "mp3" &&
+	 $ext != "wav" &&
+	 $ext != "ogg" &&
+	 $ext != "flac" )
+{
+echo "<div class='alert alert-danger'>Jeroen tried to bypass the system again. Please select an MP3, WAV, OGG or FLAC file.</div>";
+		unlink($_FILES["audio"]["tmp_name"]);
+		unlink($ctarget);
+}
+else {
+#Check if Cover Input is correct.
+if  ($cext != "png" &&
+	 $cext != "jpg" &&
+	 $cext != "jpeg"&&
+	 $cext != "gif" &&
+	 $cext != "bmp"  )
+{
+echo "<div class='alert alert-danger'><b>Jeroen!</b> Stop trying to bypass the system! Please select a PNG, WAV, OGG or FLAC file.</div>";
+		unlink($_FILES["cover"]["tmp_name"]);
+		unlink($ctarget);
+}
+else {
+
+#Check if the file exists
 if (file_exists($target)) {
     echo "<div class='alert alert-danger'>File already exists.</div>";
 }
@@ -118,7 +152,6 @@ else {
 			$albume  = mysqli_real_escape_string($db, $album)  ;
 			$location= mysqli_real_escape_string($db, $target) ;
 
-var_dump($albume);
 		# - Injection
 		$inject = "INSERT INTO `songs` (title, artiest, description, created_at, updated_at, album_title, genre_title, quality_name, price, file_location)
 		VALUES ('$titlee', '$artiste' ,'$descriptione', '".date('Y-m-d')."' , '".date('Y-m-d')."' , '$albume' , '$genree' , 'default' , '$pricee' , '$location' )";
@@ -127,6 +160,10 @@ var_dump($albume);
     } else {
         echo "<div class='alert alert-danger'>Error occured, file not uploaded.</div>";
     }
+};
+
+};
+
 };
 
 };

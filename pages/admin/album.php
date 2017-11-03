@@ -23,33 +23,17 @@
                       delete
                     </th>
                   </tr>
-
-                  <?php include 'include/admin/admin_edit_albums.php'; ?>
-
+                  <?php include 'include/admin/admin_table_albums.php'; ?>
                 </table>
-                <a href="#" title="" class="add-album">Add album</a>
               </div>
             </div>
+            <div class="col-sm-2">
+        <form class="nav flex-column"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+          <button value="add_album" type="submit" class="btn btn-success" name="profile">add album
+        </button>
+      </form>
+      </div>
           </div>
         </div>
   </div>
 
-<script type="text/javascript">
- 	jQuery(function(){
-     var counter = 1;
-     jQuery('a.add-album').click(function(event){
-        event.preventDefault();
-
-         var newRow = jQuery('<tr><form  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"><td><input class="form-control" type="text" name="Title" placeholder="Title' +
-             counter + '"/></td><td><input class="form-control" type="text" name="Artist" placeholder="Artist' +
-             counter + '"/></td><td><input class="form-control" type="text" name="Year" placeholder="Year' +
-             counter + '"/></td><td><input class="btn btn-dark" type="submit" value="Add" name="admin_album_Add'  +
-             counter + '"/></td></form></tr>');
-             counter++;
-        jQuery('table.table').append(newRow);
-
-     });
- });
-
- </script>
-<?php include 'include/admin/admin_add_albums.php'; ?>

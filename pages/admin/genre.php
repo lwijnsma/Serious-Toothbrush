@@ -21,29 +21,18 @@
 							</th>
 						</tr>
 						<tr>
-							<?php include 'include/admin/admin_edit_genre.php'; ?>
+							<?php include 'include/admin/admin_table_genre.php'; ?>
 						</tr>
 					</table>
-					<a href="#" title="" class="add-genre">Add genre</a>
 				</div>
+			</div>
+			<div class="col-sm-2">
+				<form class="nav flex-column" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+					<button value="add_genre" type="submit" class="btn btn-success" name="profile">add genre
+				</button>
+			</form>
 			</div>
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-  jQuery(function(){
-     var counter = 1;
-     jQuery('a.add-genre').click(function(event){
-        event.preventDefault();
 
-         var newRow = jQuery('<tr><form action="#" method="post"><td><input class="form-control" value="title" type="text" name="title" placeholder="Title' +
-             counter + '"/></td><td><input class="form-control" type="text" name="description" value"description" placeholder="Description' +
-             counter + '"/></td><td><input class="btn btn-dark" type="submit" value="add" name="add'  +
-             counter + '"/></td></form></tr>');
-             counter++;
-        jQuery('table.table').append(newRow);
-           });
- });
-
-    </script>
-<?php include ('genre_submit.php'); ?>

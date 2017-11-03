@@ -1,44 +1,59 @@
 <?php
 if (isset($_POST['profile'])) {
-$_SESSION["profiles"]=$_POST['profile'];
+  $_SESSION["profiles"]=$_POST['profile'];
 }
 
 if(!empty($_SESSION["profiles"])){
 
-switch ($_SESSION["profiles"]) {
-  case 'upload':
+  switch ($_SESSION["profiles"]) {
+    case 'upload':
     include 'upload.php';
     break;
 
-  case 'accounts':
+    case 'accounts':
     include 'accounts.php';
-      break;
+    break;
 
-  case 'genre':
+    case 'genre':
     include 'genre.php';
-      break;
+    break;
 
-  case 'album':
+    case 'album':
     include 'album.php';
-      break;
+    break;
 
+    case 'add_album':
+    include 'add_album.php';
+    break;
 
-  case 'tracklist':
+    case 'edit_album':
+    include 'edit_album.php';
+    break;
+
+    case 'add_genre':
+    include 'add_genre.php';
+    break;
+
+    case 'edit_genre':
+    include 'edit_genre.php';
+    break;
+
+    case 'tracklist':
     include 'tracklist.php';
-      break;
+    break;
 
-  case 'Edit':
+    case 'Edit':
     include 'edit.php';
     break;
 
-  case 'Password':
+    case 'Password':
     include 'edit_password.php';
-      break;
-}
+    break;
+  }
 
 }
 else{
   include 'edit.php';
 }
 
- ?>
+?>

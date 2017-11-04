@@ -1,6 +1,8 @@
 
 
 <?php
+// moet nog een check of number in
+
 //incude File
 include 'cfg/connection.php';
 include 'include/function.php';
@@ -8,8 +10,9 @@ include 'include/function.php';
 
 if (isset($_SESSION['edit_button_value']))
 {
+
     $title= $_SESSION['edit_button_value'];
-}
+
 
 $select_query="select * from album where title='".$title."'";
 set_error_handler("custom_error_ErrorHandler_for_edit_album");
@@ -18,7 +21,7 @@ $select_result=mysqli_fetch_assoc($select_result);
 
 $artist=$select_result['artist'];
 $year=$select_result['year'];
-
+}
 
 if (isset($_POST['album_change']))
 {

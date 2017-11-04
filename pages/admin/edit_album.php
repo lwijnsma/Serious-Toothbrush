@@ -3,7 +3,7 @@
    </br>
    <div class="card">
       <div class="card-body">
-        <?php include 'include/admin/admin_edit_album.php'; ?>
+        <?php   include 'include/admin/admin_edit_album.php'; ?>
 
          <form class="" role="form" action="<?php ($_SERVER['PHP_SELF']);?>" method="post">
             <div class="row">

@@ -27,7 +27,7 @@ CREATE TABLE cart_songs (
     songs_id   INTEGER(5) NOT NULL
 );
 
-ALTER TABLE cart_songs ADD CONSTRAINT cart_songs_pk PRIMARY KEY ( songs_id );
+ALTER TABLE cart_songs ADD CONSTRAINT cart_songs_pk PRIMARY KEY ( songs_id,cart_id );
 
 CREATE TABLE genre (
     id            INTEGER(5) NOT NULL,
@@ -85,7 +85,11 @@ CREATE TABLE songs (
     updated_at   DATE,
     album_id     INTEGER(5) NOT NULL,
     genre_id     INTEGER(5) NOT NULL,
-    quality_id   INTEGER(5) NOT NULL
+    quality_id   INTEGER(5) NOT NULL,
+    price          decimal(4,2)  NOT NULL,
+    description    longtext    NOT NULL,
+    picture_location VARCHAR(50),
+    file_location  VARCHAR(50)
 );
 
 
@@ -94,10 +98,11 @@ ALTER TABlE songs MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
 CREATE TABLE users (
     id           INTEGER(5) NOT NULL,
-    username     VARCHAR(250) NOT NULL,
+    username     VARCHAR(250) BINARY NOT NULL UNIQUE,
     email        VARCHAR(80),
     first_name   VARCHAR(55),
     last_name    VARCHAR(55),
+    is_admin     INTEGER(1) NOT NULL,
     password     VARCHAR(64) NOT NULL,
     created_at   DATE,
     updated_at   DATE
@@ -108,13 +113,13 @@ ALTER TABLE users ADD CONSTRAINT users_pk PRIMARY KEY ( id );
 ALTER TABlE users MODIFY COLUMN id integer(5) AUTO_INCREMENT;
 
 
-ALTER TABLE cart_songs
-    ADD CONSTRAINT cart_songs_cart_fk FOREIGN KEY ( cart_id )
-        REFERENCES cart ( users_id );
+       ALTER TABLE cart_songs
+            ADD CONSTRAINT cart_songs_cart_fk FOREIGN KEY ( cart_id )
+                REFERENCES cart ( users_id );
 
-ALTER TABLE cart_songs
-    ADD CONSTRAINT cart_songs_songs_fk FOREIGN KEY ( songs_id )
-        REFERENCES songs ( id );
+        ALTER TABLE cart_songs
+            ADD CONSTRAINT cart_songs_songs_fk FOREIGN KEY ( songs_id )
+                REFERENCES songs ( id );
 
 ALTER TABLE cart
     ADD CONSTRAINT cart_users_fk FOREIGN KEY ( users_id )

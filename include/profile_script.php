@@ -30,12 +30,12 @@ if (!empty($_POST['profile_name']) && !empty($_POST['profile_lastname'])) {
 
 ///als we tijd hebben verificatie schrijven of er iets is verandert voordat we het updaten -the programmer-
 
-		$query= "update USERS set first_name='".$first_name."',last_name='".$last_name."',email='".$email."',updated_at='".date('y-m-d')."' where id='".$_SESSION["gerbruiker_informatie"]["id"]."'";
+		$query= "update USERS set first_name='".$first_name."',last_name='".$last_name."',email='".$email."',updated_at='".date('y-m-d')."' where username='".$_SESSION["gerbruiker_informatie"]["username"]."'";
 		mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
 
 
 		$query = 	"SELECT * FROM USERS
-		WHERE id ='".$_SESSION["gerbruiker_informatie"]["id"]."'";
+		WHERE username ='".$_SESSION["gerbruiker_informatie"]["username"]."'";
 		$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 		$result=mysqli_fetch_assoc($result)or die("FOUT : " . mysqli_error());
 		$_SESSION["gerbruiker_informatie"]=$result;

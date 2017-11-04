@@ -30,7 +30,7 @@
                     </th>
                   </tr>
                 <tr>
-                 <?php include 'include/admin/admin_edit_users.php'; ?>
+                 <?php include 'include/admin/admin_table_users.php'; ?>
                 </tr>
                 </table>
               </div>

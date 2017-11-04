@@ -21,6 +21,9 @@ if(!empty($_SESSION["profiles"])){
     case 'accounts':
     include 'accounts.php';
     break;
+    case 'edit_account':
+    include 'edit_account.php';
+    break;
 
 
     case 'album':

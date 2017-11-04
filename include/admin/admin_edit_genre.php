@@ -12,7 +12,7 @@ if (isset($_SESSION['edit_button_value']))
     $id= $_SESSION['edit_button_value'];
 
 
-$select_query="select * from genre where id='".$id."'";
+$select_query="SELECT * from genre where id='".$id."'";
 set_error_handler("custom_error_ErrorHandler_for_edit");
 $select_result=mysqli_query($db, $select_query) or trigger_error('error_on_select');
 $select_result=mysqli_fetch_assoc($select_result);

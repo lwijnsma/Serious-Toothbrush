@@ -4,7 +4,7 @@
 //this deletes a record if the button is pushed
   if (!empty($_POST['admin_edit_genre_delete']))
   {
-  $Delete_query="DELETE from genre where title ='".$_POST['admin_edit_genre_delete']."'";
+  $Delete_query="DELETE from genre where id ='".$_POST['admin_edit_genre_delete']."'";
 
   set_error_handler("custom_error_ErrorHandler_for_genre");
   mysqli_query($db, $Delete_query) or trigger_error('an in use error');

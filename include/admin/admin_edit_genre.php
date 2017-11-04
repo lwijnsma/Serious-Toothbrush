@@ -1,5 +1,3 @@
-
-
 <?php
 // moet nog een check of number in
 
@@ -14,27 +12,22 @@ if (isset($_SESSION['edit_button_value']))
     $title= $_SESSION['edit_button_value'];
 
 
-$select_query="select * from album where title='".$title."'";
+$select_query="select * from genre where title='".$title."'";
 set_error_handler("custom_error_ErrorHandler_for_edit");
 $select_result=mysqli_query($db, $select_query) or trigger_error('error_on_select');
 $select_result=mysqli_fetch_assoc($select_result);
-
-$artist=$select_result['artist'];
-$year=$select_result['year'];
+$description=$select_result['description'];
 }
 
-if (isset($_POST['album_change']))
+if (isset($_POST['genre_change']))
 {
-  if(!empty($_POST['artist']) && !empty($_POST['year']))
+  if(!empty($_POST['description']))
   {
-    $changed_artist=mysqli_real_escape_string($db,$_POST['artist']);
-    var_dump($changed_artist);
-    $changed_year=mysqli_real_escape_string($db,$_POST['year']);
-    var_dump($changed_year);
-    $update_query="update album set artist='".$changed_artist."', year='".$changed_year."', updated_at='".date('y-m-d')."' where title='".$title."'";
+    $changed_description=mysqli_real_escape_string($db,$_POST['description']);
+   $update_query="update genre set description='".$changed_description."', updated_at='".date('y-m-d')."' where title='".$title."'";
     mysqli_query($db, $update_query) or trigger_error('error_on_update');
-    $_POST['profile']='album';
-    $_SESSION['profiles']='album';
+    $_POST['profile']='genre';
+    $_SESSION['profiles']='genre';
     header('location:redirect.php');
   }
     else

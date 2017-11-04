@@ -22,9 +22,6 @@ if(!empty($_SESSION["profiles"])){
     include 'accounts.php';
     break;
 
-    case 'genre':
-    include 'genre.php';
-    break;
 
     case 'album':
     include 'album.php';
@@ -36,6 +33,10 @@ if(!empty($_SESSION["profiles"])){
 
     case 'edit_album':
     include 'edit_album.php';
+    break;
+
+    case 'genre':
+    include 'genre.php';
     break;
 
     case 'add_genre':

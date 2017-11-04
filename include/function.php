@@ -47,7 +47,6 @@ function custom_error_ErrorHandler_for_upload($errno, $errstr, $errfile, $errlin
 {
 $error_array=explode("|",$errstr);
 
-var_dump($error_array);
 foreach ($error_array as $value) {
 
     echo '<div class="alert alert-danger" role="alert">something went wrong trying to insert this record the uploaded record has been removed</div>';
@@ -63,5 +62,17 @@ foreach ($error_array as $value) {
 
 }
 
+function custom_error_ErrorHandler_for_add_album($errno, $errstr, $errfile, $errline){
+    echo '<div class="alert alert-danger" role="alert">something went wrong trying to create this record, ';
+    if($errno==1024) echo "the album already exists";
+    else echo'please try again.';
+    echo '</div>';
+}
 
+function custom_error_ErrorHandler_for_add_genre($errno, $errstr, $errfile, $errline){
+    echo '<div class="alert alert-danger" role="alert">something went wrong trying to create this record, ';
+    if($errno==1024) echo "the genre already exists";
+    else echo'please try again.';
+    echo '</div>';
+}
  ?>

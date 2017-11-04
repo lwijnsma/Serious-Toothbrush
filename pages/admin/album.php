@@ -29,11 +29,10 @@
             </div>
             <div class="col-sm-2">
         <form class="nav flex-column"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-          <button value="add_album" type="submit" class="btn btn-success" name="profile">add album
+          <button value="add_album" type="submit"  class="btn btn-success" name="profile">add album
         </button>
       </form>
       </div>
           </div>
         </div>
   </div>
-

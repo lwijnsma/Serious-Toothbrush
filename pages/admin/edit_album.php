@@ -24,15 +24,26 @@ $select_result=mysqli_fetch_assoc($select_result);
 $artist=$select_result['artist'];
 $year=$select_result['year'];
 
-/*
-if (isset($_POST['lolo']))
-$changed_artist=mysqli_real_escape_string($db,$_POST['artist']);
-$changed_year=mysqli_real_escape_string($db,$_POST['artist']);
-$update_query="update album set artist='".$changed_arist."',year='".$changed_year."',updated_at='".date('y-m-d')."' where title='".$title."'";
-mysqli_query($db, $update_query) or trigger_error('error_on_update');
 
-*/
-var_dump('album_change');
+if (isset($_POST['album_change']))
+{
+  if(!empty($_POST['artist']) && !empty($_POST['year']))
+  {
+    $changed_artist=mysqli_real_escape_string($db,$_POST['artist']);
+    var_dump($changed_artist);
+    $changed_year=mysqli_real_escape_string($db,$_POST['year']);
+    var_dump($changed_year);
+    $update_query="update album set artist='".$changed_artist."', year='".$changed_year."', updated_at='".date('y-m-d')."' where title='".$title."'";
+    mysqli_query($db, $update_query) or trigger_error('error_on_update');
+    $_POST['profile']='album';
+    $_SESSION['profiles']='album';
+    header('location:redirect.php');
+  }
+    else
+  {
+      echo '<div class="alert alert-danger" role="alert">niet alle velden zijn ingevuld</div>';
+  }
+}
 ?>
 
          <form class="" role="form" action="<?php ($_SERVER['PHP_SELF']);?>" method="post">

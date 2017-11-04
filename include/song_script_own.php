@@ -1,7 +1,10 @@
 <?php
 include 'cfg/connection.php';
-$Song=$_SESSION['Song_own'];
-$query="SELECT * FROM SONGS WHERE TITLE = '".$Song."'";
+$song=$_SESSION['Song_own'];
+$query="SELECT songs.id, songs.title , songs.artiest, songs.price, songs.picture_location, songs.description, songs.file_location, album.title as 'album_title', genre.title as 'genre_title' FROM `songs`
+left join album on (songs.album_id=album.id)
+left join genre on(songs.genre_id=genre.id)
+where songs.id=$song";
 $result=mysqli_query($db,$query);
 $result=mysqli_fetch_assoc($result);
 

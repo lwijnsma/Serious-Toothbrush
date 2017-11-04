@@ -1,4 +1,4 @@
-<?php include('include/library_detail_navigation.php');?>
+<?php include('include/library/library_detail_navigation.php');?>
 <br><br>
 <div class="container-fluid">
    <div class="row content">
@@ -46,7 +46,7 @@
                                  </tr>
                               </thead>
                               <tbody>
-                                 <?php include("include/library_table_input.php"); ?>
+                                 <?php include("include/library/library_table_input.php"); ?>
                               </table>
                            </div>
                         </div>

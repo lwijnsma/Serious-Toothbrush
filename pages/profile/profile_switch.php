@@ -8,18 +8,18 @@ if(!empty($_SESSION["profiles"])){
 
 switch ($_SESSION["profiles"]) {
   case 'Edit':
-    include 'edit.php';
+    include 'edit_profile.php';
     break;
 
   case 'Password':
     include 'edit_password.php';
       break;
-      
+
 }
 
 }
 else {
-  include 'edit.php';
+  include 'edit_profile.php';
 }
 
  ?>

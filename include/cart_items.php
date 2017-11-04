@@ -3,36 +3,21 @@ include 'cfg/connection.php';
 
 if(!empty($_POST['cart_item_delete']))
 {
-    $query  = "DELETE FROM cart_songs where `cart_id`={$_SESSION['gerbruiker_informatie']['id']} AND `songs_title`='{$_POST['cart_item_delete']}';";
+    $query  = "DELETE FROM cart_songs where cart_id={$_SESSION['gebruiker_informatie']['id']} AND songs_id='{$_POST['cart_item_delete']}';";
     $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error($db));
     $_POST['page']  = "Cart";
     ob_end_clean();
     header("location:redirect.php");
 }
 
-/*$query="SELECT * FROM songs
-LEFT JOIN cart_songs
-ON songs.title = cart_songs.songs_title
-WHERE cart_songs.cart_id = ".$_SESSION['gerbruiker_informatie']['id']."
-ORDER BY songs_title";
-$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
-
-/*
-    Oke, dat was een groote blok code waar ik even de weg van kwijt raakte.
-    het is geen overkill om een query over meerdere lijnen te schrijven
-    zodat het nog leesbaar blijft voor anderen.
-*/
-
-    $query = "
-    SELECT *
-    FROM `songs` s
-    LEFT JOIN `cart_songs` cs
-    ON s.`title` = cs.`songs_title`
-    WHERE cs.`cart_id` = {$_SESSION['gerbruiker_informatie']['id']}
-    ORDER BY cs.`songs_title`;
-    ";
-
-    $songs = mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
+$query="SELECT songs.id, songs.title , songs.artiest, songs.price, songs.picture_location, songs.description, songs.file_location, album.title as
+'album_title',genre.title as  'genre_title',cart_songs.cart_id FROM `songs`
+left join album on (songs.album_id=album.id)
+left join genre on(songs.genre_id=genre.id)
+left join cart_songs on(songs.id=cart_songs.songs_id)
+WHERE cart_songs.cart_id ='{$_SESSION['gebruiker_informatie']['id']}'
+ORDER BY songs.title";
+$songs = mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
 
 /*
     Daarnaast is het ook niet super handig om alle query results "query" te noemen
@@ -42,22 +27,19 @@ $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
     $total = 0;
     while ($song = $songs->fetch_assoc())
     {
-        $title      = $song['songs_title']      ?? 'No Title';
+        $id         = $song['id']               ??  'No id';
+        $title      = $song['title']            ?? 'No Title';
         $picture    = $song['picture_location'] ?? 'images/song_placeholder.png';
         $album      = $song['album_title']      ?? 'No Album';
         $price      = $song['price']            ?? 0;
         $total      += $price;
 
-        generate_songrow($title, $picture, $album, $price);
+        generate_songrow($id, $title, $picture, $album, $price);
 
-    /*
-        Oke, omdat het vrij spammy werd en ik me herrinder dat iemand wou dat we functies toevoegen:
-        een functie om de lap HTML te genereren gebasseerd op de variabelen.
-        Ook een fallback gebouwd voor het geval er geen prijs, plaatje title etc. is.
-    */
+
     }
 
-    function generate_songrow($title, $picture, $album, $price)
+    function generate_songrow($id, $title, $picture, $album, $price)
     {
         echo "
         <div class='row'>
@@ -79,7 +61,7 @@ $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
 
         <div class='col text-right'>
         <form action='{$_SERVER['PHP_SELF']}' method='POST'>
-        <button type='submit' name='cart_item_delete' value='$title' class='btn btn-sm btn-dark'>
+        <button type='submit' name='cart_item_delete' value='$id' class='btn btn-sm btn-dark'>
         <i class='fa fa-trash fa-2x' aria-hidden='true'></i>
         </button>
         </form>
@@ -88,7 +70,7 @@ $result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());*/
         </div>
         ";
 
-        
+
 
         echo "</br></br>";
 

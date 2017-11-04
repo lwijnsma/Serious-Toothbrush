@@ -62,8 +62,7 @@ CREATE TABLE library_songs (
 );
 
 
-ALTER TABLE library_songs ADD CONSTRAINT library_songs_pk PRIMARY KEY ( libraries_title,songs_id );
-
+ALTER TABLE library_songs ADD CONSTRAINT library_songs_pk PRIMARY KEY ( songs_id,libraries_title,libraries_users_id );
 
 CREATE TABLE quality (
     id        INTEGER(5) NOT NULL,
@@ -129,13 +128,14 @@ ALTER TABLE libraries
     ADD CONSTRAINT libraries_users_fk FOREIGN KEY ( users_id )
         REFERENCES users ( id );
 
-ALTER TABLE library_songs
-    ADD CONSTRAINT library_songs_libraries_fk FOREIGN KEY ( libraries_title,libraries_users_id )
-        REFERENCES libraries ( title,users_id );
+        ALTER TABLE library_songs
+            ADD CONSTRAINT library_songs_libraries_fk FOREIGN KEY ( libraries_title,libraries_users_id )
+                REFERENCES libraries ( title,users_id );
 
-ALTER TABLE library_songs
-    ADD CONSTRAINT library_songs_songs_fk FOREIGN KEY ( songs_id )
-        REFERENCES songs ( id );
+        ALTER TABLE library_songs
+            ADD CONSTRAINT library_songs_songs_fk FOREIGN KEY ( songs_id )
+                REFERENCES songs ( id );
+
 
 ALTER TABLE songs
     ADD CONSTRAINT songs_album_fk FOREIGN KEY ( album_id )

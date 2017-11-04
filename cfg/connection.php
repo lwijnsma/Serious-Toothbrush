@@ -2,7 +2,7 @@
     $dbhost = "localhost";
 	$dbuser = "project";
 	$dbpass = "";
-	$dbname = "project";
+	$dbname = "project1";
 	$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 //	Test of de verbinding werkt!
 	if (mysqli_connect_errno()) {

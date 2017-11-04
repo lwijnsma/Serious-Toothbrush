@@ -35,10 +35,10 @@ if (!empty($_POST['profile_name']) && !empty($_POST['profile_lastname'])) {
 
 
 		$query = 	"SELECT * FROM USERS
-		WHERE username ='".$_SESSION["gerbruiker_informatie"]["username"]."'";
+		WHERE username ='".$_SESSION["gebruiker_informatie"]["username"]."'";
 		$result = mysqli_query($db, $query) or die("FOUT : " . mysqli_error());
 		$result=mysqli_fetch_assoc($result)or die("FOUT : " . mysqli_error());
-		$_SESSION["gerbruiker_informatie"]=$result;
+		$_SESSION["gebruiker_informatie"]=$result;
 		$_SESSION['edit_profile_succes']=1;
 		header('location: redirect.php');
 

@@ -1,9 +1,13 @@
 
 <?php
 include 'cfg/connection.php';
-$Song=$_SESSION['Song'];
+$song=$_SESSION['Song'];
+
 include 'include/cart_data_functions.php';
-$query="SELECT * FROM SONGS WHERE TITLE = '".$Song."'";
+$query="SELECT songs.id, songs.title , songs.artiest, songs.price, songs.picture_location, songs.description, songs.file_location, album.title as 'album_title', genre.title as 'genre_title' FROM `songs`
+left join album on (songs.album_id=album.id)
+left join genre on(songs.genre_id=genre.id)
+where songs.id=$song";
 $result=mysqli_query($db,$query);
 $result=mysqli_fetch_assoc($result);
 
@@ -46,7 +50,7 @@ echo "<div class='card'>
       <div class='col-sm-4 mr-auto'>
         <h4>Price <small><b>€ ".number_format($result['price'],2)."</b></small></h4>
       </div>
-      <div class='col mr-auto'><form action='".($_SERVER['PHP_SELF'])."'method=post><button type='input' name='store_add' value='".$result['title']."' class='btn btn-dark'><i class='fa fa-cart-plus' aria-hidden='true'></i></button></form><br></div></div>
+      <div class='col mr-auto'><form action='".($_SERVER['PHP_SELF'])."'method=post><button type='input' name='store_add' value='".$result['id']."' class='btn btn-dark'><i class='fa fa-cart-plus' aria-hidden='true'></i></button></form><br></div></div>
  ";
 
 

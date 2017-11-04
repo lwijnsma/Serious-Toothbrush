@@ -2,14 +2,17 @@
 
 include 'cfg/connection.php';
 
-$query = "
-SELECT *
-FROM `songs` s
-LEFT JOIN `cart_songs` cs
-ON s.`title` = cs.`songs_title`
-WHERE cs.`cart_id` = {$_SESSION['gerbruiker_informatie']['id']}
-ORDER BY cs.`songs_title`;
-";
+$query="SELECT songs.id, songs.title , songs.artiest, songs.price, songs.picture_location, songs.description, songs.file_location, album.title as
+'album_title',genre.title as  'genre_title',cart_songs.cart_id FROM `songs`
+left join album
+on (songs.album_id=album.id)
+left join genre
+on(songs.genre_id=genre.id)
+left join cart_songs
+on(songs.id=cart_songs.songs_id)
+WHERE cart_songs.cart_id ='{$_SESSION['gebruiker_informatie']['id']}'
+ORDER BY songs.title";
+
 
 $songs      = mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
 $total      = 0;
@@ -28,20 +31,14 @@ if (isset($_POST['submit']))
             //Code is goed voeg songs toe.
             while ($song = $songs->fetch_assoc())
             {
-                $query = "
-                INSERT INTO `library_songs` (`songs_title`, `libraries_title`, `libraries_users_id`)
-                VALUES (
-                '{$song['title']}',
-                'MAIN LIBRARY',
-                {$_SESSION['gerbruiker_informatie']['id']}
-                );
-                ";
+                $query = "INSERT INTO library_songs (`songs_id`, `libraries_title`, `libraries_users_id`)
+                VALUES ('{$song['id']}', 'MAIN LIBRARY', {$_SESSION['gebruiker_informatie']['id']})";
                 mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
             }
 
             $query = "
             DELETE FROM `cart_songs`
-            WHERE `cart_id` = {$_SESSION['gerbruiker_informatie']['id']};
+            WHERE `cart_id` = {$_SESSION['gebruiker_informatie']['id']};
             ";
             mysqli_query($db, $query) or die('FOUT : '.mysqli_error($db));
 

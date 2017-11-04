@@ -75,4 +75,15 @@ function custom_error_ErrorHandler_for_add_genre($errno, $errstr, $errfile, $err
     else echo'please try again.';
     echo '</div>';
 }
+
+
+function custom_error_ErrorHandler_for_edit_album($errno, $errstr, $errfile, $errline){
+  if($errstr=='error_on_select') echo '<div class="alert alert-danger" role="alert">something went wrong trying to select the data from the database';
+  if($errstr=='error_on_update') echo '<div class="alert alert-danger" role="alert">something went wrong trying to update the data in the database</div>';
+
+}
+
+
+
+
  ?>

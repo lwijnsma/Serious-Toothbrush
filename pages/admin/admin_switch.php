@@ -1,4 +1,8 @@
 <?php
+include 'edit_nav.php';
+
+
+
 if (isset($_POST['profile'])) {
   $_SESSION["profiles"]=$_POST['profile'];
 }
@@ -59,5 +63,11 @@ if(!empty($_SESSION["profiles"])){
 else{
   include 'edit.php';
 }
+
+
+
+
+
+
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-include 'edit_nav.php';
+include 'admin_nav_switch_secundairy.php';
 
 
 

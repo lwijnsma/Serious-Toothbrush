@@ -8,7 +8,7 @@
          <form class="" role="form" action="<?php ($_SERVER['PHP_SELF']);?>" method="post">
             <div class="row">
                <div class="col-md-4">
-                  <label for=""> Genre </label><input type="text" class="form-control" name="titel" value="<?php echo $title; ?>" size="20" ><br>
+                  <label for=""> Genre </label><input type="text" class="form-control" name="title" value="<?php echo $title; ?>" size="20" ><br>
                </div>
             </div>
             <div class="row">

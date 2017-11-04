@@ -24,7 +24,7 @@ if ($result = $db->query($query))
     /* fetch associative array */
     while ($row = $result->fetch_assoc())
     {
-      echo "<tr><td class='body-item mbr-fonts-style display-7'>{$row['title']}</td><td class='body-item mbr-fonts-style display-7'>{$row['artist']}</td><td class='body-item mbr-fonts-style display-7'>{$row['year']}</td><form  action='".($_SERVER['PHP_SELF'])."' method='post'><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='profile_admin_edit' value='{$row['title']}'>edit</button></td><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='admin_edit_albums_delete' value='".$row['title']."'>delete</button></td></form></tr>";
+      echo "<tr><td class='body-item mbr-fonts-style display-7'>{$row['title']}</td><td class='body-item mbr-fonts-style display-7'>{$row['artist']}</td><td class='body-item mbr-fonts-style display-7'>{$row['year']}</td><form  action='".($_SERVER['PHP_SELF'])."' method='post'><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='profile_admin_edit_album' value='{$row['title']}'>edit</button></td><td class='body-item mbr-fonts-style display-7'><button type='submit'class='library-item' name='admin_edit_albums_delete' value='".$row['title']."'>delete</button></td></form></tr>";
     }
 
     /* free result set */

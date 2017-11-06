@@ -88,7 +88,8 @@ CREATE TABLE songs (
     price          decimal(4,2)  NOT NULL,
     description    longtext    NOT NULL,
     picture_location VARCHAR(50),
-    file_location  VARCHAR(50)
+    file_location  VARCHAR(50),
+    sample_location  VARCHAR(50)
 );
 
 

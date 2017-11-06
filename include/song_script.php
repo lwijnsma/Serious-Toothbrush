@@ -4,7 +4,7 @@ include 'cfg/connection.php';
 $song=$_SESSION['Song'];
 
 include 'include/cart_data_functions.php';
-$query="SELECT songs.id, songs.title , songs.artiest, songs.price, songs.picture_location, songs.description, songs.file_location, album.title as 'album_title', genre.title as 'genre_title' FROM `songs`
+$query="SELECT songs.id, songs.title , songs.artiest, songs.price, songs.picture_location, songs.description, songs.file_location, songs.picture_location, album.title as 'album_title', genre.title as 'genre_title' FROM `songs`
 left join album on (songs.album_id=album.id)
 left join genre on(songs.genre_id=genre.id)
 where songs.id=$song";
